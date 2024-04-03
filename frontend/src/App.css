@@ -1,0 +1,26 @@
+.logo {
+    width: 100px;
+    height: 100px;
+  }
+  .card{
+    background: linear-gradient(180deg, #ffffff, #ffffff00);
+    border: none;
+  }
+  .txt{
+    color: purple;
+    font-weight: bolder;
+    font-family: Roboto;
+  }
+
+  .bg-img{
+    background-image: url(https://i.pinimg.com/564x/7e/75/dc/7e75dcfc1a29ebb757ae2410959fbf80.jpg);
+    height: 80vh;
+    background-size:cover;
+}
+.bg-img-1{
+    background-image: url(https://www.lamartinierelucknow.org/wp-content/uploads/Aerial-View-of-Constantia1-1000x450.jpg);
+    height: 80vh;
+    background-size:cover;
+ 
+
+}
