@@ -4,6 +4,7 @@ const cors = require("cors")
 const port = 3000;
 
 const UserRouter = require('./Routers/userRouter')
+const schoolRouter = require('./Routers/schoolRouter')
 
 // middleware
 app.use(express.json());
@@ -12,6 +13,7 @@ app.use(cors({
 }))
 
 app.use('/user', UserRouter)
+app.use('/school', schoolRouter)
 
 
 app.listen(port, () => {

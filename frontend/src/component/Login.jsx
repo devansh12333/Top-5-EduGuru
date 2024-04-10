@@ -1,6 +1,41 @@
+import { useFormik } from 'formik';
+import { enqueueSnackbar } from 'notistack';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
+  const loginForm = useFormik({
+    initialValues:{
+    
+      email: "",
+      password: ""
+    
+    },
+
+    onSubmit : async(values) => {
+      console.log(values);
+
+      const res = await fetch("http://localhost:3000/user/authenticate",{
+        method: "POST",
+        body: JSON.stringify(values),
+        headers:{
+          "Content-Type" : "application/json"
+        },
+
+        
+      })
+      console.log(res.status);
+      if(res.status === 200) {
+        enqueueSnackbar("user loggedIn Successfully", {variant:"success"})
+        navigate("/")
+      }else{
+        enqueueSnackbar("somthing went wrong", {variant:"warning"})
+      }
+    }
+  });
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#5DADE2 " }}>
@@ -19,7 +54,7 @@ const Login = () => {
             </div>
             <div className="col-md-6 col-lg-7 d-flex align-items-center">
               <div className="card-body p-4 p-lg-5 text-black">
-                <form>
+                <form onSubmit={loginForm.handleSubmit}>
                   <div className="d-flex align-items-center mb-3 pb-1">
                     <i
                       className="fas fa-cubes fa-2x me-3"
@@ -34,29 +69,35 @@ const Login = () => {
                     Sign into your account
                   </h5>
                   <div className="form-outline mb-4">
-                    <input
-                      type="email"
-                      id="form2Example17"
-                      className="form-control form-control-lg"
-                    />
-                    <label className="form-label" htmlFor="Email ">
+                  <label className="form-label" htmlFor="Email ">
                       Email address
                     </label>
-                  </div>
-                  <div className="form-outline mb-4">
                     <input
-                      type="password"
-                      id="form2Example27"
+                      type="email"
+                      id="email"
+                      value={loginForm.values.email}
+                      onChange={loginForm.handleChange}
                       className="form-control form-control-lg"
                     />
-                    <label className="form-label" htmlFor="form2Example27">
+                   
+                  </div>
+                  <div className="form-outline mb-4">
+                  <label className="form-label" htmlFor="form2Example27">
                       Password
                     </label>
+                    <input
+                      type="password"
+                      id="password"
+                      value={loginForm.values.password}
+                      onChange={loginForm.handleChange}
+                      className="form-control form-control-lg"
+                    />
+                   
                   </div>
                   <div className="pt-1 mb-4">
                     <button
                       className="btn btn-dark btn-lg btn-block"
-                      type="button"
+                      type="submit"
                     >
                       Login
                     </button>
