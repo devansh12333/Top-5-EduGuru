@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Manageschool = () => {
-    const [Data, setData] = userState([])
+    const [Data, setData] = useState([])
     const fetchschoolData = async () => {
         const res = await fetch ("http://localhost:3000/school/getall")
         console.log(res.status)
@@ -12,7 +12,7 @@ const Manageschool = () => {
         }
     }
     useEffect(() => {
-        fetchSchoolData();
+        fetchschoolData();
     },[])
     const displaySchool = () => {
     return Data.map((school) => {
@@ -22,6 +22,9 @@ const Manageschool = () => {
         <td>{school.fees}</td>
         <td>
             <button className='btn btn-danger'>Delete</button>
+        </td>
+        <td>
+            <button className='btn btn-primary' onClick={ () => {Navigate('/Update'+school._id)}}>Update</button>
         </td>
       </tr>
         

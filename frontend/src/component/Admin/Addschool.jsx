@@ -15,8 +15,7 @@ const AddSchool = () => {
 
     const addSchoolForm = useFormik({
         initialValues: {
-            schoolname: "",
-            
+            schoolname: "",  
             schooldetail: "",
             schooladdress: "",
             phone: "",
@@ -28,7 +27,7 @@ const AddSchool = () => {
         onSubmit: async (values, action) => {
             values.image = selFile;
             console.log(values);
-            const res = await fetch("http://localhost:5000/school/add", {
+            const res = await fetch("http://localhost:3000/school/add", {
                 method: "POST",
                 body: JSON.stringify(values),
                 headers: { "Content-type": "application/json" },
@@ -53,7 +52,7 @@ const AddSchool = () => {
         const fd = new FormData();
         fd.append('myfile', file);
 
-        const res = await fetch('http://localhost:5000/util/uploadfile', {
+        const res = await fetch('http://localhost:3000/util/uploadfile', {
             method: 'POST',
             body: fd
         })

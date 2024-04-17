@@ -20,15 +20,16 @@ const AddCollege = () => {
             collegedetail: "",
             collegeaddress: "",
             phone: "",
-            image: "",
+            
             email: "",
             fees: "",
+            image: "",
         },
 
         onSubmit: async (values, action) => {
             values.image = selFile;
             console.log(values);
-            const res = await fetch("http://localhost:5000/college/add", {
+            const res = await fetch("http://localhost:3000/college/add", {
                 method: "POST",
                 body: JSON.stringify(values),
                 headers: { "Content-type": "application/json" },
@@ -53,7 +54,7 @@ const AddCollege = () => {
         const fd = new FormData();
         fd.append('myfile', file);
 
-        const res = await fetch('http://localhost:5000/util/uploadfile', {
+        const res = await fetch('http://localhost:3000/util/uploadfile', {
             method: 'POST',
             body: fd
         })
@@ -121,7 +122,7 @@ const AddCollege = () => {
                         type="text"
                         name='collegedetail'
                         id="floatingInput"
-                        onChange={addCollegelForm.handleChange}
+                        onChange={addCollegeForm.handleChange}
                         value={addCollegeForm.values.collegedetail}
                         className="form-control mb-2 input"
                         required=""

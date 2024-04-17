@@ -28,7 +28,7 @@ const AddPlayway = () => {
         onSubmit: async (values, action) => {
             values.image = selFile;
             console.log(values);
-            const res = await fetch("http://localhost:5000/playway/add", {
+            const res = await fetch("http://localhost:3000/playway/add", {
                 method: "POST",
                 body: JSON.stringify(values),
                 headers: { "Content-type": "application/json" },
@@ -53,7 +53,7 @@ const AddPlayway = () => {
         const fd = new FormData();
         fd.append('myfile', file);
 
-        const res = await fetch('http://localhost:5000/util/uploadfile', {
+        const res = await fetch('http://localhost:3000/util/uploadfile', {
             method: 'POST',
             body: fd
         })
