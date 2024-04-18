@@ -25,7 +25,7 @@ const AddSchool = () => {
         },
 
         onSubmit: async (values, action) => {
-            values.image = selFile;
+            values.image = selFile.name;
             console.log(values);
             const res = await fetch("http://localhost:3000/school/add", {
                 method: "POST",
@@ -48,15 +48,22 @@ const AddSchool = () => {
 
     const uploadFile = async (e) => {
         let file = e.target.files[0];
-        setSelFile(file.name);
+        setSelFile(file);
         const fd = new FormData();
         fd.append('myfile', file);
 
         const res = await fetch('http://localhost:3000/util/uploadfile', {
             method: 'POST',
-            body: fd
+            body: fd,
+        }).then((res) => {
+            if(res.status === 200){
+                console.log("file uploads");
+                toast.success("file uploads");
+            }
+            
         })
-        console.log(res.status);
+     
+       
     }
 
 

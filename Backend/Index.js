@@ -8,6 +8,7 @@ const schoolRouter = require('./Routers/schoolRouter')
 const collegeRouter = require('./Routers/collegeRouter')
 const universityRouter = require('./Routers/universityRouter')
 const playwayRouter = require('./Routers/playwayRouter')
+const utilRouter= require("./Routers/util")
 
 // middleware
 app.use(express.json());
@@ -20,6 +21,9 @@ app.use('/school', schoolRouter)
 app.use('/college', collegeRouter)
 app.use('/university', universityRouter)
 app.use('/playway', playwayRouter)
+app.use("/util",utilRouter)
+
+app.use(express.static("./static/uploads"))
 
 
 app.listen(port, () => {

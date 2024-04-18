@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 const Manageschool = () => {
     const [Data, setData] = useState([])
+
     const fetchschoolData = async () => {
         const res = await fetch ("http://localhost:3000/school/getall")
         console.log(res.status)
@@ -14,6 +15,7 @@ const Manageschool = () => {
     useEffect(() => {
         fetchschoolData();
     },[])
+    
     const displaySchool = () => {
     return Data.map((school) => {
      
