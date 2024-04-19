@@ -157,7 +157,7 @@ const AddSchool = () => {
                         required=''
                         placeholder="Fees"
                     />
-                    <label htmlFor="floatingInput" className="mb-2 font-serif">fees</label>
+                    <label htmlFor="floatingInput" className="mb-2 font-serif">Fee</label>
 
                 </div>
 
