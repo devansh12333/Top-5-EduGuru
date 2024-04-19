@@ -16,10 +16,19 @@ import AddSchool from './component/Admin/Addschool'
 import AddUniversity from './component/Admin/Adduniversity'
 import AddCollege from './component/Admin/Addcollege'
 import AddPlayway from './component/Admin/Addplayway'
+<<<<<<< HEAD
 import Sidebar from './component/Sidebar'
 import Aboutus from './component/Aboutus'
 
 
+=======
+import School from './component/Mainpage/School'
+import College from './component/Mainpage/College'
+import University from './component/Mainpage/University'
+import Playway from './component/Mainpage/Playway'
+import Update from './component/Update'
+import Manageschool from './component/Manageschool'
+>>>>>>> 6a51c60c8286dc078bb58bc630e7e34f031f133a
 
 
 
@@ -40,9 +49,19 @@ const App = () => {
       <Route path="/AddUniversity" element={<AddUniversity />} />
       <Route path="/AddCollege" element={<AddCollege />} />
       <Route path="/AddPlayway" element={<AddPlayway />} />
+<<<<<<< HEAD
       <Route path="/Sidebar" element={<Sidebar />} />
       <Route path="/Aboutus" element={<Aboutus />} />
       
+=======
+      <Route path="/School" element={<School />} />
+      <Route path="/College" element={<College />} />
+      <Route path="/University" element={<University />} />
+      <Route path="/Playway" element={<Playway />} />
+      <Route path="/Update/:id" element={<Update />} />
+      <Route path="/Manageschool" element={<Manageschool />} />
+
+>>>>>>> 6a51c60c8286dc078bb58bc630e7e34f031f133a
     
      
       </Routes>
