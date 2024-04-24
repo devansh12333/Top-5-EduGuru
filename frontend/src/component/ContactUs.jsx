@@ -3,7 +3,7 @@ import React from 'react'
 const ContactUs = () => {
   return (
     <><>
-    {/* Contact 3 - Bootstrap Brain Component */}
+    
     <section className="bg-light py-3 py-md-5 py-xl-8">
       <div className="container">
         <div className="row gy-3 gy-md-4 gy-lg-0 align-items-md-center">
@@ -12,9 +12,7 @@ const ContactUs = () => {
               <div className="col-12 col-xl-11">
                 <h2 className="h1 mb-3">Get in touch</h2>
                 <p className="lead fs-4 text-secondary mb-5">
-                  We're always on the lookout to work with new clients. If you're
-                  interested in working with us, please get in touch in one of the
-                  following ways.
+                We're thrilled to assist you in your educational journey. Whether you have inquiries, feedback, or need assistance, our team is here to help.
                 </p>
                 <div className="d-flex mb-5">
                   <div className="me-4 text-primary">
@@ -61,7 +59,9 @@ const ContactUs = () => {
                             className="link-secondary text-decoration-none"
                             href="tel:+15057922430"
                           >
-                            (505) 792-2430
+                            6392140863
+                          <br />
+                            6389379177       
                           </a>
                         </p>
                       </div>
@@ -89,7 +89,7 @@ const ContactUs = () => {
                             className="link-secondary text-decoration-none"
                             href="mailto:demo@yourdomain.com"
                           >
-                            demo@yourdomain.com
+                            top5eduguru@gmail.com
                           </a>
                         </p>
                       </div>

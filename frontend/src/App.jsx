@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 
+
 import{BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 
 
@@ -27,6 +28,7 @@ import University from './component/Mainpage/University'
 import Playway from './component/Mainpage/Playway'
 import Update from './component/Update'
 import Manageschool from './component/Manageschool'
+import Reviewandrating from './component/Reviewandrating'
 
 
 
@@ -37,10 +39,12 @@ const App = () => {
       <SnackbarProvider >
       <Navbar/>
       <Routes>
+      <Route path='/' element={<Home/>}/>
+
       <Route path='/Home' element={<Home/>}/>
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup/>}/>
-      <Route path='/contactUs' element={<Contactus/>} />
+      <Route path='/contactUs' element={<ContactUs/>} />
       <Route path='/view' element={<View/>} />
     
       <Route path="/AddSchool" element={<AddSchool />} />
@@ -49,6 +53,7 @@ const App = () => {
       <Route path="/AddPlayway" element={<AddPlayway />} />
       <Route path="/Sidebar" element={<Sidebar />} />
       <Route path="/Aboutus" element={<Aboutus />} />
+      <Route path="/Reviewandrating" element={<Reviewandrating />} />
       
     
      
