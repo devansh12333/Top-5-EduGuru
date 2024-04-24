@@ -15,12 +15,10 @@ const AddCollege = () => {
 
     const addCollegeForm = useFormik({
         initialValues: {
-            collegename: "",
-            
+            collegename: "",      
             collegedetail: "",
             collegeaddress: "",
-            phone: "",
-            
+            phone: "",  
             email: "",
             fees: "",
             image: "",

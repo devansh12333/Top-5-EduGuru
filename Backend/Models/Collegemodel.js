@@ -4,7 +4,7 @@ const userSchema = new Schema({
     fees: String,
     collegedetail: String,
     collegeaddress: String,
-    Image: String,
+    image: String,
     email: String,
     phone: Number,
     
