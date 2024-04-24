@@ -20,13 +20,13 @@ const AddPlayway = () => {
             playwaydetail: "",
             playwayaddress: "",
             phone: "",
-            image: "",
+            Image: "",
             email: "",
             fees: "",
         },
 
         onSubmit: async (values, action) => {
-            values.image = selFile;
+            values.Image = selFile;
             console.log(values);
             const res = await fetch("http://localhost:3000/playway/add", {
                 method: "POST",
