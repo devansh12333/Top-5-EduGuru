@@ -1,503 +1,278 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
-    
-   <>
     <>
-  {/* Carousel wrapper */}
-  <div
-    id="carouselBasicExample"
-    className="carousel slide carousel-fade"
-    data-mdb-ride="carousel"
-  >
-    {/* Indicators */}
-    <div className="carousel-indicators">
-      <button
-        type="button"
-        data-mdb-target="#carouselBasicExample"
-        data-mdb-slide-to={0}
-        className="active"
-        aria-current="true"
-        aria-label="Slide 1"
-      />
-      <button
-        type="button"
-        data-mdb-target="#carouselBasicExample"
-        data-mdb-slide-to={1}
-        aria-label="Slide 2"
-      />
-      <button
-        type="button"
-        data-mdb-target="#carouselBasicExample"
-        data-mdb-slide-to={2}
-        aria-label="Slide 3"
-      />
+<div
+  id="carouselExampleControls"
+  className="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src="https://images.shiksha.com/mediadata/images/1558510681phphTCZL5.jpeg" className="d-block w-30" alt="..." style={{height:500, width:1600}}/>
     </div>
-    {/* Inner */}
-    <div className="carousel-inner">
-      {/* Single item */}
-      <div className="carousel-item active">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp"
-          className="d-block w-100"
-          alt="Sunset Over the City"
-        />
-        <div className="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </div>
-      {/* Single item */}
-      <div className="carousel-item">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp"
-          className="d-block w-100"
-          alt="Canyon at Nigh"
-        />
-        <div className="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      {/* Single item */}
-      <div className="carousel-item">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp"
-          className="d-block w-100"
-          alt="Cliff Above a Stormy Sea"
-        />
-        <div className="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </div>
-      </div>
+    <div className="carousel-item">
+      <img src="https://img.staticmb.com/mbcontent/images/uploads/2023/8/DPS-Eldeco%20(1).jpg" className="d-block w-30" alt="..."style={{height:500, width:1600}} />
     </div>
-    {/* Inner */}
-    {/* Controls */}
-    <button
-      className="carousel-control-prev"
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide="prev"
-    >
-      <span className="carousel-control-prev-icon" aria-hidden="true" />
-      <span className="visually-hidden">Previous</span>
-    </button>
-    <button
-      className="carousel-control-next"
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide="next"
-    >
-      <span className="carousel-control-next-icon" aria-hidden="true" />
-      <span className="visually-hidden">Next</span>
-    </button>
+    <div className="carousel-item">
+  <img src="https://lucknowkindergarten.com.au/wp-content/uploads/2022/09/benefits-img1.jpg" className="d-block w-30" alt="..." style={{height:500, width:1600}}/>
+    </div>
   </div>
-  {/* Carousel wrapper */}
-  <>
-  {/* Carousel wrapper */}
-  <div
-    id="carouselMultiItemExample"
-    className="carousel slide carousel-dark text-center"
-    data-mdb-ride="carousel"
+  <button
+    className="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleControls"
+    data-bs-slide="prev"
   >
-    {/* Controls */}
-    <div className="d-flex justify-content-center mb-4">
-      <button
-        className="carousel-control-prev position-relative"
-        type="button"
-        data-mdb-target="#carouselMultiItemExample"
-        data-mdb-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true" />
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button
-        className="carousel-control-next position-relative"
-        type="button"
-        data-mdb-target="#carouselMultiItemExample"
-        data-mdb-slide="next"
-      >
-        <span className="carousel-control-next-icon" aria-hidden="true" />
-        <span className="visually-hidden">Next</span>
-      </button>
-    </div>
-    {/* Inner */}
-    <div className="carousel-inner py-4">
-      {/* Single item */}
-      <div className="carousel-item active">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="card">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/nature/181.webp"
-                  className="card-img-top"
-                  alt="Waterfall"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#!" className="btn btn-primary">
-                    Button
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 d-none d-lg-block">
-              <div className="card">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp"
-                  className="card-img-top"
-                  alt="Sunset Over the Sea"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#!" className="btn btn-primary">
-                    Button
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 d-none d-lg-block">
-              <div className="card">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/nature/183.webp"
-                  className="card-img-top"
-                  alt="Sunset over the Sea"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#!" className="btn btn-primary">
-                    Button
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Single item */}
-      <div className="carousel-item">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 col-md-12">
-              <div className="card">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp"
-                  className="card-img-top"
-                  alt="Fissure in Sandstone"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#!" className="btn btn-primary">
-                    Button
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 d-none d-lg-block">
-              <div className="card">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/nature/185.webp"
-                  className="card-img-top"
-                  alt="Storm Clouds"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#!" className="btn btn-primary">
-                    Button
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 d-none d-lg-block">
-              <div className="card">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/nature/186.webp"
-                  className="card-img-top"
-                  alt="Hot Air Balloons"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#!" className="btn btn-primary">
-                    Button
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Single item */}
-      <div className="carousel-item">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-              <div className="card">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/nature/187.webp"
-                  className="card-img-top"
-                  alt="Peaks Against the Starry Sky"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#!" className="btn btn-primary">
-                    Button
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block">
-              <div className="card">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/nature/188.webp"
-                  className="card-img-top"
-                  alt="Bridge Over Water"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#!" className="btn btn-primary">
-                    Button
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 mb-4 mb-lg-0 d-none d-lg-block">
-              <div className="card">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/standard/nature/189.webp"
-                  className="card-img-top"
-                  alt="Purbeck Heritage Coast"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#!" className="btn btn-primary">
-                    Button
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {/* Inner */}
+    <span className="carousel-control-prev-icon" aria-hidden="true" />
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button
+    className="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleControls"
+    data-bs-slide="next"
+  >
+    <span className="carousel-control-next-icon" aria-hidden="true" />
+    <span className="visually-hidden">Next</span>
+  </button>
+</div>
+<hr />
+
+<div className="container py-5">
+  <div className="row">
+    <div className="col-md-3">
+    <div className="card" style={{ width: "18rem" }}>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/BBDU_Main_Building.jpg" className="card-img-top" alt="..." style={{height:250, width:287}}/>
+  <div className="card-body">
+    <h5 className="card-title">University</h5>
+    <p className="card-text">
+       get top 5 University in Lucknow
+    </p>
+    <a href="#" className="btn btn-primary">
+      Explore University
+    </a>
   </div>
-  {/* Carousel wrapper */}
+</div>
+    </div>
+    <div className="col-md-3">
+    <div className="card" style={{ width: "18rem" }}>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROBlFINSMGLeG4EMAMvPo2guNNivTXfbw0DoPTTkoh5Q&s" className="card-img-top" alt="..."style={{height:250, width:287}} />
+  <div className="card-body">
+    <h5 className="card-title">College</h5>
+    <p className="card-text">
+       get top 5 College in Lucknow
+    </p>
+    <a href="#" className="btn btn-primary">
+      Explore College
+    </a>
+  </div>
+</div>
+    </div>
+    <div className="col-md-3">
+    <div className="card" style={{ width: "18rem" }}>
+  <img src="https://img.staticmb.com/mbcontent/images/uploads/2023/8/Lucknow-public-school.jpg" className="card-img-top" alt="..."style={{height:250, width:287}} />
+  <div className="card-body">
+    <h5 className="card-title">School</h5>
+    <p className="card-text">
+       get top 5 school in Lucknow
+    </p>
+    <a href="#" className="btn btn-primary">
+      Explore School
+    </a>
+  </div>
+</div>
+    </div>
+    <div className="col-md-3">
+    <div className="card" style={{ width: "18rem" }}>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZUSgEsJuUcJTqsd34ptrj208NMULis__X-LPMZgNcw&s" className="card-img-top" alt="..."style={{height:250, width:287}} />
+  <div className="card-body">
+    <h5 className="card-title">Playway</h5>
+    <p className="card-text">
+       get top 5 Playway in Lucknow
+    </p>
+    <a href="#" className="btn btn-primary">
+      Explore Playway
+    </a>
+  </div>
+</div>
+    </div>
+    </div>
+    
+  </div>
+  
+
   <>
-  {/* Modal gallery */}
-  <section className="">
-    {/* Section: Images */}
-    <section className="">
-      <div className="row">
-        <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-          <div
-            className="bg-image hover-overlay ripple shadow-1-strong rounded"
-            data-ripple-color="light"
-          >
-            <img
-              src="https://mdbcdn.b-cdn.net/img/screens/yt/screen-video-1.webp"
-              className="w-100"
-            />
-            <a
-              href="#!"
-              data-mdb-toggle="modal"
-              data-mdb-target="#exampleModal1"
-            >
-              <div
-                className="mask"
-                style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
-              />
-            </a>
+  {/* Background image */}
+  <div
+    className="bg-image  text-center shadow-1-strong rounded mb-5 text-white"
+    style={{
+      backgroundImage:
+        'url("https://s26162.pcdn.co/wp-content/uploads/sites/3/2023/02/used-books.jpg")',
+        height: "30rem", width:"101rem", backgroundRepeat:"no-repeat",WebkitBackgroundSize:"cover", opacity:"0.8"
+    }}
+  >
+    <div className='container d-flex justify-content-center py-5'>
+<div className='me-4 text-white col-md-3'>
+<i class="  bi bi-mortarboard-fill"style={{fontSize:"5rem"}}></i>
+<h4>University</h4>
+<h5>125</h5>
+</div>
+<div className='me-4 text-white col-md-3'>
+<i class="  bi bi-book-half"style={{fontSize:"5rem"}}></i>
+<h4>College</h4>
+<h5>175</h5>
+</div>
+<div className='me-4 text-white col-md-3' >
+<i class="  bi bi-backpack4-fill"style={{fontSize:"5rem"}}></i>
+<h4>School</h4>
+<h5>130</h5>
+</div>
+<div className='me-4 text-white col-md-3'>
+<i class="bi bi-dribbble"style={{fontSize:"5rem"}}></i>
+<h4>Playway</h4>
+<h5>110</h5>
+</div>
+
+</div>
+  </div>
+ 
+</>
+
+ <>
+{/* Footer */}
+  <footer className="text-center text-lg-start bg-body-tertiary text-muted ">
+    {/* Section: Social media */}
+    <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom text-white bg-dark">
+      {/* Left */}
+      <div className="ms-5 d-none d-lg-block ">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      {/* Left */}
+      {/* Right */}
+      <div>
+        <Link href="" className="me-4 text-reset">
+        <i class="bi bi-facebook"></i>
+        </Link>
+        <Link href="" className="me-4 text-reset">
+        <i class="bi bi-twitter"></i>
+        </Link>
+        <Link href="" className="me-4 text-reset">
+        <i class="bi bi-google"></i>
+        </Link>
+        <Link href="" className="me-4 text-reset">
+        <i class="bi bi-instagram"></i>
+        </Link>
+        <Link href="" className="me-4 text-reset">
+        <i class="bi bi-linkedin"></i>
+        </Link>
+        <a href="" className="me-4 text-reset">
+        <i class="bi bi-github"></i>
+        </a>
+      </div>
+      {/* Right */}
+    </section>
+    {/* Section: Social media */}
+    {/* Section: Links  */}
+    <section className="text-white bg-dark">
+      <div className="container text-center text-md-start">
+        {/* Grid row */}
+        <div className="row py-5">
+          {/* Grid column */}
+          <div className="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+            {/* Content */}
+            <h6 className="text-uppercase fw-bold mb-4">
+              <i className="fas fa-gem me-3" />
+              Company name
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
           </div>
-        </div>
-        <div className="col-lg-4 mb-4 mb-lg-0">
-          <div
-            className="bg-image hover-overlay ripple shadow-1-strong rounded"
-            data-ripple-color="light"
-          >
-            <img
-              src="https://mdbcdn.b-cdn.net/img/screens/yt/screen-video-2.webp"
-              className="w-100"
-            />
-            <a
-              href="#!"
-              data-mdb-toggle="modal"
-              data-mdb-target="#exampleModal2"
-            >
-              <div
-                className="mask"
-                style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
-              />
-            </a>
+          {/* Grid column */}
+          {/* Grid column */}
+          <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            {/* Links */}
+            <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+            <p>
+              <a href="#!" className="text-reset">
+                Angular
+              </a>
+            </p>
+            <p>
+              <a href="#!" className="text-reset">
+                React
+              </a>
+            </p>
+            <p>
+              <a href="#!" className="text-reset">
+                Vue
+              </a>
+            </p>
+            <p>
+              <a href="#!" className="text-reset">
+                Laravel
+              </a>
+            </p>
           </div>
-        </div>
-        <div className="col-lg-4 mb-4 mb-lg-0">
-          <div
-            className="bg-image hover-overlay ripple shadow-1-strong rounded"
-            data-ripple-color="light"
-          >
-            <img
-              src="https://mdbcdn.b-cdn.net/img/screens/yt/screen-video-3.webp"
-              className="w-100"
-            />
-            <a
-              href="#!"
-              data-mdb-toggle="modal"
-              data-mdb-target="#exampleModal3"
-            >
-              <div
-                className="mask"
-                style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" }}
-              />
-            </a>
+          {/* Grid column */}
+          {/* Grid column */}
+          
+          {/* Grid column */}
+          {/* Grid column */}
+          <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            {/* Links */}
+            <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+            <p>
+              <i className="fas fa-home me-3" /> New York, NY 10012, US
+            </p>
+            <p>
+              <i className="fas fa-envelope me-3" />
+              info@example.com
+            </p>
+            <p>
+              <i className="fas fa-phone me-3" /> + 01 234 567 88
+            </p>
+            <p>
+              <i className="fas fa-print me-3" /> + 01 234 567 89
+            </p>
           </div>
+          {/* Grid column */}
         </div>
+        {/* Grid row */}
       </div>
     </section>
-    {/* Section: Images */}
-    {/* Section: Modals */}
-    <section className="">
-      {/* Modal 1 */}
-      <div
-        className="modal fade"
-        id="exampleModal1"
-        tabIndex={-1}
-        aria-labelledby="exampleModal1Label"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-lg">
-          <div className="modal-content">
-            <div className="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/A3PDXmYoF5U"
-                title="YouTube video"
-                allowFullScreen=""
-              />
-            </div>
-            <div className="text-center py-3">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-mdb-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Modal 2 */}
-      <div
-        className="modal fade"
-        id="exampleModal2"
-        tabIndex={-1}
-        aria-labelledby="exampleModal2Label"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-lg">
-          <div className="modal-content">
-            <div className="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/wTcNtgA6gHs"
-                title="YouTube video"
-                allowFullScreen=""
-              />
-            </div>
-            <div className="text-center py-3">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-mdb-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Modal 3 */}
-      <div
-        className="modal fade"
-        id="exampleModal3"
-        tabIndex={-1}
-        aria-labelledby="exampleModal3Label"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-lg">
-          <div className="modal-content">
-            <div className="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/vlDzYIIOYmM"
-                title="YouTube video"
-                allowFullScreen=""
-              />
-            </div>
-            <div className="text-center py-3">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-mdb-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    {/* Section: Modals */}
-  </section>
-  {/* Modal gallery */}
+    {/* Section: Links  */}
+    {/* Copyright */}
+    <div
+      className="text-center p-4 text-white bg-dark"
+      style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
+    >
+      © 2021 Copyright:
+      <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
+        MDBootstrap.com
+      </a>
+    </div>
+    {/* Copyright */}
+  </footer>
+  {/* Footer */}
 </>
 
-</>
 
-</>
 
-   </>
+
+
+
+
+
+
+
+
+    </>
   )
 }
-
-
 
 export default Home
