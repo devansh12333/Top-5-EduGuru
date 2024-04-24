@@ -20,7 +20,7 @@ const Manageschool = () => {
     return Data.map((school) => {
      
       <tr>
-        <td>{school.name}</td>
+        <td>{school.schoolname}</td>
         <td>{school.fees}</td>
         <td>
             <button className='btn btn-danger'>Delete</button>

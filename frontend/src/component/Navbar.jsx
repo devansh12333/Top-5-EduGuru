@@ -41,6 +41,11 @@ const Navbar = () => {
             Contact us
           </Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link " to="/Reviewandrating">
+            Feedback
+          </Link>
+        </li>
       </ul>
       <form className="d-flex" role="search">
         {/* <input

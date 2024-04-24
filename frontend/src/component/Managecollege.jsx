@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Managecollage = () => {
-    const [Data, setData] = userState([])
-    const fetchCollageData = async () => {
-        const res = await fetch ("http://localhost:3000/user/getall")
+const Managecollege = () => {
+    const [Data, setData] = useState([])
+    const fetchCollegeData = async () => {
+        const res = await fetch ("http://localhost:3000/college/getall")
         console.log(res.status)
         if (res.status === 200){
             const data = await res.json();
@@ -12,14 +12,14 @@ const Managecollage = () => {
         }
     }
     useEffect(() => {
-        fetchCollageData();
+        fetchCollegeData();
     },[])
-    const displaycollage = () => {
-    return Data.map((fetchCollageData) => {
+    const displaycollege = () => {
+    return Data.map((college) => {
      
       <tr>
-        <td>{user.name}</td>
-        <td>{user.email}</td>
+        <td>{college.collegename}</td>
+        <td>{college.email}</td>
         <td>
             <button className='btn btn-danger'>Delete</button>
         </td>
@@ -31,7 +31,7 @@ const Managecollage = () => {
     <div>
         <header className='bg-danger text-white'>
             <div className='container py-5'>
-                <h1>Manage fetchCollageData</h1>
+                <h1>Manage college</h1>
 
             </div>
         </header>
@@ -44,7 +44,7 @@ const Managecollage = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {displayUser()}
+                    {displaycollege()}
                 </tbody>
             </table>
 
@@ -53,4 +53,4 @@ const Managecollage = () => {
   )
 }
 
-export default Manageuser
+export default Managecollege

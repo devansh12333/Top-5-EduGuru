@@ -1,6 +1,6 @@
 import "./styles.css";
 
-export default function App() {
+const Aboutus = () => {
   function fok() {
     var j = document.getElementById("arr");
     j.style.backgroundImage =
@@ -63,10 +63,10 @@ export default function App() {
   });
   return (
     <div classNameName="App">
-      
+
       <header id="head">
-       
-         
+
+
       </header>
       <main>
         <div id="front">
@@ -77,9 +77,9 @@ export default function App() {
           />
           <p>
             " Top 5 Eduguru aims to revolutionize the process of choosing educational institutions
-             by providing a centralized platform that offers comprehensive information and user 
-             reviews for schools, colleges, and institutes, ultimately empowering students and parents to make informed decisions about 
-             their educational journey."
+            by providing a centralized platform that offers comprehensive information and user
+            reviews for schools, colleges, and institutes, ultimately empowering students and parents to make informed decisions about
+            their educational journey."
           </p>
         </div>
 
@@ -91,13 +91,13 @@ export default function App() {
           <div>
             <h1>We Offer Innovative  Solutions</h1>
             <p>
-              
-We offer a comprehensive platform, 
-Top 5 Eduguru, that aggregates information 
-and user reviews for educational institutions, including schools, 
-colleges, and institutes. Our platform simplifies the selection process
- by providing detailed insights into courses, faculty, facilities, and more, empowering students
-  and parents to make informed decisions about their educational journey.
+
+              We offer a comprehensive platform,
+              Top 5 Eduguru, that aggregates information
+              and user reviews for educational institutions, including schools,
+              colleges, and institutes. Our platform simplifies the selection process
+              by providing detailed insights into courses, faculty, facilities, and more, empowering students
+              and parents to make informed decisions about their educational journey.
 
 
 
@@ -105,7 +105,7 @@ colleges, and institutes. Our platform simplifies the selection process
 
 
             </p>
-           
+
           </div>
         </div>
 
@@ -154,7 +154,11 @@ colleges, and institutes. Our platform simplifies the selection process
         </div>
 
         <div id="second" className="reveal">
-          <div className="container">
+          <div className="container mb-5">
+            <img
+              src="https://cdni.iconscout.com/illustration/premium/thumb/men-and-woman-characters-work-together-on-project-presentation-2706075-2259871.png"
+              alt=""
+            />
             <div>
               <h1>WE PROVIDE</h1>
               <h2>Remote Employee</h2>
@@ -165,10 +169,7 @@ colleges, and institutes. Our platform simplifies the selection process
                 you down. Everything is managed by Indirect Employee staff!
               </p>
             </div>
-            <img
-              src="https://cdni.iconscout.com/illustration/premium/thumb/men-and-woman-characters-work-together-on-project-presentation-2706075-2259871.png"
-              alt=""
-            />
+
           </div>
           <div className="container">
             <div>
@@ -258,9 +259,11 @@ colleges, and institutes. Our platform simplifies the selection process
           </div>
         </div>
 
-        
+
       </main>
 
-     </div>
+    </div>
   );
 }
+
+export default Aboutus

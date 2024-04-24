@@ -15,7 +15,7 @@ const AddSchool = () => {
 
     const addSchoolForm = useFormik({
         initialValues: {
-            schoolname: "",  
+            schoolname: "",
             schooldetail: "",
             schooladdress: "",
             phone: "",
@@ -56,25 +56,18 @@ const AddSchool = () => {
             method: 'POST',
             body: fd,
         }).then((res) => {
-            if(res.status === 200){
+            if (res.status === 200) {
                 console.log("file uploads");
                 toast.success("file uploads");
             }
-            
         })
-     
-       
     }
-
-
-
-
 
     return (
         <>
 
 
-            <p className="text-yellow-600 mb-3 font-mono bg-dark w-50 mx-auto rounded fs-1 text-center mt-3  fw-bold ">School</p>
+            <p className="text-warning mb-3  bg-dark w-50 mx-auto rounded fs-1 text-center mt-3  fw-bold ">School</p>
             <form onSubmit={addSchoolForm.handleSubmit} className="mb-3 w-50 m-auto ">
                 <div className="form-group ">
                     <label htmlFor="imageUrl" className="mb-2  "></label>
@@ -95,7 +88,7 @@ const AddSchool = () => {
                         required="" placeholder="School" />
                     <label htmlFor="floatingInput" className='font-serif '>School Name</label>
                 </div>
-                
+
                 <div className="form-floating">
                     <input
                         name="email"
@@ -167,7 +160,7 @@ const AddSchool = () => {
 
                 </div>
 
-                <button type="submit" className="bg-black font-semibold py-2  text-yellow-600 fs-5 mx-auto d-block rounded mb-5 w-50">Add</button>
+                <button type="submit" className="bg-black font-semibold py-2  text-warning fs-5 mx-auto d-block rounded mb-5 w-50">Add</button>
 
 
             </form>
