@@ -27,7 +27,7 @@ const School = () => {
       <>
         <div className="row h-50">
           <div className="col-md-3">
-            <Link to={`/ViewSchool/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 img-fluid" style={{ objectFit: "cover", height: 200 }} />
+            <Link to={`/viewSchool/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 img-fluid" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
 

@@ -25,6 +25,9 @@ import Manageschool from './component/Manageschool'
 import ContactUs from './component/ContactUs'
 import Aboutus from './component/Aboutus'
 import Managecollege from './component/Managecollege'
+import Reviewandrating from './component/Reviewandrating'
+
+
 
 
 
@@ -57,6 +60,8 @@ const App = () => {
       <Route path="/Manageschool" element={<Manageschool />} />
       <Route path="/Managecollege" element={<Managecollege />} />
       <Route path="/Manageschool" element={<Manageschool />} />
+      <Route path="/Reviewandrating" element={<Reviewandrating/>} />
+      
 
     
      

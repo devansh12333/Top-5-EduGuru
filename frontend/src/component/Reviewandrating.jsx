@@ -1,6 +1,6 @@
 import React from 'react'
 import'./Reviewandrating'
-import { Rating } from 'react-simple-star-rating'
+
 
 const Reviewandrating = () => {
   
