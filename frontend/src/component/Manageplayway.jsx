@@ -1,56 +1,68 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
-const Manageuser = () => {
-    const [Data, setData] = userState([])
-    const fetchUserData = async () => {
-        const res = await fetch ("http://localhost:3000/user/getall")
+const Manageplaway = () => {
+    const [Data, setData] = useState([]);
+    const fetchplawayData = async () => {
+        const res = await fetch("http://localhost:3000/plaway/getall")
         console.log(res.status)
-        if (res.status === 200){
+        if (res.status === 200) {
             const data = await res.json();
             console.log(data);
             setData(data);
         }
     }
     useEffect(() => {
-        fetchUserData();
-    },[])
-    const displayUser = () => {
-    return Data.map((user) => {
-     
-      <tr>
-        <td>{user.name}</td>
-        <td>{user.email}</td>
-        <td>
-            <button className='btn btn-danger'>Delete</button>
-        </td>
-      </tr>
-        
-    })
-}
-  return (
-    <div>
-        <header className='bg-danger text-white'>
-            <div className='container py-5'>
-                <h1>Manage User</h1>
+        fetchplawayData();
+    }, [])
+
+    const deletefunction = async (id) => {
+        console.log(id);
+        const res = await fetch("http://localhost:3000/plaway/delete/" + id, { method: 'DELETE' })
+
+        if (res.status === 200) {
+            fetchplawayData();
+        }
+    }
+
+    const displayplaway = () => {
+        return Data.map((plaway) => {
+
+            return <tr>
+                <td>{plaway.plawayname}</td>
+                <td>{plaway.email}</td>
+                <td>
+                    <button className='btn btn-danger' onClick={() => {deletefunction(plaway._id)}}>Delete</button>
+                </td>
+                <td>
+                    <Link to={`/Update/${plaway._id}`}>Update</Link>
+                </td>
+            </tr>
+
+        })
+    }
+    return (
+        <div>
+           <Link to="/Addplaway"> <button className="btn btn-primary mt-4 py-2 px-5 ms-5 fs-5">Add plaway</button>
+           </Link>
+            <div className='container mt-5'>
+                <table className='table table-dark'>
+                    <thead>
+                        <tr>
+                            <th>plaway</th>
+                            <th>Email</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {displayplaway()}
+                    </tbody>
+                </table>
 
             </div>
-        </header>
-        <div className='container mt-5'>
-            <table className='table table-dark'>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {displayUser()}
-                </tbody>
-            </table>
-
         </div>
-    </div>
-  )
+    )
 }
 
-export default Manageuser
+export default Manageplaway

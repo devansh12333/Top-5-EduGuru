@@ -34,9 +34,11 @@ const School = () => {
 
           <div className="col-md-6 py-4">
             <h2 className=' fw-semibold fs-5 mt-3 mb-3 ' style={{ fontFamily: "serif" }}>{col.schoolname}</h2>
-            <p className='text-red-700 mb-2' style={{ fontFamily: "cursive" }}>{col.schooladdress}</p>
+            {/* <p className='text-red-700 mb-2' style={{ fontFamily: "cursive" }}>{col.schooladdress}</p> */}
             <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.phone}</p>
             <p className='text-muted ' style={{ fontFamily: "cursive" }}>{col.email}</p>
+            {/* <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.fees}</p>
+            <p className='text-red-700 mb-2' style={{ fontFamily: "cursive" }}>{col.schooldetail}</p> */}
           </div>
       
 
