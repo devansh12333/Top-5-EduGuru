@@ -17,7 +17,7 @@ const Manageuser = () => {
     const displayUser = () => {
     return Data.map((user) => {
      
-      <tr>
+      return <tr>
         <td>{user.name}</td>
         <td>{user.email}</td>
         <td>

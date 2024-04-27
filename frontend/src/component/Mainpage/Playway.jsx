@@ -34,11 +34,11 @@ const Playway = () => {
 
           <div className="col-md-6 py-4">
             <h2 className=' fw-semibold fs-5 mt-3 mb-3 ' style={{ fontFamily: "serif" }}>{col.playwayname}</h2>
-            <p className='text-red-700 mb-2' style={{ fontFamily: "cursive" }}>{col.playwayaddress}</p>
+            {/* <p className='text-red-700 mb-2' style={{ fontFamily: "cursive" }}>{col.playwayaddress}</p> */}
             <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.phone}</p>
             <p className='text-muted ' style={{ fontFamily: "cursive" }}>{col.email}</p>
-            <p className='text-red-700 mb-2' style={{ fontFamily: "cursive" }}>{col.playwaydetail}</p>
-            <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.fees}</p>
+            {/* <p className='text-red-700 mb-2' style={{ fontFamily: "cursive" }}>{col.playwaydetail}</p>
+            <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.fees}</p> */}
           </div>
       
 

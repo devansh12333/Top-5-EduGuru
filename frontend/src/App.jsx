@@ -26,6 +26,12 @@ import ContactUs from './component/ContactUs'
 import Aboutus from './component/Aboutus'
 import Managecollege from './component/Managecollege'
 import Reviewandrating from './component/Reviewandrating'
+import Viewcollege from './component/Viewcollege'
+import Viewuniversity from './component/Viewuniversity'
+import ViewSchool from './component/Viewschool'
+import ViewPlayway from './component/Viewplayway'
+import Manageplaway from './component/Manageplayway'
+import Manageuniversity from './component/Manageuniversity'
 
 
 
@@ -59,8 +65,13 @@ const App = () => {
       <Route path="/Update/:id" element={<Update />} />
       <Route path="/Manageschool" element={<Manageschool />} />
       <Route path="/Managecollege" element={<Managecollege />} />
-      <Route path="/Manageschool" element={<Manageschool />} />
+      <Route path="/Manageplaway" element={<Manageplaway />} />
+      <Route path="/Manageuniversity" element={<Manageuniversity />} />
       <Route path="/Reviewandrating" element={<Reviewandrating/>} />
+      <Route path="/Viewcollege/:id" element={<Viewcollege/>} />
+      <Route path="/Viewuniversity/:id" element={<Viewuniversity/>} />
+      <Route path="/Viewschool/:id" element={<ViewSchool/>} />
+      <Route path="/Viewplayway/:id" element={<ViewPlayway/>} />
       
 
     

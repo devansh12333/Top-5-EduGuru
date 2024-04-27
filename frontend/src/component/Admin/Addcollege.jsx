@@ -22,6 +22,7 @@ const AddCollege = () => {
             email: "",
             fees: "",
             image: "",
+            courses: "",
         },
 
         onSubmit: async (values, action) => {
@@ -158,6 +159,15 @@ const AddCollege = () => {
                     />
                     <label htmlFor="floatingInput" className="mb-2 font-serif">fees</label>
 
+                </div>
+                <div className="form-floating ">
+                    <input type="text" className="form-control input mb-2" id="floatingInput"
+                        name='courses'
+                        onChange={addCollegeForm.handleChange}
+                        value={addCollegeForm.values.courses}
+
+                        required="" placeholder="Courses" />
+                    <label htmlFor="floatingInput" className='font-serif '>Courses</label>
                 </div>
 
                 <button type="submit" className="bg-black font-semibold py-2  text-warning fs-5 mx-auto d-block rounded mb-5 w-50">Add</button>
