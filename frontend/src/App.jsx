@@ -32,6 +32,7 @@ import ViewSchool from './component/Viewschool'
 import ViewPlayway from './component/Viewplayway'
 import Manageplaway from './component/Manageplayway'
 import Manageuniversity from './component/Manageuniversity'
+import Admin from './component/Admin/Index'
 
 
 
@@ -72,6 +73,12 @@ const App = () => {
       <Route path="/Viewuniversity/:id" element={<Viewuniversity/>} />
       <Route path="/Viewschool/:id" element={<ViewSchool/>} />
       <Route path="/Viewplayway/:id" element={<ViewPlayway/>} />
+
+
+      <Route path="/Admin" element={<Admin/>} >
+     
+
+      </Route>
       
 
     
