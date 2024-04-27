@@ -1,9 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { IoStarSharp } from "react-icons/io5";
 
 const Home = () => {
   return (
     <>
+
+<div className="conatiner-fluid">
+  <div className="row">
+    <div className="col-md-6">
+   <span className='d-flex text-yellow'> <IoStarSharp />
+    <IoStarSharp />
+    <IoStarSharp />
+    <IoStarSharp />
+    <IoStarSharp /></span>
+    <p className="">Trusted by 1M+ users</p>
+    </div>
+  </div>
+</div>
+
+
 <div
   id="carouselExampleControls"
   className="carousel slide"
