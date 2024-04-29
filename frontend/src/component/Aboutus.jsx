@@ -110,9 +110,9 @@ const Aboutus = () => {
         </div>
 
         <div id="fourth" className="reveal">
-          <h2 style={{ color: "white" }}>TECHNOLOGY INDEX</h2>
+          <h2 style={{ color: "white" }}>WE WORK ON PROVIDING YOU</h2>
           <h1 style={{ color: "white" }}>
-            Real Time Monitoring Your Infrstracture Branded Degital Solutions
+Top 5 list with the help of reviews and feedback
           </h1>
           <div id="fourth_cards">
             <div>
@@ -120,36 +120,30 @@ const Aboutus = () => {
                 src="https://cdn.iconscout.com/icon/premium/png-64-thumb/data-analysis-27-681042.png"
                 alt=" "
               />
-              <p>DATA ANALYTICS</p>
+              <p>COLLEGES</p>
             </div>
             <div>
               <img
                 src="https://cdn.iconscout.com/icon/premium/png-64-thumb/ui-ux-designer-2755964-2289563.png"
                 alt=" "
               />
-              <p>UI/UX DESIGN</p>
+              <p>UNIVERSITIES</p>
             </div>
             <div>
               <img
                 src="https://cdn.iconscout.com/icon/premium/png-64-thumb/web-development-3-478143.png"
                 alt=" "
               />
-              <p>WEB DEVELOPEMENT</p>
+              <p>SCHOOLS</p>
             </div>
             <div>
               <img
                 src="https://cdn.iconscout.com/icon/premium/png-64-thumb/qa-testing-3919162-3246433.png"
                 alt=" "
               />
-              <p>Q&A TESTING</p>
+              <p>PLAYWAY</p>
             </div>
-            <div>
-              <img
-                src="https://cdn.iconscout.com/icon/premium/png-64-thumb/team-135-386667.png"
-                alt=" "
-              />
-              <p>DEDICATED TEAM</p>
-            </div>
+
           </div>
         </div>
 
@@ -163,10 +157,9 @@ const Aboutus = () => {
               <h1>WE PROVIDE</h1>
               <h2>Remote Employee</h2>
               <p>
-                A huge pool of talent from every domain available for your
-                office. Solve your freelancing problems by letting us help you
-                find the most suitable employee or a whole team that won't let
-                you down. Everything is managed by Indirect Employee staff!
+              Top 5 Eduguru offers comprehensive profiles and user reviews for schools, colleges, and institutes.
+               With intuitive search and personalized recommendations, finding the perfect fit is effortless.
+               Explore confidently with Top 5 Eduguru.
               </p>
             </div>
 
@@ -189,25 +182,21 @@ const Aboutus = () => {
             />
           </div>
           <div className="container">
-            <div>
-              <h1>OUR GOAL</h1>
-              <h2>Same Quality at Low Cost</h2>
-              <p>
-                We have unique and revolutionary business principle, ‘Same
-                quality but significantly lower cost’. we aims to fulfill the
-                long-standing outsourcing vacuum felt by Small Medium
-                Enterprises across the country who, till now, were dependent
-                mostly on offshore freelancers.The hired professionals match
-                their western counterparts in skills, qualifications and
-                experience alongwith the added advantage of attractive low
-                costs.
-              </p>
-            </div>
-            <img
+          <img
               src="https://cdni.iconscout.com/illustration/premium/thumb/business-goal-4352585-3618767.png"
               style={{ marginTop: "80px" }}
               alt=""
             />
+            <div>
+              <h1>OUR GOAL</h1>
+              <h2>Same Quality at Low Cost</h2>
+              <p>
+              Our goal is to simplify educational decisions by offering comprehensive information and user reviews
+              . Through personalized recommendations and intuitive tools, 
+              we aim to empower users in finding their ideal institution.
+              </p>
+            </div>
+
           </div>
           <div className="container">
             <div>

@@ -7,7 +7,8 @@ const Reviewandrating = () => {
   
 
   return (
-    <div>
+    <div className="card text-black card-body " style={{ borderRadius: 25, width:900, marginLeft: 330}}>
+       
        <form action="#!">
                 <div className="row gy-4 gy-xl-5 p-4 p-xl-5">
                   <div className="col-12">
@@ -143,7 +144,9 @@ const Reviewandrating = () => {
                   </div>
                 </div>
               </form>
+              
     </div>
+    
   )
 }
 
