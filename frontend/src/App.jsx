@@ -34,10 +34,6 @@ import Manageplayway from './component/Manageplayway'
 import Manageuniversity from './component/Manageuniversity'
 import Admin from './component/Admin/Index'
 
-
-
-
-
 const App = () => {
   return (
     <div>
@@ -67,6 +63,7 @@ const App = () => {
       <Route path="/Manageschool" element={<Manageschool />} />
       <Route path="/Managecollege" element={<Managecollege />} />
       <Route path="/Manageplayway" element={<Manageplayway />} />
+  
       <Route path="/Manageuniversity" element={<Manageuniversity />} />
       <Route path="/Reviewandrating" element={<Reviewandrating/>} />
       <Route path="/Viewcollege/:id" element={<Viewcollege/>} />
