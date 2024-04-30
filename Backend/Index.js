@@ -9,7 +9,7 @@ const collegeRouter = require('./Routers/collegeRouter')
 const universityRouter = require('./Routers/universityRouter')
 const playwayRouter = require('./Routers/playwayRouter')
 const utilRouter= require("./Routers/util")
-const ReviewandratingRouter= require("./Routers/ReviewandratingRouter")
+const ReviewandratingRouter= require("./Routers/Review")
 
 // middleware
 app.use(express.json());
@@ -23,7 +23,7 @@ app.use('/college', collegeRouter)
 app.use('/university', universityRouter)
 app.use('/playway', playwayRouter)
 app.use("/util",utilRouter)
-app.use("/Reviewandrating",ReviewandratingRouter)
+app.use("/reviews",ReviewandratingRouter)
 
 app.use(express.static("./static/uploads"))
 

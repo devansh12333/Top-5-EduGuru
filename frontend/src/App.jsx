@@ -33,6 +33,7 @@ import ViewPlayway from './component/Viewplayway'
 import Manageplayway from './component/Manageplayway'
 import Manageuniversity from './component/Manageuniversity'
 import Admin from './component/Admin/Index'
+import Review from './component/collegeReview'
 
 const App = () => {
   return (
@@ -70,6 +71,7 @@ const App = () => {
       <Route path="/Viewuniversity/:id" element={<Viewuniversity/>} />
       <Route path="/Viewschool/:id" element={<ViewSchool/>} />
       <Route path="/Viewplayway/:id" element={<ViewPlayway/>} />
+      <Route path="/collegeReview/:id" element={<Review/>} />
 
 
       <Route path="/Admin" element={<Admin/>} >

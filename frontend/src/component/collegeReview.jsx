@@ -65,7 +65,7 @@ const Review = () => {
                         <div className="row px-5">
 
                                 <div className="col-md-4  flex items-center justify-center">
-                                    <img src={'http://localhost:5000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid mb-3" />
+                                    <img src={'http://localhost:3000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid mb-3" />
 
                                 </div>
                                 <div className="col-md-8  px-5">

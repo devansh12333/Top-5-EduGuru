@@ -6,7 +6,35 @@ const Home = () => {
   return (
     <>
 
-    
+
+
+      <div className="conatiner-fluid " style={{ height: "80vh" }}>
+        <div className="row p-5">
+          <div className="col-md-6">
+            <span className='d-flex fs-5 ' style={{ color: "rgb(209, 189, 8)" }}> <IoStarSharp />
+              <IoStarSharp />
+              <IoStarSharp />
+              <IoStarSharp />
+              <IoStarSharp /></span>
+            <p className="">Trusted by 1M+ users</p>
+            <p className="mt-3 " style={{ fontFamily: "fantasy", letterSpacing: "1px", fontSize: "35px" }}>Discover, Compare, Choose</p>
+            <p className="fs-5 mt-4">Top5 Eduguru simplify your decision-making process by curating a list of the best five institutions in each category. Our mission is to provide comprehensive insights, helping you make informed choices that align with your educational goals. With Top 5 Eduguru, embark on your academic journey with confidence and find excellence in education.
+              <br />
+              <Link to="/College"> <button className="w-50 mt-4 fs-4 navbar-2 " style={{ borderRadius: "30px" }}>Learn More..</button>    </Link> </p>
+
+          </div>
+          <div className="col-md-6">
+            <img
+              className="img-fluid rounded w-100"
+              loading="lazy"
+              src="https://image.cnbcfm.com/api/v1/image/106922887-1628206615260-gettyimages-887132600-as1700__08.jpeg?v=1628206641"
+              alt=""
+
+            />
+          </div>
+        </div>
+      </div>
+
 
 
       <div
@@ -46,43 +74,43 @@ const Home = () => {
       </div>
       <hr />
 
-      <div className="container   py-5">
+      <div className="container mt-5 mb-5">
         <div className="row">
           <div className="col-md-3">
-            <div className="card" style={{ width: "18rem" }}>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/BBDU_Main_Building.jpg" className="card-img-top" alt="..." style={{ height: 250, width: 287 }} />
+            <div className="card shadow" style={{ border: "none" }}>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/BBDU_Main_Building.jpg" className="card-img-top img-fluid w-100" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">University</h5>
-                <p className="card-text">
-                  get top 5 University in Lucknow
+                <p className=" fs-5 fw-semibold">University</p>
+                <p className="mb-3">
+                  Get top 5 University in Lucknow
                 </p>
-                <Link to="/University" className="btn btn-primary">
+                <Link to="/University" style={{ fontFamily: "serif" }} className="btn btn-primary">
                   Explore University
                 </Link>
               </div>
             </div>
           </div>
           <div className="col-md-3">
-            <div className="card" style={{ width: "18rem" }}>
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROBlFINSMGLeG4EMAMvPo2guNNivTXfbw0DoPTTkoh5Q&s" className="card-img-top" alt="..." style={{ height: 250, width: 287 }} />
+            <div className="card shadow" style={{ border: "none" }}>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROBlFINSMGLeG4EMAMvPo2guNNivTXfbw0DoPTTkoh5Q&s" className="card-img-top img-fluid w-100" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">College</h5>
-                <p className="card-text">
-                  get top 5 College in Lucknow
+                <p className="fs-5 fw-semibold">College</p>
+                <p className="mb-3">
+                  Get top 5 College in Lucknow
                 </p>
-                <Link to="/College" className="btn btn-primary">
+                <Link to="/College" style={{ fontFamily: "serif" }} className="btn btn-primary">
                   Explore College
                 </Link>
               </div>
             </div>
           </div>
           <div className="col-md-3">
-            <div className="card" style={{ width: "18rem" }}>
-              <img src="https://img.staticmb.com/mbcontent/images/uploads/2023/8/Lucknow-public-school.jpg" className="card-img-top" alt="..." style={{ height: 250, width: 287 }} />
+            <div className="card shadow" style={{ border: "none" }}>
+              <img src="https://indusvalleylucknow.in/wp-content/uploads/2023/01/Indus-Valley-Public-School-Lucknow-Best-CBSE-School-in-Jankipuram-Lucknow-1.webp" className="card-img-top img-fluid w-100" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">School</h5>
-                <p className="card-text">
-                  get top 5 school in Lucknow
+                <p className="fs-5 fw-semibold">School</p>
+                <p className="mb-3">
+                  Get top 5 school in Lucknow
                 </p>
                 <Link to="/School" className="btn btn-primary">
                   Explore School
@@ -91,12 +119,12 @@ const Home = () => {
             </div>
           </div>
           <div className="col-md-3">
-            <div className="card" style={{ width: "18rem" }}>
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZUSgEsJuUcJTqsd34ptrj208NMULis__X-LPMZgNcw&s" className="card-img-top" alt="..." style={{ height: 250, width: 287 }} />
+            <div className="card shadow" style={{ border: "none" }}>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZUSgEsJuUcJTqsd34ptrj208NMULis__X-LPMZgNcw&s" className="card-img-top img-fluid w-100" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">Playway</h5>
-                <p className="card-text">
-                  get top 5 Playway in Lucknow
+                <p className="fs-5 fw-semibold">Playway</p>
+                <p className="mb-3">
+                  Get top5 Playway in Lucknow
                 </p>
                 <Link to="Playway" className="btn btn-primary">
                   Explore Playway
@@ -112,30 +140,30 @@ const Home = () => {
       <>
         {/* Background image */}
         <div
-          className="bg-image  text-center shadow-1-strong rounded mb-5 text-white"
+          className="bg-image  d-flex justify-content-center align-items-center  text-center shadow-1-strong rounded mb-5 text-white"
           style={{
             backgroundImage:
               'url("https://s26162.pcdn.co/wp-content/uploads/sites/3/2023/02/used-books.jpg")',
-            height: "30rem", width: "101rem", backgroundRepeat: "no-repeat", WebkitBackgroundSize: "cover", opacity: "0.8"
+            height: "15rem", backgroundRepeat: "no-repeat", WebkitBackgroundSize: "cover"
           }}
         >
-          <div className='container d-flex justify-content-center py-5'>
-            <div className='me-4 text-white col-md-3'>
+          <div className='container d-flex justify-content-center py-5 bg-black bg-opacity-50'>
+            <div className=' text-center text-white col-md-3'>
               <i class="  bi bi-mortarboard-fill" style={{ fontSize: "5rem" }}></i>
               <h4>University</h4>
               <h5>125</h5>
             </div>
-            <div className='me-4 text-white col-md-3'>
+            <div className='text-center text-white col-md-3'>
               <i class="  bi bi-book-half" style={{ fontSize: "5rem" }}></i>
               <h4>College</h4>
               <h5>175</h5>
             </div>
-            <div className='me-4 text-white col-md-3' >
+            <div className='text-center text-white col-md-3' >
               <i class="  bi bi-backpack4-fill" style={{ fontSize: "5rem" }}></i>
               <h4>School</h4>
               <h5>130</h5>
             </div>
-            <div className='me-4 text-white col-md-3'>
+            <div className='text-center text-white col-md-3'>
               <i class="bi bi-dribbble" style={{ fontSize: "5rem" }}></i>
               <h4>Playway</h4>
               <h5>110</h5>
@@ -153,27 +181,26 @@ const Home = () => {
         <section className="py-3 py-md-5 py-xl-8">
           <div className="container d-flex justify-content-center">
             <div className="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-              <div className="col-12 col-lg-6 col-xl-5">
-                <img
-                  className="img-fluid rounded"
-                  loading="lazy"
-                  src="https://image.cnbcfm.com/api/v1/image/106922887-1628206615260-gettyimages-887132600-as1700__08.jpeg?v=1628206641"
-                  alt=""
-                  style={{ height: 500, width: 1800,  }}
-                />
+
+              <div className="col-md-3 mt-5">
+                <img src="https://i.pinimg.com/236x/88/c7/a2/88c7a23546a9ea851b888a6a51dcecf6.jpg" className='w-100' alt="" />
               </div>
-              <div className="col-12 col-lg-6 col-xl-7">
+
+              <div className="col-md-3 mt-5">
+
+                <img src="https://i.pinimg.com/236x/7b/d1/dd/7bd1dd8219e3a12afa53f61c1ac84f97.jpg" className='w-100' alt="" />
+              </div>
+
+              <div className="col-md-6  mt-5 ">
                 <div className="row justify-content-xl-center">
                   <div className="col-12 col-xl-11">
-                    <h2 className="h1 mb-3">Who Are We?</h2>
-                    <p className="lead fs-4 text-secondary mb-3">
-                    Top 5 Eduguru simplifies the educational decision-making process by offering a central platform with comprehensive institution information and user reviews for students and parents.
+                    <p className="fs-2 fw-semibold  mb-3">Who Are We?</p>
+                    <p className="lead mb-5 fs-4 text-secondary mb-3">
+                      Top 5 Eduguru simplifies the educational decision-making process by offering a central platform with comprehensive institution information and user reviews for students and parents.
                     </p>
-                    <p className="mb-5">
-                    Our goal is to assist them in making informed decisions about choosing the right school, college, or institute based on their specific needs and preferences.
-                    </p>
+
                     <div className="row gy-4 gy-md-0 gx-xxl-5X">
-                      <div className="col-12 col-md-6">
+                      <div className="col-12 col-md-6 shadow -lg p-4 bg-primary bg-opacity-25 rounded">
                         <div className="d-flex">
                           <div className="me-4 text-primary">
                             <svg
@@ -188,7 +215,7 @@ const Home = () => {
                             </svg>
                           </div>
                           <div>
-                            <h4 className="mb-3">24x7</h4>
+                            <p className="mb-2 fs-5 fw-semibold">24x7</p>
                             <p className="text-secondary mb-0">
                               We are crafting a digital method that subsists life
                               across all mediums.
@@ -196,7 +223,8 @@ const Home = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="col-12 col-md-6">
+                      <div className="col-md-1"></div>
+                      <div className="col-12 col-md-5 shadow -lg p-4 bg-primary bg-opacity-25 rounded ">
                         <div className="d-flex">
                           <div className="me-4 text-primary">
                             <svg
@@ -211,7 +239,7 @@ const Home = () => {
                             </svg>
                           </div>
                           <div>
-                            <h4 className="mb-3">Digital Agency</h4>
+                            <p className="mb-2 fs-5">Digital Agency</p>
                             <p className="text-secondary mb-0">
                               We believe in innovation by merging primary with
                               elaborate ideas.
@@ -228,18 +256,6 @@ const Home = () => {
         </section>
       </>
 
-      <div className="conatiner-fluid">
-        <div className="row">
-          <div className="col-md-6">
-            <span className='d-flex text-yellow'> <IoStarSharp />
-              <IoStarSharp />
-              <IoStarSharp />
-              <IoStarSharp />
-              <IoStarSharp /></span>
-            <p className="">Trusted by 1M+ users</p>
-          </div>
-        </div>
-      </div>
 
 
 

@@ -42,24 +42,15 @@ const ViewCollege = () => {
 
         return reviews.map((rev) => (
             <>
-
-
-
                 <div className="row h-50">
-
-
-
                     <div className="rev-md-6 py-4">
-                        <p className='text-yellow-600 me-3' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
-
-                        <h2 className=' fw-semibold fs-5 mt-3 mb-3 ' style={{ fontFamily: "serif" }}>{rev.name}</h2>
-                        <h2 className='  mt-3 mb-3 '>{rev.comment}</h2>
-
+                        <p className='text-warning ' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
+                        <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{rev.name}</p>
+                        <p className=' '>{rev.comment}</p>
                     </div>
 
 
-                    <div className="col-md-3">
-                    </div>
+                  
                 </div>
                 <hr />
             </>
@@ -74,14 +65,14 @@ const ViewCollege = () => {
                 CollegeList !== null ? (
 
                     <div className="container pt-1 px-16 mb-5">
-                        <div className="row text-center flex items-center  flex-col">
+                        <div className="row text-center d-flex align-items-center  flex-col">
                             <div className="col-md-5">
-                                <img src={'http://localhost:3000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid mb-3"style={{height:500, width:1000}} />
+                                <img src={'http://localhost:3000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid d-block mx-auto mb-3"style={{height:500, width:1000}} />
 
                             </div>
 
 
-                            <h1 className=' fw-semibold text-red-500 fs-2 mt-3 mb-1' style={{ fontFamily: "serif" }}>{CollegeList.collegename}</h1>
+                            <p className=' fw-semibold text-danger fs-2 mt-3 mb-1' style={{ fontFamily: "serif" }}>{CollegeList.collegename}</p>
                             <p className=' fs-5 fw-semibold mb-5'>{CollegeList.fees}</p>
                             <p className=' fs-5 fw-semibold mb-5'>{CollegeList.phone}</p>
                             <p className='text-secondary  mb-3 fs-5' style={{ fontFamily: "serif" }}>{CollegeList.collegeaddress}</p>
@@ -113,27 +104,27 @@ const ViewCollege = () => {
                         <p className="fs-4 mb-2">Reviews and Ratings</p>
                         <div className="row">
                             <div className="col-md-1 ">
-                                <p className="bg-green-600 h-14 mb-2 w-16 rounded flex items-center content-center flex-col fs-2 text-white">4.3 </p>
+                                <p className="bg-success  mb-2  rounded d-flex align-items-center justify-content-center flex-col fs-2 text-white" style={{height:"40px",width:"60px"}}>4.3 </p>
                             </div>
                         </div>
                         <p className="fs-4 mb-2">Finish your review </p>
-                        <span><button className='btn hover:bg-orange-500 me-2 hover:text-white border py-2 '>
+                        <span><button className='btn me-2 mb-3 border py-2 stars '>
                             <FaRegStar className='fs-3' />
                         </button></span>
-                        <span><button className='btn btn-light me-2  hover:bg-orange-500 hover:text-white border py-2 '>
+                        <span><button className='btn btn-light me-2 stars border py-2 '>
                             <FaRegStar className='fs-3' />
                         </button></span>
-                        <span><button className='btn btn-light  hover:bg-orange-500 hover:text-white me-2 border py-2 '>
+                        <span><button className='btn btn-light stars me-2 border py-2 '>
                             <FaRegStar className='fs-3' />
                         </button></span>
-                        <span><button className='btn btn-light  hover:bg-orange-500 me-2 hover:text-white border py-2 '>
+                        <span><button className='btn btn-light stars me-2  border py-2 '>
                             <FaRegStar className='fs-3' />
                         </button></span>
-                        <span><button className='btn btn-light  hover:bg-orange-500 me-4 hover:text-white border py-2 '>
+                        <span><button className='btn btn-light stars me-4  border py-2 '>
                             <FaRegStar className='fs-3' />
                         </button></span>
 
-                        <Link to={`/Review/${CollegeList._id}`}><button type="button" className="text-blue-700 fs-5 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
+                        <Link to={`/collegeReview/${CollegeList._id}`}><button type="button" className="btn mb-4 btn-outline-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
                         </Link>
                     </div>
                 </div>
