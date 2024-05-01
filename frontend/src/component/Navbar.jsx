@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 // import { FaSearch } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
+import useAppContext from "./Context/UserContext";
 // import { IoAddCircleOutline } from "react-icons/io5";
 
 const Navbar = () => {
@@ -28,7 +29,40 @@ const Navbar = () => {
 
   // Render Navbar only if shouldHideNavbar is false
 
+  const { loggedIn, logout } = useAppContext();
+  
+  console.log(loggedIn);
 
+  const showLoggedin = () => {
+    if (loggedIn) {
+      return (<div className=" ">
+        <div className="container d-flex flex-wrap justify-content-end ">
+
+          <div className="text-end">
+            <button onClick={logout} type="button" className="btn btn-danger  text-white px-3 py-1 rounded ">
+              Logout
+            </button>
+
+          </div>
+        </div>
+      </div>
+      );
+    } else {
+      return <div className=" ">
+        <div className="container d-flex flex-wrap justify-content-end">
+
+          <div className="text-end">
+            <Link to={"/login"} type="button" className="btn text-white px-3 py-1 rounded btn-dark" style={{ fontFamily: "initial" }}>
+              Login
+            </Link>
+            <Link to={"/signup"} type="button" className="btn btn-primary mx-2 hover:bg-blue-700 text-white px-3 py-1 rounded " style={{ fontFamily: "initial" }}>
+              SignUp
+            </Link>
+          </div>
+        </div>
+      </div>
+    }
+  }
 
   return shouldHideNavbar ? null : (
     <>
@@ -67,10 +101,7 @@ const Navbar = () => {
             </div>
             {showMenu &&
               <div className="absolute right-0 bg-white py-2 px-2 shadow drop-shadow-md flex flex-col">
-                <div>
-                  <Link to="Signup" className='nav-link fs-4 text-center mb-3 py-1 navbar-1 rounded me-2 px-3' >Signup</Link>
-                  <Link to="Login" className='nav-link fs-4 text-center mb-3 navbar-1 py-1 rounded px-3 me-2' >Login</Link>
-                </div>
+                {showLoggedin()}
               </div>
             }
           </div>

@@ -34,11 +34,13 @@ import Manageplayway from './component/Manageplayway'
 import Manageuniversity from './component/Manageuniversity'
 import Admin from './component/Admin/Index'
 import Review from './component/collegeReview'
+import { AppProvider } from './component/Context/UserContext'
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
+      <AppProvider>
       <SnackbarProvider >
       <Navbar/>
       <Routes>
@@ -84,6 +86,7 @@ const App = () => {
      
       </Routes>
       </SnackbarProvider>
+      </AppProvider>
       </BrowserRouter>
     </div>
   )
