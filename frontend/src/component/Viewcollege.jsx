@@ -48,16 +48,11 @@ const ViewCollege = () => {
                         <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{rev.name}</p>
                         <p className=' '>{rev.comment}</p>
                     </div>
-
-
-                  
                 </div>
                 <hr />
             </>
         ))
     }
-
-
 
     return (
         <>
