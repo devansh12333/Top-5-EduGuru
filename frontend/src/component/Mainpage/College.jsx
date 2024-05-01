@@ -3,6 +3,33 @@ import { Link } from 'react-router-dom'
 
 const College = () => {
   const [College, setCollege] = useState([])
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Fetch products and ratings data from backend
+    fetch('/api/products-ratings')
+      .then((response) => response.json())
+      .then((data) => {
+        // Process data to calculate average rating for each product
+        const processedProducts = data.products.map((product) => {
+          const ratings = product.ratings;
+          const totalRating = ratings.reduce((sum, rating) => sum + rating, 0);
+          const averageRating = totalRating / ratings.length;
+
+          return {
+            id: product._id,
+            name: product.collegename,
+            averageRating,
+          };
+        });
+
+        // Sort products by average rating in descending order
+        const sortedProducts = processedProducts.sort((a, b) => b.averageRating - a.averageRating);
+
+        // Set top 5 products to state
+        setProducts(sortedProducts.slice(0, 5));
+      });
+  }, []);
 
   const fetchCollegeData = async () => {
     const res = await fetch("http://localhost:3000/college/getall");

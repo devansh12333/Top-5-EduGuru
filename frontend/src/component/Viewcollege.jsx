@@ -1,10 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { FaRegStar } from "react-icons/fa";
+import StarRatings from 'react-star-ratings';
 
 const ViewCollege = () => {
     const { id } = useParams();
     const [CollegeList, setCollegeList] = useState([]);
+    const [currentUser, setCurrentUser] = useState(sessionStorage.getItem('user'));
+    const reviewRef = useRef();
+    const [rating, setRating] = useState(3);
+
     const fetchUserData = async () => {
         const res = await fetch('http://localhost:3000/college/getbyid/' + id);
         console.log(res.status);
@@ -22,7 +27,7 @@ const ViewCollege = () => {
     const [reviews, setreviews] = useState([])
 
     const fetchreviewsDAta = async () => {
-        const res = await fetch("http://localhost:3000/reviews/getall");
+        const res = await fetch("http://localhost:3000/reviews/getbycollege/" + id);
         console.log(res.status);
         if (res.status === 200) {
             const data = await res.json();
@@ -48,15 +53,30 @@ const ViewCollege = () => {
                         <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{rev.name}</p>
                         <p className=' '>{rev.comment}</p>
                     </div>
-
-
-                  
                 </div>
                 <hr />
             </>
         ))
     }
 
+
+    const ratingForm = () => {
+        if (currentUser !== null) {
+            return <div>
+                <StarRatings
+                    rating={rating}
+                    starRatedColor="blue"
+                    changeRating={setRating}
+                    numberOfStars={5}
+                />
+
+                <textarea ref={reviewRef}></textarea>
+                <button>Submit Review</button>
+            </div>
+        } else {
+            return <p>login to give review</p>
+        }
+    }
 
 
     return (
@@ -67,7 +87,7 @@ const ViewCollege = () => {
                     <div className="container pt-1 px-16 mb-5">
                         <div className="row text-center d-flex align-items-center  flex-col">
                             <div className="col-md-5">
-                                <img src={'http://localhost:3000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid d-block mx-auto mb-3"style={{height:500, width:1000}} />
+                                <img src={'http://localhost:3000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid d-block mx-auto mb-3" style={{ height: 500, width: 1000 }} />
 
                             </div>
 
@@ -77,7 +97,7 @@ const ViewCollege = () => {
                             <p className=' fs-5 fw-semibold mb-5'>{CollegeList.phone}</p>
                             <p className='text-secondary  mb-3 fs-5' style={{ fontFamily: "serif" }}>{CollegeList.collegeaddress}</p>
 
-                           
+
                             <p className=' fs-5 fw-semibold mb-5'>{CollegeList.collegedetail}</p>
 
 
@@ -102,27 +122,7 @@ const ViewCollege = () => {
                 <div className="row">
                     <div className="col-md-8">
                         <p className="fs-4 mb-2">Reviews and Ratings</p>
-                        <div className="row">
-                            <div className="col-md-1 ">
-                                <p className="bg-success  mb-2  rounded d-flex align-items-center justify-content-center flex-col fs-2 text-white" style={{height:"40px",width:"60px"}}>4.3 </p>
-                            </div>
-                        </div>
-                        <p className="fs-4 mb-2">Finish your review </p>
-                        <span><button className='btn me-2 mb-3 border py-2 stars '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light me-2 stars border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light stars me-2 border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light stars me-2  border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light stars me-4  border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
+                        {ratingForm()}
 
                         <Link to={`/collegeReview/${CollegeList._id}`}><button type="button" className="btn mb-4 btn-outline-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
                         </Link>
