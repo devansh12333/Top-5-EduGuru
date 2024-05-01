@@ -78,4 +78,26 @@ Model.findByIdAndUpdate(req.params.id, req.body,{new:true})             //new:tr
 });
 })
 
+router.get("/getbyuser/:userid", (req, res) => {
+  Model.find({ user: req.params.userid }).populate('product')
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/getbyproduct/:productid", (req, res) => {
+  Model.find({ product: req.params.productid }).populate('user')
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
