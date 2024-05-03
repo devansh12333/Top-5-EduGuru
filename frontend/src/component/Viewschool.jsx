@@ -74,27 +74,30 @@ const ViewSchool = () => {
                 SchoolList !== null ? (
 
                     <div className="container pt-1 px-16 mb-5">
-                        <div className="row text-center flex items-center  flex-col">
-                            <div className="col-md-5">
+                        <div className="row text-center flex items-center  flex-col me-5">
+                            <div className="card col-md-5" style={{border:"none", width:600}}>
                                 <img src={'http://localhost:3000/' + SchoolList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid mb-3"style={{height:500, width:1000}} />
 
                             </div>
+                            </div>
+                    <div>
+                    
+                            
 
-
-                            <h1 className=' fw-semibold text-red-500 fs-2 mt-3 mb-1' style={{ fontFamily: "serif" }}>{SchoolList.collegename}</h1>
+                            <h1 className=' fw-semibold text-red-500 fs-2 mt-3 mb-1' style={{ fontFamily: "serif" }}>{SchoolList.schoolname}</h1>
                             <p className=' fs-5 fw-semibold mb-5'>{SchoolList.fees}</p>
                             <p className=' fs-5 fw-semibold mb-5'>{SchoolList.phone}</p>
-                            <p className='text-secondary  mb-3 fs-5' style={{ fontFamily: "serif" }}>{SchoolList.collegeaddress}</p>
+                            <p className='text-secondary  mb-3 fs-5' style={{ fontFamily: "serif" }}>{SchoolList.schooladdress}</p>
 
                            
-                            <p className=' fs-5 fw-semibold mb-5'>{SchoolList.collegedetail}</p>
+                            <p className=' fs-5 fw-semibold mb-5'>{SchoolList.schooldetail}</p>
 
 
 
                             {/* <p className=' mb-2  ' ><span className="fw-bold me-1">Phone no:</span>{SchoolList.phone}</p>
                             <p className="mb-5"><span className="fw-bold me-1">Email:</span>{SchoolList.email}</p> */}
 
-                        </div>
+</div>
 
                     </div>
 
@@ -133,7 +136,7 @@ const ViewSchool = () => {
                             <FaRegStar className='fs-3' />
                         </button></span>
 
-                        <Link to={`/Review/${SchoolList._id}`}><button type="button" className="text-blue-700 fs-5 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
+                        <Link to={`/Schoolreview/${SchoolList._id}`}><button type="button" className="text-blue-700 fs-5 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
                         </Link>
                     </div>
                 </div>

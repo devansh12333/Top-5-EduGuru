@@ -33,6 +33,11 @@ import ViewPlayway from './component/Viewplayway'
 import Manageplayway from './component/Manageplayway'
 import Manageuniversity from './component/Manageuniversity'
 import Admin from './component/Admin/Index'
+import Collegereview from './component/Mainpage/Collegereview'
+import Playwayreview from './component/Mainpage/Playwayreview'
+import Schoolreview from './component/Mainpage/Schoolreview'
+import Universityreview from './component/Mainpage/Universityreview'
+
 
 
 
@@ -73,6 +78,14 @@ const App = () => {
       <Route path="/Viewuniversity/:id" element={<Viewuniversity/>} />
       <Route path="/Viewschool/:id" element={<ViewSchool/>} />
       <Route path="/Viewplayway/:id" element={<ViewPlayway/>} />
+      <Route path="/Collegereview/:id" element={<Collegereview/>} />
+      <Route path="/Playwayreview/:id" element={<Playwayreview/>} />
+      <Route path="/Schoolreview/:id" element={<Schoolreview/>} />
+      <Route path="/Universityreview/:id" element={<Universityreview/>} />
+      
+      
+      
+
 
 
       <Route path="/Admin" element={<Admin/>} >
