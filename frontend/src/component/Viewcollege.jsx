@@ -84,17 +84,10 @@ const ViewCollege = () => {
             {
                 CollegeList !== null ? (
 
-<<<<<<< HEAD
                     <div className="container px-10 mb-5">
-                        <div className="row  text-center flex items-center  flex-col me-5">
-                            <div className=" card col-md-5 " style={{border:"none", width:600}}>
-                                <img src={'http://localhost:3000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid mb-3" style={{ height: 500, width: 5000, }} />
-=======
-                    <div className="container pt-1 px-16 mb-5">
-                        <div className="row text-center d-flex align-items-center  flex-col">
-                            <div className="col-md-5">
+                        <div className="row text-center flex align-items-center  flex-col me-5">
+                            <div className="col-md-5" style={{border:"none", width:600}}>
                                 <img src={'http://localhost:3000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid d-block mx-auto mb-3" style={{ height: 500, width: 1000 }} />
->>>>>>> 12ee9fe8cc2379989ca9b31d8056492c19b152dd
 
                             </div>
                         </div>
@@ -130,35 +123,9 @@ const ViewCollege = () => {
                 <div className="row">
                     <div className="col-md-8">
                         <p className="fs-4 mb-2">Reviews and Ratings</p>
-<<<<<<< HEAD
-                        <div className="row">
-                            <div className="col-md-1 ">
-                                <p className="bg-green-600 h-14 mb-2 w-16 rounded flex items-center content-center flex-col fs-2 text-white">4.3 </p>
-                            </div>
-                        </div>
-                        <p className="fs-4 mb-2">Finish your review </p>
-                        <span><button className='btn hover:bg-orange-500 me-2 hover:text-white border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light me-2  hover:bg-orange-500 hover:text-white border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light  hover:bg-orange-500 hover:text-white me-2 border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light  hover:bg-orange-500 me-2 hover:text-white border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light  hover:bg-orange-500 me-4 hover:text-white border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-
-                        <Link to={`/Collegereview/${CollegeList._id}`}><button type="button" className="text-blue-700 fs-5 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
-=======
                         {ratingForm()}
 
                         <Link to={`/collegeReview/${CollegeList._id}`}><button type="button" className="btn mb-4 btn-outline-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
->>>>>>> 12ee9fe8cc2379989ca9b31d8056492c19b152dd
                         </Link>
                     </div>
                 </div>

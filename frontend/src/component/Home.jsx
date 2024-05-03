@@ -8,7 +8,7 @@ const Home = () => {
 
 
 
-      <div className="conatiner-fluid " style={{ height: "80vh" }}>
+      <div className="conatiner-fluid " style={{ height: "70vh" }}>
         <div className="row p-5">
           <div className="col-md-6">
             <span className='d-flex fs-5 ' style={{ color: "rgb(209, 189, 8)" }}> <IoStarSharp />
@@ -77,14 +77,14 @@ const Home = () => {
       <div className="container mt-5 mb-5">
         <div className="row">
           <div className="col-md-3">
-            <div className="card shadow" style={{ border: "none" }}>
+            <div className="card shadow" style={{ border: "none"}}>
               <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/BBDU_Main_Building.jpg" className="card-img-top img-fluid w-100" alt="..." />
               <div className="card-body">
                 <p className=" fs-5 fw-semibold">University</p>
                 <p className="mb-3">
                   Get top 5 University in Lucknow
                 </p>
-                <Link to="/University" style={{ fontFamily: "serif" }} className="btn btn-primary">
+                <Link to="/University" style={{ fontFamily: "serif" }} className="btn mx-auto d-block btn-primary">
                   Explore University
                 </Link>
               </div>
@@ -98,7 +98,7 @@ const Home = () => {
                 <p className="mb-3">
                   Get top 5 College in Lucknow
                 </p>
-                <Link to="/College" style={{ fontFamily: "serif" }} className="btn btn-primary">
+                <Link to="/College" style={{ fontFamily: "serif" }} className="btn mx-auto d-block btn-primary">
                   Explore College
                 </Link>
               </div>
@@ -112,7 +112,7 @@ const Home = () => {
                 <p className="mb-3">
                   Get top 5 school in Lucknow
                 </p>
-                <Link to="/School" className="btn btn-primary">
+                <Link to="/School" className="btn btn-primary mx-auto d-block">
                   Explore School
                 </Link>
               </div>
@@ -126,7 +126,7 @@ const Home = () => {
                 <p className="mb-3">
                   Get top5 Playway in Lucknow
                 </p>
-                <Link to="Playway" className="btn btn-primary">
+                <Link to="Playway" className="btn btn-primary mx-auto d-block">
                   Explore Playway
                 </Link>
               </div>
@@ -302,14 +302,17 @@ const Home = () => {
                 {/* Grid column */}
                 <div className="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
                   {/* Content */}
+                  
                   <h6 className="text-uppercase fw-bold mb-4">
                     <i className="fas fa-gem me-3" />
                     Company name
                   </h6>
-                  <p>
+                   <p>
                     Here you can use rows and columns to organize your footer content.
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  </p>
+                  </p> 
+                 
+                
                 </div>
                 {/* Grid column */}
                 {/* Grid column */}

@@ -33,20 +33,9 @@ import ViewPlayway from './component/Viewplayway'
 import Manageplayway from './component/Manageplayway'
 import Manageuniversity from './component/Manageuniversity'
 import Admin from './component/Admin/Index'
-<<<<<<< HEAD
-import Collegereview from './component/Mainpage/Collegereview'
-import Playwayreview from './component/Mainpage/Playwayreview'
-import Schoolreview from './component/Mainpage/Schoolreview'
-import Universityreview from './component/Mainpage/Universityreview'
-
-
-
-
-
-=======
 import Review from './component/collegeReview'
 import { AppProvider } from './component/Context/UserContext'
->>>>>>> 12ee9fe8cc2379989ca9b31d8056492c19b152dd
+import Playwayreview from './component/playwayReview'
 
 const App = () => {
   return (
@@ -85,18 +74,8 @@ const App = () => {
       <Route path="/Viewuniversity/:id" element={<Viewuniversity/>} />
       <Route path="/Viewschool/:id" element={<ViewSchool/>} />
       <Route path="/Viewplayway/:id" element={<ViewPlayway/>} />
-<<<<<<< HEAD
-      <Route path="/Collegereview/:id" element={<Collegereview/>} />
-      <Route path="/Playwayreview/:id" element={<Playwayreview/>} />
-      <Route path="/Schoolreview/:id" element={<Schoolreview/>} />
-      <Route path="/Universityreview/:id" element={<Universityreview/>} />
-      
-      
-      
-
-=======
       <Route path="/collegeReview/:id" element={<Review/>} />
->>>>>>> 12ee9fe8cc2379989ca9b31d8056492c19b152dd
+      <Route path="/playwayReview/:id" element={<Playwayreview/>} />
 
 
       <Route path="/Admin" element={<Admin/>} >

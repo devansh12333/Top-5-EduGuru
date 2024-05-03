@@ -1,10 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { FaRegStar } from "react-icons/fa";
+import StarRatings from 'react-star-ratings';
 
 const ViewPlayway = () => {
     const { id } = useParams();
     const [PlaywayList, setPlaywayList] = useState([]);
+    const [currentUser, setCurrentUser] = useState(sessionStorage.getItem('user'));
+    const reviewRef = useRef();
+    const [rating, setRating] = useState(3);
+
     const fetchUserData = async () => {
         const res = await fetch('http://localhost:3000/playway/getbyid/' + id);
         console.log(res.status);
@@ -22,7 +27,7 @@ const ViewPlayway = () => {
     const [reviews, setreviews] = useState([])
 
     const fetchreviewsDAta = async () => {
-        const res = await fetch("http://localhost:3000/reviews/getall");
+        const res = await fetch("http://localhost:3000/reviews/getbyplayway/" + id);
         console.log(res.status);
         if (res.status === 200) {
             const data = await res.json();
@@ -42,23 +47,11 @@ const ViewPlayway = () => {
 
         return reviews.map((rev) => (
             <>
-
-
-
                 <div className="row h-50">
-
-
-
                     <div className="rev-md-6 py-4">
-                        <p className='text-yellow-600 me-3' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
-
-                        <h2 className=' fw-semibold fs-5 mt-3 mb-3 ' style={{ fontFamily: "serif" }}>{rev.name}</h2>
-                        <h2 className='  mt-3 mb-3 '>{rev.comment}</h2>
-
-                    </div>
-
-
-                    <div className="col-md-3">
+                        <p className='text-warning ' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
+                        <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{rev.name}</p>
+                        <p className=' '>{rev.comment}</p>
                     </div>
                 </div>
                 <hr />
@@ -67,34 +60,53 @@ const ViewPlayway = () => {
     }
 
 
+    const ratingForm = () => {
+        if (currentUser !== null) {
+            return <div>
+                <StarRatings
+                    rating={rating}
+                    starRatedColor="blue"
+                    changeRating={setRating}
+                    numberOfStars={5}
+                />
+
+                <textarea ref={reviewRef}></textarea>
+                <button>Submit Review</button>
+            </div>
+        } else {
+            return <p>login to give review</p>
+        }
+    }
+
 
     return (
         <>
             {
                 PlaywayList !== null ? (
 
-                    <div className="container pt-1 px-16 mb-5">
-                        <div className="row text-center flex items-center  flex-col me-5">
-                            <div className="card col-md-5" style={{border:"none", width:600}}>
-                                <img src={'http://localhost:3000/' + PlaywayList.Image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid mb-3"style={{height:500, width:1000}} />
+                    <div className="container px-10 mb-5">
+                        <div className="row text-center flex align-items-center  flex-col me-5">
+                            <div className="col-md-5" style={{border:"none", width:600}}>
+                                <img src={'http://localhost:3000/' + PlaywayList.Image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid d-block mx-auto mb-3" style={{ height: 500, width: 1000 }} />
 
                             </div>
-                            </div>
-<div>
-                            <h1 className=' fw-semibold text-red-500 fs-2 mt-3 mb-1' style={{ fontFamily: "serif" }}>{PlaywayList.collegename}</h1>
+                        </div>
+                        <div>
+
+                            <p className=' fw-semibold text-danger fs-2 mt-3 mb-1' style={{ fontFamily: "serif" }}>{PlaywayList.playwayname}</p>
                             <p className=' fs-5 fw-semibold mb-5'>{PlaywayList.fees}</p>
                             <p className=' fs-5 fw-semibold mb-5'>{PlaywayList.phone}</p>
-                            <p className='text-secondary  mb-3 fs-5' style={{ fontFamily: "serif" }}>{PlaywayList.collegeaddress}</p>
+                            <p className='text-secondary  mb-3 fs-5' style={{ fontFamily: "serif" }}>{PlaywayList.playwayaddress}</p>
 
-                           
-                            <p className=' fs-5 fw-semibold mb-5'>{PlaywayList.collegedetail}</p>
+
+                            <p className=' fs-5 fw-semibold mb-5'>{PlaywayList.playwaydetail}</p>
 
 
 
                             {/* <p className=' mb-2  ' ><span className="fw-bold me-1">Phone no:</span>{PlaywayList.phone}</p>
                             <p className="mb-5"><span className="fw-bold me-1">Email:</span>{PlaywayList.email}</p> */}
 
-</div>  
+                        </div>
 
                     </div>
 
@@ -111,29 +123,9 @@ const ViewPlayway = () => {
                 <div className="row">
                     <div className="col-md-8">
                         <p className="fs-4 mb-2">Reviews and Ratings</p>
-                        <div className="row">
-                            <div className="col-md-1 ">
-                                <p className="bg-green-600 h-14 mb-2 w-16 rounded flex items-center content-center flex-col fs-2 text-white">4.3 </p>
-                            </div>
-                        </div>
-                        <p className="fs-4 mb-2">Finish your review </p>
-                        <span><button className='btn hover:bg-orange-500 me-2 hover:text-white border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light me-2  hover:bg-orange-500 hover:text-white border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light  hover:bg-orange-500 hover:text-white me-2 border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light  hover:bg-orange-500 me-2 hover:text-white border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
-                        <span><button className='btn btn-light  hover:bg-orange-500 me-4 hover:text-white border py-2 '>
-                            <FaRegStar className='fs-3' />
-                        </button></span>
+                        {ratingForm()}
 
-                        <Link to={`/Playwayreview/${PlaywayList._id}`}><button type="button" className="text-blue-700 fs-5 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
+                        <Link to={`/playwayReview/${PlaywayList._id}`}><button type="button" className="btn mb-4 btn-outline-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
                         </Link>
                     </div>
                 </div>
