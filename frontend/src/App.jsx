@@ -33,6 +33,7 @@ import ViewPlayway from './component/Viewplayway'
 import Manageplayway from './component/Manageplayway'
 import Manageuniversity from './component/Manageuniversity'
 import Admin from './component/Admin/Index'
+<<<<<<< HEAD
 import Collegereview from './component/Mainpage/Collegereview'
 import Playwayreview from './component/Mainpage/Playwayreview'
 import Schoolreview from './component/Mainpage/Schoolreview'
@@ -42,11 +43,16 @@ import Universityreview from './component/Mainpage/Universityreview'
 
 
 
+=======
+import Review from './component/collegeReview'
+import { AppProvider } from './component/Context/UserContext'
+>>>>>>> 12ee9fe8cc2379989ca9b31d8056492c19b152dd
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
+      <AppProvider>
       <SnackbarProvider >
       <Navbar/>
       <Routes>
@@ -72,12 +78,14 @@ const App = () => {
       <Route path="/Manageschool" element={<Manageschool />} />
       <Route path="/Managecollege" element={<Managecollege />} />
       <Route path="/Manageplayway" element={<Manageplayway />} />
+  
       <Route path="/Manageuniversity" element={<Manageuniversity />} />
       <Route path="/Reviewandrating" element={<Reviewandrating/>} />
       <Route path="/Viewcollege/:id" element={<Viewcollege/>} />
       <Route path="/Viewuniversity/:id" element={<Viewuniversity/>} />
       <Route path="/Viewschool/:id" element={<ViewSchool/>} />
       <Route path="/Viewplayway/:id" element={<ViewPlayway/>} />
+<<<<<<< HEAD
       <Route path="/Collegereview/:id" element={<Collegereview/>} />
       <Route path="/Playwayreview/:id" element={<Playwayreview/>} />
       <Route path="/Schoolreview/:id" element={<Schoolreview/>} />
@@ -86,6 +94,9 @@ const App = () => {
       
       
 
+=======
+      <Route path="/collegeReview/:id" element={<Review/>} />
+>>>>>>> 12ee9fe8cc2379989ca9b31d8056492c19b152dd
 
 
       <Route path="/Admin" element={<Admin/>} >
@@ -98,6 +109,7 @@ const App = () => {
      
       </Routes>
       </SnackbarProvider>
+      </AppProvider>
       </BrowserRouter>
     </div>
   )

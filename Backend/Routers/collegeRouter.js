@@ -40,7 +40,6 @@ router.post("/delete", (req, res) => {
     });
   });
   
-  
   router.get("/getbycategory/:category", (req,res) => {
     console.log(req.params.category)
     Model.find({ pcategory: req.params.category })
