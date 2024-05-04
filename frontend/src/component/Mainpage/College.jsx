@@ -5,7 +5,37 @@ import { FaSearch } from "react-icons/fa"
 
 const College = () => {
   const [College, setCollege] = useState([])
+<<<<<<< HEAD
   const [filterList, setfilterList] = useState([])
+=======
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Fetch products and ratings data from backend
+    fetch('/api/products-ratings')
+      .then((response) => response.json())
+      .then((data) => {
+        // Process data to calculate average rating for each product
+        const processedProducts = data.products.map((product) => {
+          const ratings = product.ratings;
+          const totalRating = ratings.reduce((sum, rating) => sum + rating, 0);
+          const averageRating = totalRating / ratings.length;
+
+          return {
+            id: product._id,
+            name: product.collegename,
+            averageRating,
+          };
+        });
+
+        // Sort products by average rating in descending order
+        const sortedProducts = processedProducts.sort((a, b) => b.averageRating - a.averageRating);
+
+        // Set top 5 products to state
+        setProducts(sortedProducts.slice(0, 5));
+      });
+  }, []);
+>>>>>>> 59ec61a9386b093fb4e8f1ead43fad03a700fd01
 
   const fetchCollegeData = async () => {
     const res = await fetch("http://localhost:3000/college/getall");

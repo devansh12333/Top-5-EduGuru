@@ -20,6 +20,7 @@ import Reviewandrating from './component/Reviewandrating'
 import Admin from './component/Admin/Index'
 import Review from './component/collegeReview'
 import { AppProvider } from './component/Context/UserContext'
+<<<<<<< HEAD
 import Managecollege from './component/Admin/Managecollege'
 import Manageschool from './component/Admin/Manageschool'
 import Dashboard from './component/Admin/Dashboard'
@@ -32,6 +33,9 @@ import ViewPlayway from './component/Mainpage/Viewplayway'
 import Manageuniversity from './component/Admin/Manageuniversity'
 import AddUniversity from './component/Admin/Adduniversity'
 import Main from './component/Mainpage/Index'
+=======
+import Playwayreview from './component/playwayReview'
+>>>>>>> 59ec61a9386b093fb4e8f1ead43fad03a700fd01
 
 const App = () => {
   return (
@@ -49,6 +53,7 @@ const App = () => {
               <Route path='/contactUs' element={<ContactUs />} />
               <Route path='/Aboutus' element={<Aboutus />} />
 
+<<<<<<< HEAD
               <Route path="/Update/:id" element={<Update />} />
 
               <Route path="/Reviewandrating" element={<Reviewandrating />} />
@@ -65,6 +70,31 @@ const App = () => {
               <Route path="University" element={<University />} />
               <Route path="Playway" element={<Playway />} />
               </Route>
+=======
+      <Route path='/view' element={<View/>} />
+    
+      <Route path="/AddSchool" element={<AddSchool />} />
+      <Route path="/AddUniversity" element={<AddUniversity />} />
+      <Route path="/AddCollege" element={<AddCollege />} />
+      <Route path="/AddPlayway" element={<AddPlayway />} />
+      <Route path="/School" element={<School />} />
+      <Route path="/College" element={<College />} />
+      <Route path="/University" element={<University />} />
+      <Route path="/Playway" element={<Playway />} />
+      <Route path="/Update/:id" element={<Update />} />
+      <Route path="/Manageschool" element={<Manageschool />} />
+      <Route path="/Managecollege" element={<Managecollege />} />
+      <Route path="/Manageplayway" element={<Manageplayway />} />
+  
+      <Route path="/Manageuniversity" element={<Manageuniversity />} />
+      <Route path="/Reviewandrating" element={<Reviewandrating/>} />
+      <Route path="/Viewcollege/:id" element={<Viewcollege/>} />
+      <Route path="/Viewuniversity/:id" element={<Viewuniversity/>} />
+      <Route path="/Viewschool/:id" element={<ViewSchool/>} />
+      <Route path="/Viewplayway/:id" element={<ViewPlayway/>} />
+      <Route path="/collegeReview/:id" element={<Review/>} />
+      <Route path="/playwayReview/:id" element={<Playwayreview/>} />
+>>>>>>> 59ec61a9386b093fb4e8f1ead43fad03a700fd01
 
 
               <Route path='Admin' element={<Admin />}>

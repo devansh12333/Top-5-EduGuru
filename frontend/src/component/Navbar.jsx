@@ -77,10 +77,15 @@ const Navbar = () => {
                 <Offcanvas.Title></Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
+<<<<<<< HEAD
                 <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600  text-center mb-3" aria-current="page" to="/">
                   Home
                 </Link>
                 <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/Playway">
+=======
+                
+                <Link className="nav-link fs-4 navbar-2 text-center mb-3" aria-current="page" to="/Playway">
+>>>>>>> 59ec61a9386b093fb4e8f1ead43fad03a700fd01
                   Playway
                 </Link>
                 <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/School">
@@ -95,6 +100,32 @@ const Navbar = () => {
               </Offcanvas.Body>
             </Offcanvas>
           </div>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+      <li className="nav-item">
+          <Link className="nav-link active" to="/Home" style={{fontFamily: 'cursive' , fontSize: ' large', color: 'blue'}}>
+            Home
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/Aboutus" style={{fontFamily: 'cursive' , fontSize: 'large', color: 'blue'}}>
+            About us
+          </Link>
+        </li>
+       
+        <li className="nav-item">
+          <Link className="nav-link active" to="/Contactus" style={{fontFamily: 'cursive' , fontSize: 'large', color: 'blue'}}>
+            Contact us
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" to="/Reviewandrating" style={{fontFamily: 'cursive' , fontSize: ' large', color: 'blue'}}>
+            Feedback
+          </Link>
+        </li>
+        
+        </ul>
+        </div>
           <div className=" text-slate-600" onClick={handleShowMenu}>
             <div className="text-2xl cursor-pointer">
               <LuUserCircle2 className="text-slate-600 fw-bold fs-2 hover:text-blue-500 " />
