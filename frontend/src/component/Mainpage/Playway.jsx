@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react"
+import { FaSearch } from "react-icons/fa"
 import { Link } from 'react-router-dom'
 
 const Playway = () => {
   const [Playway, setPlayway] = useState([])
+  const [filterList, setfilterList] = useState([])
+
 
   const fetchPlaywayData = async () => {
     const res = await fetch("http://localhost:3000/playway/getall");
@@ -11,12 +14,20 @@ const Playway = () => {
       const data = await res.json();
       console.log(data);
       setPlayway(data)
+      setfilterList(data)
     }
   }
 
   useEffect(() => {
     fetchPlaywayData()
   }, [])
+
+  const filterproduct = (e) => {
+    const value = e.target.value;
+    setPlayway(filterList.filter((col) => {
+      return (col.playwayname.toLowerCase().includes(value.toLowerCase()))
+    }))
+  }
 
   const displayPlaywayData = () => {
     if (Playway.length === 0) {
@@ -25,9 +36,9 @@ const Playway = () => {
 
     return Playway.map((col) => (
       <>
-        <div className="row h-50">
+        <div className="row h-50 shadow mb-3">
           <div className="col-md-3">
-            <Link to={`/ViewPlayway/${col._id}`}> <img src={'http://localhost:3000/' + col.Image} alt="" className="card-img-top p-3 img-fluid" style={{ objectFit: "cover", height: 200 }} />
+            <Link to={`/Main/ViewPlayway/${col._id}`}> <img src={'http://localhost:3000/' + col.Image} alt="" className="card-img-top p-3 img-fluid" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
 
@@ -45,7 +56,7 @@ const Playway = () => {
         <div className="col-md-3">
         </div>
         </div>
-        <hr />
+   
       </>
     ))
   }
@@ -54,6 +65,18 @@ const Playway = () => {
 
   return (
     <>
+
+<div className="container mb-4">
+        <div className="card w-full shadow py-2 border-none">
+          <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your College</h5>
+          <div class="input-group mb-3 w-75 ">
+            <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.."  aria-describedby="basic-addon2" />
+            <div className="input-group-append">
+              <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="">
         {displayPlaywayData()}

@@ -29,6 +29,9 @@ import ViewCollege from './component/Mainpage/Viewcollege'
 import ViewUniversity from './component/Mainpage/Viewuniversity'
 import ViewSchool from './component/Mainpage/Viewschool'
 import ViewPlayway from './component/Mainpage/Viewplayway'
+import Manageuniversity from './component/Admin/Manageuniversity'
+import AddUniversity from './component/Admin/Adduniversity'
+import Main from './component/Mainpage/Index'
 
 const App = () => {
   return (
@@ -46,18 +49,23 @@ const App = () => {
               <Route path='/contactUs' element={<ContactUs />} />
               <Route path='/Aboutus' element={<Aboutus />} />
 
-              <Route path="/School" element={<School />} />
-              <Route path="/College" element={<College />} />
-              <Route path="/University" element={<University />} />
-              <Route path="/Playway" element={<Playway />} />
               <Route path="/Update/:id" element={<Update />} />
 
               <Route path="/Reviewandrating" element={<Reviewandrating />} />
-              <Route path="/Viewcollege/:id" element={<ViewCollege />} />
-              <Route path="/Viewuniversity/:id" element={<ViewUniversity />} />
-              <Route path="/Viewschool/:id" element={<ViewSchool />} />
-              <Route path="/Viewplayway/:id" element={<ViewPlayway />} />
+             
               <Route path="/collegeReview/:id" element={<Review />} />
+
+              <Route path='Main' element={<Main />}>
+              <Route path="Viewcollege/:id" element={<ViewCollege />} />
+              <Route path="Viewuniversity/:id" element={<ViewUniversity />} />
+              <Route path="Viewschool/:id" element={<ViewSchool />} />
+              <Route path="Viewplayway/:id" element={<ViewPlayway />} />
+              <Route path="School" element={<School />} />
+              <Route path="College" element={<College />} />
+              <Route path="University" element={<University />} />
+              <Route path="Playway" element={<Playway />} />
+              </Route>
+
 
               <Route path='Admin' element={<Admin />}>
                 
@@ -66,9 +74,11 @@ const App = () => {
                   <Route path="AddCollege" element={<AddCollege />} />
                   <Route path="AddSchool" element={<AddSchool />} />
                   <Route path="AddPlayway" element={<AddPlayway />} />
+                  <Route path="Adduniversity" element={<AddUniversity />} />
                   <Route path="Manageuser" element={<Manageuser />} />
                   <Route path="ManageSchool" element={<Manageschool />} />
                   <Route path="ManagePlayway" element={<Manageplaway />} />
+                  <Route path="Manageuniversity" element={<Manageuniversity />} />
                   <Route path="Manageuser" element={<Manageuser />} />
                 </Route>
             </Routes>

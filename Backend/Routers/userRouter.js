@@ -26,4 +26,14 @@ router.post("/authenticate" ,(req, res) => {
     });
 });
 
+router.get("/getall", (req, res) => {
+    Model.find({}) //empty brackets will give all the data from the database
+    .then((result) => {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+    });
+  });
+  
 module.exports = router;

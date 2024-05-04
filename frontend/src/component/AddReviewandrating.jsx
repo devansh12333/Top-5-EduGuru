@@ -40,16 +40,9 @@ const AddReviewandrating = () => {
                 toast("Something went wrong")
             }
         },
-      
-
-    });
+        });
 
   
-
-
-
-
-
     return (
         <>
 

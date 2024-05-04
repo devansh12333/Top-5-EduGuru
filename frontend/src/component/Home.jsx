@@ -22,7 +22,7 @@ const Home = () => {
             <p className="mt-3 " style={{ fontFamily: "fantasy", letterSpacing: "1px", fontSize: "35px" }}>Discover, Compare, Choose</p>
             <p className="fs-5 mt-4">Top5 Eduguru simplify your decision-making process by curating a list of the best five institutions in each category. Our mission is to provide comprehensive insights, helping you make informed choices that align with your educational goals. With Top 5 Eduguru, embark on your academic journey with confidence and find excellence in education.
               <br />
-              <Link to="/College"> <button className="w-50 mt-4 fs-4 navbar-2 " style={{ borderRadius: "30px" }}>Learn More..</button>    </Link> </p>
+              <Link to="/College"> <button className="w-50 mt-4 fs-4 bg-blue-900 text-white py-1 font-serif hover:bg-blue-700  " style={{ borderRadius: "30px" }}>Learn More..</button>    </Link> </p>
 
           </div>
           <div className="col-md-6">

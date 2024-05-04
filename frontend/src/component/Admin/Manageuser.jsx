@@ -5,7 +5,7 @@ const Manageuser = () => {
     const [Data, setData] = useState([]);
 
     const fetchuserData = async () => {
-        const res = await fetch('http://localhost:5000/user/getall');
+        const res = await fetch('http://localhost:3000/user/getall');
 
         console.log(res.status);
         if (res.status === 200) {
@@ -23,7 +23,7 @@ const Manageuser = () => {
     const deleteFun = async (id) => {
         console.log(id);
 
-        const res = await fetch('http://localhost:5000/user/delete/' + id, { method: 'DELETE' })
+        const res = await fetch('http://localhost:3000/user/delete/' + id, { method: 'DELETE' })
 
         if (res.status === 200) {
             fetchuserData();
@@ -34,8 +34,7 @@ const Manageuser = () => {
     //User Display func
     const displayuser = () => {
         return Data.map((obj) => (
-            <>
-                <tr>
+            <tr>
                     <td>{obj._id}</td>
                     <td>{obj.name}</td>
                     <td>{obj.email}</td>
@@ -48,7 +47,7 @@ const Manageuser = () => {
                         <UpdateProduct><button className="btn btn-success">Update</button></UpdateProduct>
                     </td> */}
                 </tr>
-            </>
+    
         ))
     }
 
@@ -59,7 +58,7 @@ const Manageuser = () => {
 
          
 
-            <header className=' rounded mx-auto  text-danger bg-dark ' >
+            <header className=' rounded mx-auto  text-white bg-blue-900' >
                 <div className="container ">
                     <h1 className="text-center fs-2 font-serif">Manage user</h1>
 
@@ -67,7 +66,7 @@ const Manageuser = () => {
             </header>
 
             <div className="container mt-5">
-                <table className="table table-warning">
+                <table className="table table-primary shadow">
                     <thead>
                         <tr className="font-serif fs-5 ">
                             <th>Id</th>
