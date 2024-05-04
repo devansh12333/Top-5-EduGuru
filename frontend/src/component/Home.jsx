@@ -10,11 +10,7 @@ const Home = () => {
 <>
 
 
-<<<<<<< HEAD
 <div className="conatiner-fluid " style={{ height: "80vh" }}>
-=======
-      <div className="conatiner-fluid " style={{ height: "70vh" }}>
->>>>>>> 59ec61a9386b093fb4e8f1ead43fad03a700fd01
         <div className="row p-5">
           <div className="col-md-6">
             <span className='d-flex fs-5 ' style={{ color: "rgb(209, 189, 8)" }}> <IoStarSharp />

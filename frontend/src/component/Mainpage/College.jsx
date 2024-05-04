@@ -5,9 +5,8 @@ import { FaSearch } from "react-icons/fa"
 
 const College = () => {
   const [College, setCollege] = useState([])
-<<<<<<< HEAD
+  
   const [filterList, setfilterList] = useState([])
-=======
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -35,7 +34,6 @@ const College = () => {
         setProducts(sortedProducts.slice(0, 5));
       });
   }, []);
->>>>>>> 59ec61a9386b093fb4e8f1ead43fad03a700fd01
 
   const fetchCollegeData = async () => {
     const res = await fetch("http://localhost:3000/college/getall");
