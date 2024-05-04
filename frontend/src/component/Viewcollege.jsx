@@ -2,13 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { FaRegStar } from "react-icons/fa";
 import StarRatings from 'react-star-ratings';
+import { enqueueSnackbar } from 'notistack';
 
 const ViewCollege = () => {
     const { id } = useParams();
     const [CollegeList, setCollegeList] = useState([]);
-    const [currentUser, setCurrentUser] = useState(sessionStorage.getItem('user'));
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
     const reviewRef = useRef();
     const [rating, setRating] = useState(3);
+    // console.log(currentUser);
 
     const fetchUserData = async () => {
         const res = await fetch('http://localhost:3000/college/getbyid/' + id);
@@ -71,10 +73,33 @@ const ViewCollege = () => {
                 />
 
                 <textarea ref={reviewRef}></textarea>
-                <button>Submit Review</button>
+                <button onClick={submitReview}>Submit Review</button>
             </div>
         } else {
             return <p>login to give review</p>
+        }
+    }
+
+    const submitReview = async () => {
+        const res = await fetch('http://localhost:3000/reviews/add', {
+            method: 'POST',
+            body: JSON.stringify({
+                comment: reviewRef.current.value,
+                rating: rating,
+                user: currentUser._id,
+                college: id
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log(res.status);
+        if(res.status === 200){
+            console.log('review submitted');
+            enqueueSnackbar('Review submitted', {variant: 'success'});
+            fetchreviewsDAta();
+        }else{
+
         }
     }
 
@@ -124,8 +149,8 @@ const ViewCollege = () => {
                         <p className="fs-4 mb-2">Reviews and Ratings</p>
                         {ratingForm()}
 
-                        <Link to={`/collegeReview/${CollegeList._id}`}><button type="button" className="btn mb-4 btn-outline-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
-                        </Link>
+                        {/* <Link to={`/collegeReview/${CollegeList._id}`}><button type="button" className="btn mb-4 btn-outline-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
+                        </Link> */}
                     </div>
                 </div>
                 <div className="row">
