@@ -35,6 +35,7 @@ import Manageuniversity from './component/Manageuniversity'
 import Admin from './component/Admin/Index'
 import Review from './component/collegeReview'
 import { AppProvider } from './component/Context/UserContext'
+import Playwayreview from './component/playwayReview'
 
 const App = () => {
   return (
@@ -74,6 +75,7 @@ const App = () => {
       <Route path="/Viewschool/:id" element={<ViewSchool/>} />
       <Route path="/Viewplayway/:id" element={<ViewPlayway/>} />
       <Route path="/collegeReview/:id" element={<Review/>} />
+      <Route path="/playwayReview/:id" element={<Playwayreview/>} />
 
 
       <Route path="/Admin" element={<Admin/>} >

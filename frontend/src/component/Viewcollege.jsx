@@ -109,13 +109,14 @@ const ViewCollege = () => {
             {
                 CollegeList !== null ? (
 
-                    <div className="container pt-1 px-16 mb-5">
-                        <div className="row text-center d-flex align-items-center  flex-col">
-                            <div className="col-md-5">
+                    <div className="container px-10 mb-5">
+                        <div className="row text-center flex align-items-center  flex-col me-5">
+                            <div className="col-md-5" style={{border:"none", width:600}}>
                                 <img src={'http://localhost:3000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid d-block mx-auto mb-3" style={{ height: 500, width: 1000 }} />
 
                             </div>
-
+                        </div>
+                        <div>
 
                             <p className=' fw-semibold text-danger fs-2 mt-3 mb-1' style={{ fontFamily: "serif" }}>{CollegeList.collegename}</p>
                             <p className=' fs-5 fw-semibold mb-5'>{CollegeList.fees}</p>
