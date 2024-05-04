@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Manageplaway = () => {
     const [Data, setData] = useState([]);
     const fetchplawayData = async () => {
-        const res = await fetch("http://localhost:3000/plaway/getall")
+        const res = await fetch("http://localhost:3000/playway/getall")
         console.log(res.status)
         if (res.status === 200) {
             const data = await res.json();
@@ -18,7 +18,7 @@ const Manageplaway = () => {
 
     const deletefunction = async (id) => {
         console.log(id);
-        const res = await fetch("http://localhost:3000/plaway/delete/" + id, { method: 'DELETE' })
+        const res = await fetch("http://localhost:3000/playway/delete/" + id, { method: 'DELETE' })
 
         if (res.status === 200) {
             fetchplawayData();
@@ -29,7 +29,7 @@ const Manageplaway = () => {
         return Data.map((plaway) => {
 
             return <tr>
-                <td>{plaway.plawayname}</td>
+                <td>{plaway.playwayname}</td>
                 <td>{plaway.email}</td>
                 <td>
                     <button className='btn btn-danger' onClick={() => {deletefunction(plaway._id)}}>Delete</button>

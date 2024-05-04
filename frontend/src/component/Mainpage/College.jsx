@@ -43,6 +43,7 @@ const College = () => {
       
 
         <div className="col-md-3">
+          
         </div>
         </div>
         <hr />
