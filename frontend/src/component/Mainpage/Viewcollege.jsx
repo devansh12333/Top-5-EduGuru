@@ -67,13 +67,12 @@ const ViewCollege = () => {
             return <div>
                 <StarRatings
                     rating={rating}
-                    starRatedColor="blue"
+                    starRatedColor="orange"
                     changeRating={setRating}
                     numberOfStars={5}
                 />
-
-                <textarea ref={reviewRef}></textarea>
-                <button onClick={submitReview}>Submit Review</button>
+                <textarea className='bg-blue-100 w-full mt-3' ref={reviewRef}></textarea>
+                <button className='bg-blue-900 text-white px-2 font-serif rounded' onClick={submitReview}>Submit Review</button>
             </div>
         } else {
             return <p>login to give review</p>
@@ -99,10 +98,9 @@ const ViewCollege = () => {
             enqueueSnackbar('Review submitted', {variant: 'success'});
             fetchreviewsDAta();
         }else{
-
+        console.log(err);
         }
     }
-
 
     return (
         <>
@@ -117,27 +115,15 @@ const ViewCollege = () => {
                             </div>
                         </div>
                         <div>
-
-                            <p className=' fw-semibold text-danger fs-2 mt-3 mb-1' style={{ fontFamily: "serif" }}>{CollegeList.collegename}</p>
+                           <p className=' fw-semibold text-danger fs-2 mt-3 mb-1' style={{ fontFamily: "serif" }}>{CollegeList.collegename}</p>
                             <p className=' fs-5 fw-semibold mb-5'>{CollegeList.fees}</p>
                             <p className=' fs-5 fw-semibold mb-5'>{CollegeList.phone}</p>
                             <p className='text-secondary  mb-3 fs-5' style={{ fontFamily: "serif" }}>{CollegeList.collegeaddress}</p>
-
-
                             <p className=' fs-5 fw-semibold mb-5'>{CollegeList.collegedetail}</p>
-
-
-
                             {/* <p className=' mb-2  ' ><span className="fw-bold me-1">Phone no:</span>{CollegeList.phone}</p>
                             <p className="mb-5"><span className="fw-bold me-1">Email:</span>{CollegeList.email}</p> */}
-
                         </div>
-
                     </div>
-
-
-
-
                 ) : (
                     <div>
                         Loading
@@ -147,9 +133,9 @@ const ViewCollege = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-8">
-                        <p className="fs-4 mb-2">Reviews and Ratings</p>
+                    <h2 className="">Reviews And Ratings</h2>
+                       <p className="fs-4 mb-2"></p>
                         {ratingForm()}
-
                         {/* <Link to={`/collegeReview/${CollegeList._id}`}><button type="button" className="btn mb-4 btn-outline-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
                         </Link> */}
                     </div>
@@ -159,10 +145,6 @@ const ViewCollege = () => {
                 </div>
             </div>
         </>
-
-
-
-
     )
 }
 
