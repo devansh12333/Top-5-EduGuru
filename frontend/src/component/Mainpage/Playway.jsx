@@ -68,7 +68,7 @@ const Playway = () => {
 
 <div className="container mb-4">
         <div className="card w-full shadow py-2 border-none">
-          <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your College</h5>
+          <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your Playway</h5>
           <div class="input-group mb-3 w-75 ">
             <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.."  aria-describedby="basic-addon2" />
             <div className="input-group-append">
