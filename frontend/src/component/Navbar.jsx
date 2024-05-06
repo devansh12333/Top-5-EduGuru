@@ -80,16 +80,16 @@ const Navbar = () => {
                 <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600  text-center mb-3" aria-current="page" to="/">
                   Home
                 </Link>
-                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/Playway">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Mainpage/Playway">
                   Playway
                 </Link>
-                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/School">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Mainpage/School">
                   School
                 </Link>
-                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/College">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Mainpage/College">
                   College
                 </Link>
-                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/University">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Mainpage/University">
                   University
                 </Link>
               </Offcanvas.Body>

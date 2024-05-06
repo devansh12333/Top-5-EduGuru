@@ -55,9 +55,7 @@ const Home = () => {
             Work with tools you already use
           </h2>
           <p className="mb-8 font-light lg:text-xl">
-            Deliver great service experiences fast - without the complexity of
-            traditional ITSM solutions. Accelerate critical development work,
-            eliminate toil, and deploy changes with ease.
+          Here, we believe that learning through play is the cornerstone of early childhood education. Our carefully curated playway curriculum is designed to foster holistic development while making learning fun and engaging for young minds.
           </p>
           {/* List */}
           <ul
@@ -79,7 +77,7 @@ const Home = () => {
                 />
               </svg>
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Continuous integration and deployment
+              Holistic Development
               </span>
             </li>
             <li className="flex space-x-3">
@@ -97,7 +95,7 @@ const Home = () => {
                 />
               </svg>
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Development workflow
+              Fun and Engagement
               </span>
             </li>
             <li className="flex space-x-3">
@@ -115,13 +113,12 @@ const Home = () => {
                 />
               </svg>
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Knowledge management
+              Individualized Learning
               </span>
             </li>
           </ul>
           <p className="mb-8 font-light lg:text-xl">
-            Deliver great service experiences fast - without the complexity of
-            traditional ITSM solutions.
+          Experience exceptional service at our Playway Section, where expert guidance and engaging environments redefine early childhood education.
           </p>
         </div>
      
@@ -134,9 +131,7 @@ const Home = () => {
             We invest in the world’s potential
           </h2>
           <p className="mb-8 font-light lg:text-xl">
-            Deliver great service experiences fast - without the complexity of
-            traditional ITSM solutions. Accelerate critical development work,
-            eliminate toil, and deploy changes with ease.
+          Our dedication to fostering a love for learning empowers students to become lifelong learners and leaders
           </p>
           {/* List */}
           <ul
@@ -146,41 +141,42 @@ const Home = () => {
             <li className="flex space-x-3">
          
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Dynamic reports and dashboards
+                
+              Character Development
               </span>
             </li>
             <li className="flex space-x-3">
               {/* Icon */}
             
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Templates for everyone
+              Student-Centered Approach
               </span>
             </li>
             <li className="flex space-x-3">
          
            
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Development workflow
+              Extracurricular Opportunities
               </span>
             </li>
             <li className="flex space-x-3">
               {/* Icon */}
              
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Limitless business automation
+              Parental Involvement
               </span>
             </li>
             <li className="flex space-x-3">
               {/* Icon */}
             
               <span className="text-base font-medium leading-tight text-gray-900 dark:text-white">
-                Knowledge management
+              Community Engagement
               </span>
             </li>
           </ul>
           <p className="font-light lg:text-xl">
-            Deliver great service experiences fast - without the complexity of
-            traditional ITSM solutions.
+          Explore our School Section, a hub of transformative education, where cutting-edge facilities, expert
+           guidance, and inspiring environments converge to nurture holistic developmen
           </p>
         </div>
         <img
@@ -514,10 +510,9 @@ const Home = () => {
                             </svg>
                           </div>
                           <div>
-                            <p className="mb-2 fs-5 fw-semibold">24x7</p>
+                            <p className="mb-2 fs-5 fw-semibold">Transparent Ranking System</p>
                             <p className="text-secondary mb-0">
-                              We are crafting a digital method that subsists life
-                              across all mediums.
+                            Top5Eduguru boasts an intuitive and easy-to-navigate interface, enhancing user experience and making the search for educational institutions convenient and efficient
                             </p>
                           </div>
                         </div>
@@ -538,10 +533,9 @@ const Home = () => {
                             </svg>
                           </div>
                           <div>
-                            <p className="mb-2 fs-5">Digital Agency</p>
+                            <p className="mb-2 fs-5">Comprehensive Institution Profiles</p>
                             <p className="text-secondary mb-0">
-                              We believe in innovation by merging primary with
-                              elaborate ideas.
+                            Top5Eduguru features institution profiles with user reviews and alumni success stories, aiding prospective students in informed decision-making
                             </p>
                           </div>
                         </div>
@@ -572,9 +566,7 @@ const Home = () => {
         </svg>
         <blockquote>
           <p className="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">
-            "Landwind is just awesome. It contains tons of predesigned
-            components and pages starting from login screen to complex
-            dashboard. Perfect choice for your next SaaS application."
+            "Top5Eduguru revolutionized search for educational institutions. Comprehensive profiles and user reviews made decision-making a breeze. Highly recommended"
           </p>
         </blockquote>
         <figcaption className="flex items-center justify-center mt-6 space-x-3">
@@ -585,10 +577,10 @@ const Home = () => {
           />
           <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
             <div className="pr-3 font-medium text-gray-900 dark:text-white">
-              Micheal Gough
+              Hafsah Naseer
             </div>
             <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
-              CEO at Google
+              CEO at Digipodium
             </div>
           </div>
         </figcaption>
