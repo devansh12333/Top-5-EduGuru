@@ -16,16 +16,10 @@ router.post("/add", (req, res) => {
       res.status(500).json(err);
     });
 });
-router.post("/delete", (req, res) => {
-  res.send("Data deleted");
-});
-router.post("/update", (req, res) => {
-  res.send("updated data");
-});
 
 
 router.get("/getall", (req, res) => {
-  Model.find({}) //empty brackets will give all the data from the database
+  Model.find()
     .then((result) => {
       res.json(result)
     }).catch((err) => {

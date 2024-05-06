@@ -34,10 +34,10 @@ const AddCollege = () => {
                 headers: { "Content-type": "application/json" },
             });
             console.log(res.status);
-            action.resetForm();
+            // action.resetForm();
             if (res.status === 200) {
                 toast("Item uploaded successfully")
-                Navigate("/College")
+                // Navigate("/College")
             }
             else {
                 toast("Something went wrong")
