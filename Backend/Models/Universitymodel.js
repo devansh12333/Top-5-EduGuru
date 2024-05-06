@@ -7,6 +7,6 @@ const userSchema = new Schema({
     image: String,
     email: String,
     phone: Number,
-    
+    courses: String,
 });
 module.exports = model('university', userSchema)
