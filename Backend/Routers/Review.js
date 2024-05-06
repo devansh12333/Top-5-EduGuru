@@ -79,7 +79,7 @@ router.put("/update/:id", (req, res) => {
 })
 
 router.get("/getbyuser/:userid", (req, res) => {
-  Model.find({ user: req.params.userid }).populate('product')
+  Model.find({ user: req.params.userid }).populate('college')
     .then((result) => {
       res.status(200).json(result);
     })
@@ -90,13 +90,13 @@ router.get("/getbyuser/:userid", (req, res) => {
 });
 
 router.get("/getbycollege/:id", (req, res) => {
-  Model.find({colleg : req.params.id}) //param is for parameter
-  .then((result) => {
-    res.json(result)
-  }).catch((err) => {
-    console.error(err)
-    res.status(500).json(err)
-  });
+  Model.find({ college: req.params.id }).populate('user')
+    .then((result) => {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+    });
 });
 
 router.get("/getbyproduct/:productid", (req, res) => {

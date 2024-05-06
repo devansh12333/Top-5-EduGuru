@@ -1,14 +1,14 @@
 import { Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar'
 
-const Admin = () => {
+const Main = () => {
   return (
     <div>
    <div className="row">
-    <div className="col-md-2">
+    {/* <div className="col-md-2">
       <Sidebar />
-    </div>
-    <div className="col-md-10 px-16 py-5 bg-blue-100">
+    </div> */}
+    <div className=" px-16 py-5 bg-blue-50">
       <Outlet />
     </div>
    </div>
@@ -16,4 +16,4 @@ const Admin = () => {
   )
 }
 
-export default Admin
+export default Main

@@ -22,7 +22,7 @@ const Navbar = () => {
   const location = useLocation();
 
   // Specify the paths where you want to hide the Navbar
-  const hideNavbarPaths = ['/Login', '/Signup', '/AddCollege', '/Admin/Dashboard', '/Admin/ManageReviews', '/Admin/Manage', '/Admin/AddPlayway', '/Admin/AddSchool', '/Admin/AddCollege', '/Admin/AddUniversity', '/Admin/ManageSchool', '/Admin/ManagePlayway', '/Admin/ManageUniversity', '/Admin/Manageuser'];
+  const hideNavbarPaths = ['/Login', '/signup', '/AddCollege','/Admin','/Admin/ManageCollege','/Admin/Manageuniversity','/Admin/Adduniversity', '/Admin/Dashboard', '/Admin/ManageReviews', '/Admin/Manage', '/Admin/AddPlayway', '/Admin/AddSchool', '/Admin/AddCollege', '/Admin/AddUniversity', '/Admin/ManageSchool', '/Admin/ManagePlayway', '/Admin/ManageUniversity', '/Admin/Manageuser'];
 
   // Check if the current path is in the hideNavbarPaths array
   const shouldHideNavbar = hideNavbarPaths.includes(location.pathname);
@@ -66,7 +66,7 @@ const Navbar = () => {
 
   return shouldHideNavbar ? null : (
     <>
-      <nav className="navbar bg-body-tertiary  navbar-expand-lg py-0  sticky-top shadow-lg">
+      <nav className="navbar navbar-expand-lg py-0  sticky-top shadow-lg">
         <div className="container-fluid">
           <div>
             <img src={logo} onClick={handleShow} alt="" style={{ width: "200px" }} />
@@ -77,17 +77,19 @@ const Navbar = () => {
                 <Offcanvas.Title></Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                
-                <Link className="nav-link fs-4 navbar-2 text-center mb-3" aria-current="page" to="/Playway">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600  text-center mb-3" aria-current="page" to="/">
+                  Home
+                </Link>
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/Playway">
                   Playway
                 </Link>
-                <Link className="nav-link fs-4 navbar-2 text-center mb-3" aria-current="page" to="/School">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/School">
                   School
                 </Link>
-                <Link className="nav-link fs-4 navbar-2 text-center mb-3" aria-current="page" to="/College">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/College">
                   College
                 </Link>
-                <Link className="nav-link fs-4 navbar-2 text-center mb-3" aria-current="page" to="/University">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/University">
                   University
                 </Link>
               </Offcanvas.Body>
