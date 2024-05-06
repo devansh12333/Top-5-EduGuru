@@ -5,7 +5,7 @@ import { FaSearch } from "react-icons/fa"
 
 const College = () => {
   const [College, setCollege] = useState([])
-  
+
   const [filterList, setfilterList] = useState([])
   const [products, setProducts] = useState([]);
 
@@ -68,7 +68,7 @@ const College = () => {
       <>
         <div className="row h-50 mt-5 shadow mb-3">
           <div className="col-md-3  ">
-            <Link to={`/Main/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 img-fluid" style={{ objectFit: "cover", height: 200 }} />
+            <Link to={`/Main/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
 
@@ -103,8 +103,8 @@ const College = () => {
       <div className="container mb-4">
         <div className="card w-full shadow py-2 border-none">
           <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your College</h5>
-          <div class="input-group mb-3 w-75 ">
-            <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.."  aria-describedby="basic-addon2" />
+          <div class="input-group mb-3 w-75 mx-auto">
+            <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.." aria-describedby="basic-addon2" />
             <div className="input-group-append">
               <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>
             </div>

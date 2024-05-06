@@ -12,6 +12,16 @@ router.post('/add', (req, res) => {
     });
 });
 
+router.put("/update/:id", (req,res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body,{new:true})             //new:true is for data update
+    .then((result) => {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+    });
+    })
+
 router.post("/authenticate" ,(req, res) => {
     console.log(req.body);
     Model.findOne({})

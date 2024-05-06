@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { enqueueSnackbar } from 'notistack';
 import React from 'react'
-import { useActionData, useNavigate } from 'react-router-dom';
+import { Link, useActionData, useNavigate } from 'react-router-dom';
 import useAppContext from './Context/UserContext';
 
 const Login = () => {
@@ -43,7 +43,7 @@ const Login = () => {
           sessionStorage.setItem('user', JSON.stringify(data));
           setLoggedIn(true);
           enqueueSnackbar("user loggedIn Successfully", { variant: "success" })
-          navigate("/")
+          navigate("/User/Profile")
         }
       } else {
         enqueueSnackbar("somthing went wrong", { variant: "warning" })
@@ -51,97 +51,67 @@ const Login = () => {
     }
   });
   return (
-    <div>
-      <section className="vh-100" style={{ backgroundColor: "#5DADE2 " }}>
-        <div className="container py-5 h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col col-xl-10">
-              <div className="card" style={{ borderRadius: "1rem" }}>
-                <div className="row g-0">
-                  <div className="col-md-6 col-lg-5 d-none d-md-block">
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
-                      alt="login form"
-                      className="img-fluid"
-                      style={{ borderRadius: "1rem 0 0 1rem" }}
-                    />
-                  </div>
-                  <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                    <div className="card-body p-4 p-lg-5 text-black">
-                      <form onSubmit={loginForm.handleSubmit}>
-                        <div className="d-flex align-items-center mb-3 pb-1">
-                          <i
-                            className="fas fa-cubes fa-2x me-3"
-                            style={{ color: "#ff6219" }}
-                          />
-                          <span className="h1 fw-bold mb-0">Top-5-Eduguru</span>
-                        </div>
-                        <h5
-                          className="fw-normal mb-3 pb-3"
-                          style={{ letterSpacing: 1 }}
-                        >
-                          Sign into your account
-                        </h5>
-                        <div className="form-outline mb-4">
-                          <label className="form-label" htmlFor="Email ">
-                            Email address
-                          </label>
-                          <input
-                            type="email"
-                            id="email"
-                            value={loginForm.values.email}
-                            onChange={loginForm.handleChange}
-                            className="form-control form-control-lg"
-                          />
 
-                        </div>
-                        <div className="form-outline mb-4">
-                          <label className="form-label" htmlFor="form2Example27">
-                            Password
-                          </label>
-                          <input
-                            type="password"
-                            id="password"
-                            value={loginForm.values.password}
-                            onChange={loginForm.handleChange}
-                            className="form-control form-control-lg"
-                          />
+    <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
+      <div className="shadow rounded-2xl flex max-w-3xl p-5 items-center">
+        <div className="md:w-1/2 px-8">
+          <h2 className="font-bold text-3xl text-blue-900 font-serif">Login</h2>
+          <p className="text-sm mt-4 mb-3 text-[#002D74]">
+            If you already a member, easily log in now.
+          </p>
+          <form onSubmit={loginForm.handleSubmit} className="flex flex-col gap-4">
+            <input
+              className="p-2 mt-8] rounded-xl border"
+              type="email"
+              name="email"
+              id="email"
+              value={loginForm.values.email}
+              onChange={loginForm.handleChange}
+              placeholder="Email"
+            />
+            <div className="relative">
+              <input
+                className="p-2 rounded-xl border w-full"
+                type="password"
+                name="password"
+                id="password"
+                value={loginForm.values.password}
+                onChange={loginForm.handleChange}
+                placeholder="Password"
+              />
 
-                        </div>
-                        <div className="pt-1 mb-4">
-                          <button
-                            className="btn btn-dark btn-lg btn-block"
-                            type="submit"
-                          >
-                            Login
-                          </button>
-                        </div>
-                        <a className="small text-muted" href="#!">
-                          Forgot password?
-                        </a>
-                        <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
-                          Don't have an account?{" "}
-                          <a href="#!" style={{ color: "#393f81" }}>
-                            Register here
-                          </a>
-                        </p>
-                        <a href="#!" className="small text-muted">
-                          Terms of use.
-                        </a>
-                        <a href="#!" className="small text-muted">
-                          Privacy policy
-                        </a>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
+            <div className=" text-sm  text-lue-900 border-gray-500  ">
+              Forget password?
+            </div>
+            <button
+              className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"
+              type="submit"
+            >
+              Login
+            </button>
+          </form>
+
+
+
+          <div className="mt-4 text-sm flex justify-between items-center container-mr">
+            <p className="mr-3 md:mr-0 ">If you don't have an account..</p>
+            <Link to="/signup" className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
+              Register
+            </Link>
           </div>
         </div>
-      </section>
+        <div className="md:block hidden w-1/2">
+          <img
+            className="rounded-2xl max-h-[1600px]"
+            src="https://static.vecteezy.com/system/resources/previews/015/732/713/original/education-and-money-illustration-flat-cartoon-graduation-hat-and-coins-cash-concept-of-scholarship-cost-or-loan-tuition-or-study-fee-value-of-student-knowledge-learning-success-vector.jpg "
+            alt="login form image"
+          />
+        </div>
+      </div>
+    </section>
 
-    </div>
+
   )
 }
 
