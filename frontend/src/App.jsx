@@ -14,7 +14,7 @@ import College from './component/Mainpage/College'
 import University from './component/Mainpage/University'
 import Playway from './component/Mainpage/Playway'
 import Update from './component/Update'
-import ContactUs from './component/ContactUs'
+import ContactUs from './component/ContactUs'j
 import Aboutus from './component/Aboutus'
 import Reviewandrating from './component/Reviewandrating'
 import Admin from './component/Admin/Index'
