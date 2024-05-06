@@ -8,6 +8,5 @@ const userSchema = new Schema({
     email: String,
     phone: Number,
     courses:String,
-    
 });
 module.exports = model('college', userSchema)

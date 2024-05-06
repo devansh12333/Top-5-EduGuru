@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
+import Sidebar from "./Sidebar"
+import { FaSearch } from "react-icons/fa"
 
 const College = () => {
   const [College, setCollege] = useState([])
+
+  const [filterList, setfilterList] = useState([])
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -38,12 +42,22 @@ const College = () => {
       const data = await res.json();
       console.log(data);
       setCollege(data)
+      setfilterList(data)
     }
   }
 
   useEffect(() => {
     fetchCollegeData()
   }, [])
+
+  const filterproduct = (e) => {
+    const value = e.target.value;
+    setCollege(filterList.filter((col) => {
+      return (col.collegename.toLowerCase().includes(value.toLowerCase())),
+        (col.courses.toLowerCase().includes(value.toLowerCase()))
+    }))
+  }
+
 
   const displayCollegeData = () => {
     if (College.length === 0) {
@@ -52,9 +66,9 @@ const College = () => {
 
     return College.map((col) => (
       <>
-        <div className="row h-50">
-          <div className="col-md-3">
-            <Link to={`/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 img-fluid" style={{ objectFit: "cover", height: 200 }} />
+        <div className="row h-50 mt-5 shadow mb-3">
+          <div className="col-md-3  ">
+            <Link to={`/Main/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
 
@@ -64,15 +78,16 @@ const College = () => {
             <p className='text-muted me-3' style={{ fontFamily: "serif" }}>{col.courses}</p>
             <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.phone}</p>
             <p className='text-muted ' style={{ fontFamily: "cursive" }}>{col.email}</p>
-            
-           
-          </div>
-      
 
-        <div className="col-md-3">
+
+          </div>
+
+
+          <div className="col-md-3">
+
+          </div>
         </div>
-        </div>
-        <hr />
+
       </>
     ))
   }
@@ -80,7 +95,36 @@ const College = () => {
 
 
   return (
+
+
     <>
+
+
+      <div className="container mb-4">
+        <div className="card w-full shadow py-2 border-none">
+          <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your College</h5>
+          <div class="input-group mb-3 w-75 mx-auto">
+            <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.." aria-describedby="basic-addon2" />
+            <div className="input-group-append">
+              <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-white d-flex justify-content-between bg-blue-900 container font-serif text-xl">
+        <span>MA</span>
+        <span>BA</span>
+        <span>BCA</span>
+        <span>MCA</span>
+        <span>BBA</span>
+        <span>MBA</span>
+        <span>Btech</span>
+        <span>Mtech</span>
+        <span>Bsc</span>
+        <span>Msc</span>
+      </div>
+
 
       <div className="">
         {displayCollegeData()}
