@@ -52,7 +52,7 @@ const ViewCollege = () => {
                 <div className="row h-50">
                     <div className="rev-md-6 py-4">
                         <p className='text-warning ' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
-                        <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{rev.name}</p>
+                        <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{rev.user.name}</p>
                         <p className=' '>{rev.comment}</p>
                     </div>
                 </div>
@@ -94,12 +94,13 @@ const ViewCollege = () => {
             }
         });
         console.log(res.status);
-        if(res.status === 200){
+        if (res.status === 200) {
             console.log('review submitted');
-            enqueueSnackbar('Review submitted', {variant: 'success'});
+            enqueueSnackbar('Review submitted', { variant: 'success' });
             fetchreviewsDAta();
-        }else{
-
+        } else {
+            console.log('something went wrong');
+            enqueueSnackbar('Something went wrong', { variant: 'error' });
         }
     }
 
@@ -111,7 +112,7 @@ const ViewCollege = () => {
 
                     <div className="container px-10 mb-5">
                         <div className="row text-center flex align-items-center  flex-col me-5">
-                            <div className="col-md-5" style={{border:"none", width:600}}>
+                            <div className="col-md-5" style={{ border: "none", width: 600 }}>
                                 <img src={'http://localhost:3000/' + CollegeList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid d-block mx-auto mb-3" style={{ height: 500, width: 1000 }} />
 
                             </div>

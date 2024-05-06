@@ -1,14 +1,14 @@
 import React from 'react'
 import './App.css'
 
-import{BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 import Login from './component/Login'
 import Navbar from './component/Navbar'
 import Home from './component/Home'
 import Signup from './component/Signup'
- 
+
 import { SnackbarProvider } from 'notistack'
 // import Contactus from './component/ContactUs'
 import View from './component/View'
@@ -41,54 +41,45 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-      <AppProvider>
-      <SnackbarProvider >
-      <Navbar/>
-      <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/Home' element={<Home/>}/>
+        <AppProvider>
+          <SnackbarProvider >
+            <Navbar />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/Home' element={<Home />} />
 
-      <Route path='/login' element={<Login />} />
-      <Route path='/signup' element={<Signup/>}/>
-      <Route path='/contactUs' element={<ContactUs/>} />
-      <Route path='/Aboutus' element={<Aboutus />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/contactUs' element={<ContactUs />} />
+              <Route path='/Aboutus' element={<Aboutus />} />
 
-      <Route path='/view' element={<View/>} />
-    
-      <Route path="/AddSchool" element={<AddSchool />} />
-      <Route path="/AddUniversity" element={<AddUniversity />} />
-      <Route path="/AddCollege" element={<AddCollege />} />
-      <Route path="/AddPlayway" element={<AddPlayway />} />
-      <Route path="/School" element={<School />} />
-      <Route path="/College" element={<College />} />
-      <Route path="/University" element={<University />} />
-      <Route path="/Playway" element={<Playway />} />
-      <Route path="/Update/:id" element={<Update />} />
-      <Route path="/Manageschool" element={<Manageschool />} />
-      <Route path="/Managecollege" element={<Managecollege />} />
-      <Route path="/Manageplayway" element={<Manageplayway />} />
-  
-      <Route path="/Manageuniversity" element={<Manageuniversity />} />
-      <Route path="/Reviewandrating" element={<Reviewandrating/>} />
-      <Route path="/Viewcollege/:id" element={<Viewcollege/>} />
-      <Route path="/Viewuniversity/:id" element={<Viewuniversity/>} />
-      <Route path="/Viewschool/:id" element={<ViewSchool/>} />
-      <Route path="/Viewplayway/:id" element={<ViewPlayway/>} />
-      <Route path="/collegeReview/:id" element={<Review/>} />
-      <Route path="/playwayReview/:id" element={<Playwayreview/>} />
+              <Route path='/view' element={<View />} />
 
-
-      <Route path="/Admin" element={<Admin/>} >
-     
-
-      </Route>
-      
-
-    
-     
-      </Routes>
-      </SnackbarProvider>
-      </AppProvider>
+              <Route path="/AddSchool" element={<AddSchool />} />
+              <Route path="/AddUniversity" element={<AddUniversity />} />
+              <Route path="/AddCollege" element={<AddCollege />} />
+              <Route path="/AddPlayway" element={<AddPlayway />} />
+              <Route path="/School" element={<School />} />
+              <Route path="/College" element={<College />} />
+              <Route path="/University" element={<University />} />
+              <Route path="/Playway" element={<Playway />} />
+              <Route path="/Update/:id" element={<Update />} />
+              <Route path="/Manageschool" element={<Manageschool />} />
+              <Route path="/Managecollege" element={<Managecollege />} />
+              <Route path="/Manageplayway" element={<Manageplayway />} />
+              <Route path="/Manageuniversity" element={<Manageuniversity />} />
+              <Route path="/Reviewandrating" element={<Reviewandrating />} />
+              <Route path="/Viewcollege/:id" element={<Viewcollege />} />
+              <Route path="/Viewuniversity/:id" element={<Viewuniversity />} />
+              <Route path="/Viewschool/:id" element={<ViewSchool />} />
+              <Route path="/Viewplayway/:id" element={<ViewPlayway />} />
+              <Route path="/collegeReview/:id" element={<Review />} />
+              <Route path="/playwayReview/:id" element={<Playwayreview />} />
+              <Route path="/Admin" element={<Admin />} >
+              </Route>
+            </Routes>
+          </SnackbarProvider>
+        </AppProvider>
       </BrowserRouter>
     </div>
   )
