@@ -27,7 +27,8 @@ import Manageplaway from './component/Admin/Manageplayway'
 import Manageuser from './component/Admin/Manageuser'
 import ViewCollege from './component/Mainpage/Viewcollege'
 import ViewUniversity from './component/Mainpage/Viewuniversity'
-import ViewSchool from './component/Mainpage/viewSchool'
+import Viewschool from './component/Mainpage/Viewschool'
+
 import ViewPlayway from './component/Mainpage/Viewplayway'
 import Manageuniversity from './component/Admin/Manageuniversity'
 import AddUniversity from './component/Admin/Adduniversity'
@@ -63,7 +64,7 @@ const App = () => {
               <Route path='Mainpage' element={<Mainpage />}>
                 <Route path="Viewcollege/:id" element={<ViewCollege />} />
                 <Route path="Viewuniversity/:id" element={<ViewUniversity />} />
-                <Route path="Viewschool/:id" element={<ViewSchool />} />
+                <Route path="Viewschool/:id" element={<Viewschool />} />
                 <Route path="Viewplayway/:id" element={<ViewPlayway />} />
                 <Route path="School" element={<School />} />
                 <Route path="College" element={<College />} />
