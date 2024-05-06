@@ -1,39 +1,33 @@
 import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
-import Sidebar from "./Sidebar"
-import { FaSearch } from "react-icons/fa"
+import StarRatings from "react-star-ratings";
 
 const College = () => {
   const [College, setCollege] = useState([])
 
   const [filterList, setfilterList] = useState([])
   const [products, setProducts] = useState([]);
+  const [reviewList, setReviewList] = useState([]);
 
-  useEffect(() => {
-    // Fetch products and ratings data from backend
-    fetch('/api/products-ratings')
-      .then((response) => response.json())
-      .then((data) => {
-        // Process data to calculate average rating for each product
-        const processedProducts = data.products.map((product) => {
-          const ratings = product.ratings;
-          const totalRating = ratings.reduce((sum, rating) => sum + rating, 0);
-          const averageRating = totalRating / ratings.length;
 
-          return {
-            id: product._id,
-            name: product.collegename,
-            averageRating,
-          };
-        });
+  const fetchReviews = async () => {
+    const res = await fetch("http://localhost:3000/reviews/getall");
+    console.log(res.status);
+    if (res.status === 200) {
+      const data = await res.json();
+      console.log(data);
+      return data;
+    }
+  }
 
-        // Sort products by average rating in descending order
-        const sortedProducts = processedProducts.sort((a, b) => b.averageRating - a.averageRating);
-
-        // Set top 5 products to state
-        setProducts(sortedProducts.slice(0, 5));
-      });
-  }, []);
+  const calculateAvgRating = (reviews, collegeId) => {
+    const collegeReviews = reviews.filter(review => review.college === collegeId);
+    if (collegeReviews.length === 0) {
+      return 0;
+    }
+    const totalRating = collegeReviews.reduce((acc, review) => acc + review.rating, 0);
+    return totalRating / collegeReviews.length;
+  }
 
   const fetchCollegeData = async () => {
     const res = await fetch("http://localhost:3000/college/getall");
@@ -41,8 +35,18 @@ const College = () => {
     if (res.status === 200) {
       const data = await res.json();
       console.log(data);
-      setCollege(data)
-      setfilterList(data)
+      const ratingsData = await fetchReviews();
+      let temp = data.map(college => (
+        {
+          ...college,
+          avgRating: calculateAvgRating(ratingsData, college._id)
+        }
+      ));
+      // sort colleges according to avg rating
+      temp.sort((a, b) => b.avgRating - a.avgRating);
+      console.log(temp);
+      setCollege(temp);
+
     }
   }
 
@@ -64,7 +68,7 @@ const College = () => {
       return <h1 className='text-center fw-bold' style={{ color: "seagreen" }}>No Data Found</h1>
     }
 
-    return College.map((col) => (
+    return College.slice(0, 5).map((col) => (
       <>
         <div className="row h-50 mt-5 shadow mb-3">
           <div className="col-md-3  ">
@@ -75,6 +79,13 @@ const College = () => {
 
           <div className="col-md-6 py-4">
             <h2 className=' fw-semibold fs-5 mt-3 mb-3 ' style={{ fontFamily: "serif" }}>{col.collegename}</h2>
+            <StarRatings
+              rating={col.avgRating}
+              starRatedColor="#ffbe00"
+              numberOfStars={5}
+              starDimension="20px"
+              starSpacing="2px"
+            />
             <p className='text-muted me-3' style={{ fontFamily: "serif" }}>{col.courses}</p>
             <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.phone}</p>
             <p className='text-muted ' style={{ fontFamily: "cursive" }}>{col.email}</p>
@@ -84,7 +95,6 @@ const College = () => {
 
 
           <div className="col-md-3">
-
           </div>
         </div>
 
@@ -103,7 +113,7 @@ const College = () => {
       <div className="container mb-4">
         <div className="card w-full shadow py-2 border-none">
           <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your College</h5>
-          <div class="input-group mb-3 w-75 mx-auto">
+          <div className="input-group mb-3 w-75 mx-auto">
             <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.." aria-describedby="basic-addon2" />
             <div className="input-group-append">
               <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>

@@ -377,7 +377,7 @@ const Home = () => {
         <div className="row">
           <div className="col-md-3">
             <div className="card shadow" style={{ border: "none"}}>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/BBDU_Main_Building.jpg" className="card-img-top img-fluid w-100" alt="..." />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/BBDU_Main_Building.jpg" className="card-img-top img-fluid w-100" style={{height:"180px"}} alt="..." />
               <div className="card-body">
                 <p className=" fs-5 fw-semibold">University</p>
                 <p className="mb-3">
@@ -391,7 +391,7 @@ const Home = () => {
           </div>
           <div className="col-md-3">
             <div className="card shadow" style={{ border: "none" }}>
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROBlFINSMGLeG4EMAMvPo2guNNivTXfbw0DoPTTkoh5Q&s" className="card-img-top img-fluid w-100" alt="..." />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROBlFINSMGLeG4EMAMvPo2guNNivTXfbw0DoPTTkoh5Q&s" className="card-img-top img-fluid w-100" style={{height:"180px"}} alt="..." />
               <div className="card-body">
                 <p className="fs-5 fw-semibold">College</p>
                 <p className="mb-3">
@@ -405,7 +405,7 @@ const Home = () => {
           </div>
           <div className="col-md-3">
             <div className="card shadow" style={{ border: "none" }}>
-              <img src="https://indusvalleylucknow.in/wp-content/uploads/2023/01/Indus-Valley-Public-School-Lucknow-Best-CBSE-School-in-Jankipuram-Lucknow-1.webp" className="card-img-top img-fluid w-100" alt="..." />
+              <img src="https://indusvalleylucknow.in/wp-content/uploads/2023/01/Indus-Valley-Public-School-Lucknow-Best-CBSE-School-in-Jankipuram-Lucknow-1.webp" style={{height:"180px"}} className="card-img-top img-fluid w-100" alt="..." />
               <div className="card-body">
                 <p className="fs-5 fw-semibold">School</p>
                 <p className="mb-3">
@@ -419,7 +419,7 @@ const Home = () => {
           </div>
           <div className="col-md-3">
             <div className="card shadow" style={{ border: "none" }}>
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZUSgEsJuUcJTqsd34ptrj208NMULis__X-LPMZgNcw&s" className="card-img-top img-fluid w-100" alt="..." />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZUSgEsJuUcJTqsd34ptrj208NMULis__X-LPMZgNcw&s" style={{height:"180px"}} className="card-img-top img-fluid w-100" alt="..." />
               <div className="card-body">
                 <p className="fs-5 fw-semibold">Playway</p>
                 <p className="mb-3">
