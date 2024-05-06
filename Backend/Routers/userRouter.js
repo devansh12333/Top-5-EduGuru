@@ -12,7 +12,17 @@ router.post('/add', (req, res) => {
         });
 });
 
-router.post("/authenticate", (req, res) => {
+router.put("/update/:id", (req,res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body,{new:true})             //new:true is for data update
+    .then((result) => {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+    });
+    })
+
+router.post("/authenticate" ,(req, res) => {
     console.log(req.body);
     Model.findOne(req.body)
         .then((result) => {
@@ -37,4 +47,14 @@ router.get('/getall', (req, res) => {
         });
 });
 
+router.get("/getall", (req, res) => {
+    Model.find({}) //empty brackets will give all the data from the database
+    .then((result) => {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+    });
+  });
+  
 module.exports = router;

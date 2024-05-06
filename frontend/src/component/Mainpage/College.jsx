@@ -4,6 +4,8 @@ import StarRatings from "react-star-ratings";
 
 const College = () => {
   const [College, setCollege] = useState([])
+
+  const [filterList, setfilterList] = useState([])
   const [products, setProducts] = useState([]);
   const [reviewList, setReviewList] = useState([]);
 
@@ -52,6 +54,15 @@ const College = () => {
     fetchCollegeData()
   }, [])
 
+  const filterproduct = (e) => {
+    const value = e.target.value;
+    setCollege(filterList.filter((col) => {
+      return (col.collegename.toLowerCase().includes(value.toLowerCase())),
+        (col.courses.toLowerCase().includes(value.toLowerCase()))
+    }))
+  }
+
+
   const displayCollegeData = () => {
     if (College.length === 0) {
       return <h1 className='text-center fw-bold' style={{ color: "seagreen" }}>No Data Found</h1>
@@ -59,9 +70,9 @@ const College = () => {
 
     return College.slice(0, 5).map((col) => (
       <>
-        <div className="row h-50">
-          <div className="col-md-3">
-            <Link to={`/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 img-fluid" style={{ objectFit: "cover", height: 200 }} />
+        <div className="row h-50 mt-5 shadow mb-3">
+          <div className="col-md-3  ">
+            <Link to={`/Main/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
 
@@ -86,7 +97,7 @@ const College = () => {
           <div className="col-md-3">
           </div>
         </div>
-        <hr />
+
       </>
     ))
   }
@@ -94,7 +105,36 @@ const College = () => {
 
 
   return (
+
+
     <>
+
+
+      <div className="container mb-4">
+        <div className="card w-full shadow py-2 border-none">
+          <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your College</h5>
+          <div className="input-group mb-3 w-75 mx-auto">
+            <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.." aria-describedby="basic-addon2" />
+            <div className="input-group-append">
+              <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-white d-flex justify-content-between bg-blue-900 container font-serif text-xl">
+        <span>MA</span>
+        <span>BA</span>
+        <span>BCA</span>
+        <span>MCA</span>
+        <span>BBA</span>
+        <span>MBA</span>
+        <span>Btech</span>
+        <span>Mtech</span>
+        <span>Bsc</span>
+        <span>Msc</span>
+      </div>
+
 
       <div className="">
         {displayCollegeData()}
