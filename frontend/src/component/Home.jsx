@@ -383,7 +383,7 @@ const Home = () => {
                 <p className="mb-3">
                   Get top 5 University in Lucknow
                 </p>
-                <Link to="/University" style={{ fontFamily: "serif" }} className="btn mx-auto d-block btn-primary">
+                <Link to="/Mainpage/University" style={{ fontFamily: "serif" }} className="btn mx-auto d-block btn-primary">
                   Explore University
                 </Link>
               </div>
@@ -397,7 +397,7 @@ const Home = () => {
                 <p className="mb-3">
                   Get top 5 College in Lucknow
                 </p>
-                <Link to="/College" style={{ fontFamily: "serif" }} className="btn mx-auto d-block btn-primary">
+                <Link to="/Mainpage/College" style={{ fontFamily: "serif" }} className="btn mx-auto d-block btn-primary">
                   Explore College
                 </Link>
               </div>
@@ -411,7 +411,7 @@ const Home = () => {
                 <p className="mb-3">
                   Get top 5 school in Lucknow
                 </p>
-                <Link to="/School" className="btn btn-primary mx-auto d-block">
+                <Link to="/Mainpage/School" className="btn btn-primary mx-auto d-block">
                   Explore School
                 </Link>
               </div>
@@ -425,7 +425,7 @@ const Home = () => {
                 <p className="mb-3">
                   Get top5 Playway in Lucknow
                 </p>
-                <Link to="Playway" className="btn btn-primary mx-auto d-block">
+                <Link to="/Mainpage/Playway" className="btn btn-primary mx-auto d-block">
                   Explore Playway
                 </Link>
               </div>
@@ -638,24 +638,24 @@ const Home = () => {
           </h2>
           <ul className="text-gray-500 dark:text-gray-400 font-medium">
             <li className="mb-4">
-              <a href="/Main/College" className="hover:underline">
+              <Link to="/Mainpage/College" className="hover:underline">
                 College
-              </a>
+              </Link>
             </li>
             <li className='mb-4'>
-              <a href="/Main/School" className="hover:underline">
+              <Link to="/Mainpage/School" className="hover:underline">
                 School
-              </a>
+              </Link>
             </li>
             <li className='mb-4'>
-              <a href="/Main/Playway" className="hover:underline">
+              <Link to="/Mainpage/Playway" className="hover:underline">
                 Playway
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/Main/University" className="hover:underline">
+              <Link to="/Mainpage/University" className="hover:underline">
                 University
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

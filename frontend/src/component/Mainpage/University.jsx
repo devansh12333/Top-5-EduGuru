@@ -38,7 +38,7 @@ const University = () => {
       <>
         <div className="row h-50 shadow mb-3">
           <div className="col-md-3">
-            <Link to={`/Main/ViewUniversity/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 img-fluid" style={{ objectFit: "cover", height: 200 }} />
+            <Link to={`/Mainpage/ViewUniversity/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 img-fluid" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
 
