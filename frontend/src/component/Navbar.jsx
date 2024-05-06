@@ -22,7 +22,7 @@ const Navbar = () => {
   const location = useLocation();
 
   // Specify the paths where you want to hide the Navbar
-  const hideNavbarPaths = ['/login', '/signup', '/AddCollege','/Admin','/Admin/ManageCollege','/Admin/Manageuniversity','/Admin/Adduniversity', '/Admin/Dashboard', '/Admin/ManageReviews', '/Admin/Manage', '/Admin/AddPlayway', '/Admin/AddSchool', '/Admin/AddCollege', '/Admin/AddUniversity', '/Admin/ManageSchool', '/Admin/ManagePlayway', '/Admin/ManageUniversity', '/Admin/Manageuser'];
+  const hideNavbarPaths = ['/login', '/signup', '/AddCollege', '/Admin', '/Admin/ManageCollege', '/Admin/Manageuniversity', '/Admin/Adduniversity', '/Admin/Dashboard', '/Admin/ManageReviews', '/Admin/Manage', '/Admin/AddPlayway', '/Admin/AddSchool', '/Admin/AddCollege', '/Admin/AddUniversity', '/Admin/ManageSchool', '/Admin/ManagePlayway', '/Admin/ManageUniversity', '/Admin/Manageuser'];
 
   // Check if the current path is in the hideNavbarPaths array
   const shouldHideNavbar = hideNavbarPaths.includes(location.pathname);
@@ -30,7 +30,7 @@ const Navbar = () => {
   // Render Navbar only if shouldHideNavbar is false
 
   const { loggedIn, logout } = useAppContext();
-  
+
   console.log(loggedIn);
 
   const showLoggedin = () => {
@@ -42,6 +42,11 @@ const Navbar = () => {
             <button onClick={logout} type="button" className="btn btn-danger  text-white px-3 py-1 rounded ">
               Logout
             </button>
+            <br />
+            <Link to={"/User/Profile"} type="button" className="btn btn-primary  text-white px-3 py-1 rounded ">
+              Profile
+            </Link>
+
 
           </div>
         </div>
@@ -67,60 +72,62 @@ const Navbar = () => {
   return shouldHideNavbar ? null : (
     <>
       <nav className="navbar navbar-expand-lg py-0 bg-white sticky-top shadow-lg">
+
         <div className="container-fluid">
           <div>
+
             <img src={logo} onClick={handleShow} alt="" style={{ width: "200px" }} />
             {/* </Button> */}
-           <Offcanvas show={show} onHide={handleClose}>
+            <Offcanvas show={show} onHide={handleClose}>
               <Offcanvas.Header closeButton >
                 <img src={logo} className='w-50 ' alt="" />
                 <Offcanvas.Title></Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600  text-center mb-3" aria-current="page" to="/">
-                  Home
-                </Link>
-                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/Playway">
+
+
+              
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Mainpage/Playway">
                   Playway
                 </Link>
-                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/School">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Mainpage/School">
                   School
                 </Link>
-                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/College">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Mainpage/College">
                   College
                 </Link>
-                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Main/University">
+                <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Mainpage/University">
                   University
                 </Link>
               </Offcanvas.Body>
             </Offcanvas>
           </div>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-      <li className="nav-item">
-          <Link className="nav-link active" to="/Home" style={{fontFamily: 'cursive' , fontSize: ' large', color: 'blue'}}>
+<div style={{fontFamily: "cursive",fontSize: "large"}}>
+  <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+<li className="nav-item">
+          <Link className="nav-link text-blue-900 underline" aria-current="page" to="/Home">
             Home
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/Aboutus" style={{fontFamily: 'cursive' , fontSize: 'large', color: 'blue'}}>
-            About us
           </Link>
         </li>
        
         <li className="nav-item">
-          <Link className="nav-link active" to="/Contactus" style={{fontFamily: 'cursive' , fontSize: 'large', color: 'blue'}}>
+          <Link className="nav-link text-blue-900 underline" to="/Aboutus"  >
+            About us
+          </Link>
+        </li>
+        
+        <li className="nav-item">
+          <Link className="nav-link text-blue-900 underline " to="/Contactus" >
             Contact us
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link active" to="/Reviewandrating" style={{fontFamily: 'cursive' , fontSize: ' large', color: 'blue'}}>
+          <Link className="nav-link text-blue-900 underline" to="/Reviewandrating" >
             Feedback
           </Link>
         </li>
-        
-        </ul>
-        </div>
+      </ul>
+</div>
           <div className=" text-slate-600" onClick={handleShowMenu}>
             <div className="text-2xl cursor-pointer">
               <LuUserCircle2 className="text-slate-600 fw-bold fs-2 hover:text-blue-500 " />
