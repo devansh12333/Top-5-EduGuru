@@ -12,6 +12,7 @@ const Signup = () => {
     initialValues: {
       name: "",
       email: "",
+      avatar:"",
       password: "",
       cpassword: ""
     },
@@ -38,6 +39,32 @@ const Signup = () => {
     }
   });
 
+  const uploadFile = (e) => {
+    const file = e.target.files[0];
+    console.log(file);
+    const fd = new FormData();
+    fd.append('myfile', file);
+    fetch('http://localhost:5000/util/uploadfile', {
+      method: 'POST',
+      body: fd
+
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          toast.success('Photo Upload');
+          response.json()
+            .then((data) => {
+              signupForm.values.avatar = data.savedFile;
+            })
+        } else {
+          toast.error('some error occured')
+        }
+      }).catch((err) => {
+        console.log(err);
+        toast.error('some error occured')
+      });
+  }
+
   return (
     <>
 
@@ -56,7 +83,7 @@ const Signup = () => {
             style={{ maxWidth: 1000 }}
           >
             <div className="md:flex w-full">
-              <div className="hidden md:block w-1/2 bg-blue-900 py-10 px-10">
+              <div className="hidden md:block w-1/2 py-10 px-10">
                 <img className='h-full' src="https://static.vecteezy.com/system/resources/previews/010/308/207/original/online-education-cartoon-icon-illustration-education-technology-icon-concept-isolated-premium-flat-cartoon-style-vector.jpg" alt="" />
 
               </div>
@@ -109,8 +136,29 @@ const Signup = () => {
                       </div>
                     </div>
                   </div>
-
                   <div className="flex -mx-3">
+                      <div className="w-full px-3 mb-2">
+                        <label htmlFor="" className="text-xs font-semibold px-1">
+                          Image
+                        </label>
+                        <div className="flex">
+                          <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                     
+                          </div>
+                          <input
+                            type="file"
+                            onChange={uploadFile}
+                            required=''
+                            value={signupForm.values.avatar}
+                            className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                            placeholder="johnsmith@example.com"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+<div className="flex">
+                  <div className="flex -mx-3 w-1/2">
                     <div className="w-full px-3 mb-3">
                       <label htmlFor="" className="text-xs font-semibold px-1">
                         Password
@@ -130,7 +178,7 @@ const Signup = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex -mx-3">
+                  <div className="flex -mx-3 w-1/2">
                     <div className="w-full px-3 mb-3">
                       <label htmlFor="" className="text-xs font-semibold px-1">
                         Confirm Password
@@ -149,6 +197,7 @@ const Signup = () => {
                         />
                       </div>
                     </div>
+                  </div>
                   </div>
                   <div className="flex -mx-3">
                     <div className="w-full px-3 mb-5">

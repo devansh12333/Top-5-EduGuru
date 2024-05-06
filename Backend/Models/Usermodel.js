@@ -7,5 +7,6 @@ const userSchema = new Schema({
         type: String,
         default: "user",
       },
+      avatar:{type:String, default:"Avatar.png"}
 });
 module.exports = model('user', userSchema)

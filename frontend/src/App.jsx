@@ -32,7 +32,11 @@ import ViewPlayway from './component/Mainpage/Viewplayway'
 import Manageuniversity from './component/Admin/Manageuniversity'
 import AddUniversity from './component/Admin/Adduniversity'
 import Main from './component/Mainpage/Index'
-import Playwayreview from './component/playwayReview'
+
+import User from './component/User/Index'
+import Profile from './component/User/Profile'
+import Editprofile from './component/User/editProfile'
+
 
 const App = () => {
   return (
@@ -67,7 +71,13 @@ const App = () => {
                 <Route path="Playway" element={<Playway />} />
               </Route>
 
-           
+
+              <Route path='/User' element={<User />}>
+                <Route path='Profile' element={<Profile />} />
+                <Route path='editProfile' element={<Editprofile />} />
+
+              </Route>
+
               <Route path='Admin' element={<Admin />}>
 
                 <Route path='Dashboard' element={<Dashboard />} />
