@@ -37,6 +37,7 @@ import Mainpage from './component/Mainpage/Index'
 import User from './component/User/Index'
 import Profile from './component/User/Profile'
 import Editprofile from './component/User/editProfile'
+import TopCollege from './component/Mainpage/Top5College'
 
 
 const App = () => {
@@ -70,6 +71,7 @@ const App = () => {
                 <Route path="College" element={<College />} />
                 <Route path="University" element={<University />} />
                 <Route path="Playway" element={<Playway />} />
+                <Route path="Top5College" element={<TopCollege />} />
               </Route>
 
 
