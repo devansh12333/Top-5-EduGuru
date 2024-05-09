@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import StarRatings from "react-star-ratings";
 
-const College = () => {
+const TopCollege = () => {
   const [College, setCollege] = useState([])
 
   const [filterList, setfilterList] = useState([])
@@ -36,7 +36,7 @@ const College = () => {
     if (res.status === 200) {
       const data = await res.json();
       console.log(data);
-      setfilterList(data);
+      setfilterList(data)
       const ratingsData = await fetchReviews();
       let temp = data.map(college => (
         {
@@ -56,12 +56,6 @@ const College = () => {
     fetchCollegeData()
   }, [])
 
-  const filterproduct = (e) => {
-    const value = e.target.value;
-    setCollege(filterList.filter((col) => {
-      return (col.collegename.toLowerCase().includes(value.toLowerCase()))
-    }))
-  }
 
   const filterByCourses = (course) => {
     console.log(course);
@@ -69,12 +63,13 @@ const College = () => {
     setCollege(filteredColleges);
   }
 
+
   const displayCollegeData = () => {
     if (College.length === 0) {
       return <h1 className='text-center fw-bold' style={{ color: "seagreen" }}>No Data Found</h1>
     }
 
-    return College.map((col) => (
+    return College.slice(0, 5).map((col) => (
       <>
         <div className="row h-50 mt-5 shadow mb-3">
           <div className="col-md-3  ">
@@ -110,22 +105,7 @@ const College = () => {
     <>
 
 
-      <div className="container mb-4">
-        <div className="card w-full shadow py-2 border-none">
-          <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your College</h5>
-          <div className="input-group mb-3 w-75 mx-auto">
-            <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.." aria-describedby="basic-addon2" />
-            <div className="input-group-append">
-              <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>
-            </div>
-            <Link to='/Mainpage/Top5College'> <button className="bg-blue-900 mx-2 px-5  font-serif text-white rounded">Top 5</button>
-            </Link>
-          </div>
-          <div>
-          </div>
-        </div>
-      </div>
-
+      <div className="text-white d-flex justify-content-between bg-blue-900 container font-serif text-xl">
       <div className="text-white d-flex justify-content-between bg-blue-900 container font-serif text-xl">
         <button id="MA" value='a' onClick={(e) => filterByCourses("MA")} >MA</button>
         <button id="BA" value='a' onClick={(e) => filterByCourses("BA")}>BA</button>
@@ -140,6 +120,9 @@ const College = () => {
       </div>
 
 
+      </div>
+
+
       <div className="">
         {displayCollegeData()}
       </div>
@@ -148,4 +131,4 @@ const College = () => {
   )
 }
 
-export default College
+export default TopCollege

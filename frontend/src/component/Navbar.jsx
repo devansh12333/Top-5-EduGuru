@@ -35,14 +35,15 @@ const Navbar = () => {
 
   const showLoggedin = () => {
     if (loggedIn) {
-      return (<div className=" ">
+      return (
+      <div className=" ">
         <div className="container d-flex flex-wrap justify-content-end ">
 
           <div className="text-end">
-            <button onClick={logout} type="button" className="btn btn-danger  text-white px-3 py-1 rounded ">
+            <button onClick={logout} type="button" className="btn btn-danger mx-2 text-white px-3 py-1 rounded ">
               Logout
             </button>
-            <br />
+           
             <Link to={"/User/Profile"} type="button" className="btn btn-primary  text-white px-3 py-1 rounded ">
               Profile
             </Link>
@@ -105,24 +106,24 @@ const Navbar = () => {
 <div style={{fontFamily: "cursive",fontSize: "large"}}>
   <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
 <li className="nav-item">
-          <Link className="nav-link text-blue-900 underline" aria-current="page" to="/Home">
+          <Link className="nav-link text-blue-900 font-serif" aria-current="page" to="/Home">
             Home
           </Link>
         </li>
        
         <li className="nav-item">
-          <Link className="nav-link text-blue-900 underline" to="/Aboutus"  >
+          <Link className="nav-link text-blue-900 font-serif" to="/Aboutus"  >
             About us
           </Link>
         </li>
         
         <li className="nav-item">
-          <Link className="nav-link text-blue-900 underline " to="/Contactus" >
+          <Link className="nav-link text-blue-900 font-serif" to="/Contactus" >
             Contact us
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link text-blue-900 underline" to="/Reviewandrating" >
+          <Link className="nav-link text-blue-900 font-serif" to="/Reviewandrating" >
             Feedback
           </Link>
         </li>

@@ -70,6 +70,7 @@ const App = () => {
                 <Route path="College" element={<College />} />
                 <Route path="University" element={<University />} />
                 <Route path="Playway" element={<Playway />} />
+                <Route path="Top5College" element={<TopCollege />} />
               </Route>
 
 
