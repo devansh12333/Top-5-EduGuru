@@ -92,16 +92,34 @@ router.get("/getbycollege/:id", (req, res) => {
       res.status(500).json(err)
     });
 });
-
-router.get("/getbyproduct/:productid", (req, res) => {
-  Model.find({ product: req.params.productid }).populate('user')
+router.get("/getbyschool/:id", (req, res) => {
+  Model.find({ college: req.params.id }).populate('user')
     .then((result) => {
-      res.status(200).json(result);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json(err);
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
     });
 });
+router.get("/getbyuniversity/:id", (req, res) => {
+  Model.find({ college: req.params.id }).populate('user')
+    .then((result) => {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+    });
+});
+router.get("/getbyplayway/:id", (req, res) => {
+  Model.find({ college: req.params.id }).populate('user')
+    .then((result) => {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+    });
+});
+
+
 
 module.exports = router;

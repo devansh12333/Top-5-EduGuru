@@ -13,7 +13,6 @@ import School from './component/Mainpage/School'
 import College from './component/Mainpage/College'
 import University from './component/Mainpage/University'
 import Playway from './component/Mainpage/Playway'
-import Update from './component/Update'
 import ContactUs from './component/ContactUs'
 import Aboutus from './component/Aboutus'
 import Reviewandrating from './component/Reviewandrating'
@@ -36,11 +35,10 @@ import Mainpage from './component/Mainpage/Index'
 import User from './component/User/Index'
 import Profile from './component/User/Profile'
 import Editprofile from './component/User/editProfile'
-import ViewSchool from './component/Mainpage/Viewschool'
+import ViewSchool from './component/Mainpage/ViewSchool'
 import TopCollege from './component/Mainpage/Top5College'
-import TopSchool from './component/Mainpage/Top5School'
-import TopUniversity from './component/Mainpage/Top5University'
-import TopPlayway from './component/Mainpage/Top5Playway'
+import ForgotPassword from './component/Mainpage/ForgotPassword'
+import UpdateCollege from './component/Admin/UpdateCollege'
 
 
 const App = () => {
@@ -59,7 +57,6 @@ const App = () => {
               <Route path='/contactUs' element={<ContactUs />} />
               <Route path='/Aboutus' element={<Aboutus />} />
 
-              <Route path="/Update/:id" element={<Update />} />
 
               <Route path="/Reviewandrating" element={<Reviewandrating />} />
 
@@ -75,9 +72,7 @@ const App = () => {
                 <Route path="University" element={<University />} />
                 <Route path="Playway" element={<Playway />} />
                 <Route path="Top5College" element={<TopCollege />} />
-                <Route path="Top5School" element={<TopSchool />} />
-                <Route path="Top5University" element={<TopUniversity />} />
-                <Route path="Top5Playway" element={<TopPlayway/>} />
+                <Route path="forgotPassword" element={<ForgotPassword/>} />
               </Route>
 
 
@@ -100,6 +95,7 @@ const App = () => {
                 <Route path="ManagePlayway" element={<Manageplaway />} />
                 <Route path="Manageuniversity" element={<Manageuniversity />} />
                 <Route path="Manageuser" element={<Manageuser />} />
+                <Route path="updateCollege/:id" element={<UpdateCollege />} />
               </Route>
             </Routes>
           </SnackbarProvider>
