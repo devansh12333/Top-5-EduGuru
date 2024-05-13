@@ -38,6 +38,7 @@ import User from './component/User/Index'
 import Profile from './component/User/Profile'
 import Editprofile from './component/User/editProfile'
 import TopCollege from './component/Mainpage/Top5College'
+import ForgotPassword from './component/Mainpage/ForgotPassword'
 
 
 const App = () => {
@@ -72,6 +73,7 @@ const App = () => {
                 <Route path="University" element={<University />} />
                 <Route path="Playway" element={<Playway />} />
                 <Route path="Top5College" element={<TopCollege />} />
+                <Route path="forgotPassword" element={<ForgotPassword/>} />
               </Route>
 
 
