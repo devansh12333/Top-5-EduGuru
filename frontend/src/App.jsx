@@ -26,10 +26,6 @@ import Manageplaway from './component/Admin/Manageplayway'
 import Manageuser from './component/Admin/Manageuser'
 import ViewCollege from './component/Mainpage/Viewcollege'
 import ViewUniversity from './component/Mainpage/Viewuniversity'
-<<<<<<< HEAD
-
-=======
->>>>>>> 1e00cbdcf7444dd183d3767e53590e9e034c8149
 
 import ViewPlayway from './component/Mainpage/Viewplayway'
 import Manageuniversity from './component/Admin/Manageuniversity'
@@ -40,13 +36,9 @@ import User from './component/User/Index'
 import Profile from './component/User/Profile'
 import Editprofile from './component/User/editProfile'
 import ViewSchool from './component/Mainpage/ViewSchool'
-<<<<<<< HEAD
-
-=======
 import TopCollege from './component/Mainpage/Top5College'
 import ForgotPassword from './component/Mainpage/ForgotPassword'
 import UpdateCollege from './component/Admin/UpdateCollege'
->>>>>>> 1e00cbdcf7444dd183d3767e53590e9e034c8149
 
 
 const App = () => {

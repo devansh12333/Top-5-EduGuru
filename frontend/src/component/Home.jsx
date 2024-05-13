@@ -7,13 +7,12 @@ import Logo from '../../public/Logo.png'
 const Home = () => {
   return (
     <>
-
 <>
-
 
 <div className="conatiner-fluid " style={{ height: "80vh" }}>
         <div className="row p-5">
           <div className="col-md-6">
+            
             <span className='d-flex fs-5 ' style={{ color: "rgb(209, 189, 8)" }}> <IoStarSharp />
               <IoStarSharp />
               <IoStarSharp />

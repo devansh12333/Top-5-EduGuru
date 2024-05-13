@@ -10,7 +10,6 @@ const College = () => {
   const [products, setProducts] = useState([]);
   const [reviewList, setReviewList] = useState([]);
 
-
   const fetchReviews = async () => {
     const res = await fetch("http://localhost:3000/reviews/getall");
     console.log(res.status);

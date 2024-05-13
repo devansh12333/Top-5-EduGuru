@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-const University = () => {
-  return (
-    <div>University</div>
-=======
 import { useEffect, useState } from "react"
 import { FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom'
@@ -152,7 +145,6 @@ const University = () => {
       </div>
 
     </>
->>>>>>> 1e00cbdcf7444dd183d3767e53590e9e034c8149
   )
 }
 

@@ -14,7 +14,7 @@ const ForgotPassword = () => {
     const navigate = useNavigate();
 
     const checkMailExists = async () => {
-        const res = await fetch('http://localhost:3000/user/getbymail/${emailRef.current.value}');
+        const res = await fetch(`http://localhost:3000/user/getbymail/${emailRef.current.value}`);
         // console.log(res.status);
         const data = await res.json();
         // console.log(data);
@@ -24,10 +24,10 @@ const ForgotPassword = () => {
 
     const sendOTP = async () => {
         if (!await checkMailExists()) {
-            enqueueSnackbar('Email not registered', { variant: 'error' });
+            enqueueSnackbar(`Email not registered', { variant: 'error' }`);
             return;
         }
-        const res = await fetch('http://localhost:3000/util/sendotp', {
+        const res = await fetch(`http://localhost:3000/util/sendotp`, {
             method: 'POST',
             body: JSON.stringify({ email: emailRef.current.value }),
             headers: {
@@ -43,7 +43,7 @@ const ForgotPassword = () => {
     }
 
     const verifyOTP = async () => {
-        const res = await fetch('http://localhost:3000/util/verifyotp/${emailRef.current.value}/${otpRef.current.value}');
+        const res = await fetch(`http://localhost:3000/util/verifyotp/${emailRef.current.value}/${otpRef.current.value}`);
         // console.log(res.status);
         if (res.status === 200) {
             setShowForm(true);
@@ -53,7 +53,7 @@ const ForgotPassword = () => {
     }
 
     const updatePassword = async (values) => {
-        const res = await fetch('http://localhost:3000/user/update/${verifiedUser._id}', {
+        const res = await fetch(`http://localhost:3000/user/update/${verifiedUser._id}`, {
             method: 'PUT',
             body: JSON.stringify(values),
             headers: {
@@ -63,7 +63,7 @@ const ForgotPassword = () => {
         // console.log(res.status);
         if (res.status === 200) {
             enqueueSnackbar('Password updated successfully', { variant: 'success' });
-            navigate("/main/login")
+            navigate("/login")
         } else {
             enqueueSnackbar('Something went wrong', { variant: 'error' });
         }
