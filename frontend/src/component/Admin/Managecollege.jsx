@@ -49,7 +49,7 @@ const Managecollege = () => {
     }
     return (
         <div>
-           <Link to="/AddCollege"> <button className="bg-blue-900 text-white rounded-lg mt-4 py-2 px-5 ms-5 fs-5">Add College</button>
+           <Link to="/Admin/AddCollege"> <button className="bg-blue-900 text-white rounded-lg mt-4 py-2 px-5 ms-5 fs-5">Add College</button>
            </Link>
             <div className='container mt-5'>
                 <table className='table shadow'>

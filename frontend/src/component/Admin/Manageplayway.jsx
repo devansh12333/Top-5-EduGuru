@@ -39,7 +39,7 @@ const Manageplaway = () => {
                     <button className='btn btn-danger' onClick={() => {deletefunction(plaway._id)}}>Delete</button>
                 </td>
                 <td>
-                    <Link to={`/Update/${plaway._id}`} className='btn btn-success'>Update</Link>
+                    <Link to={`/Admin/updatePlayway/${plaway._id}`} className='btn btn-success'>Update</Link>
                 </td>
             </tr>
 
@@ -47,7 +47,7 @@ const Manageplaway = () => {
     }
     return (
         <div>
-           <Link to="/Addplaway"> <button className="bg-blue-900 text-white rounded-lg mt-4 py-2 px-5 ms-5 fs-5">Add plaway</button>
+           <Link to="/Admin/AddPlayway"> <button className="bg-blue-900 text-white rounded-lg mt-4 py-2 px-5 ms-5 fs-5">Add plaway</button>
            </Link>
             <div className='container mt-5'>
                 <table className='table shadow'>

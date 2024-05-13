@@ -29,13 +29,17 @@ const Manageschool = () => {
         return Data.map((school) => {
 
             return <tr>
+              <td><img src={'http://localhost:3000/' + school.image} /></td>
                 <td>{school.schoolname}</td>
                 <td>{school.email}</td>
+                <td>{school.phone}</td>
+                <td>{school.schooladdress}</td>
+                <td>{school.fees}</td>
                 <td>
                     <button className='btn btn-danger' onClick={() => {deletefunction(school._id)}}>Delete</button>
                 </td>
                 <td>
-                    <Link to={`/Update/${school._id}`}>Update</Link>
+                    <Link to={`/Admin/updateSchool/${school._id}`} className='btn btn-success'>Update</Link>
                 </td>
             </tr>
 
@@ -43,15 +47,20 @@ const Manageschool = () => {
     }
     return (
         <div>
-           <Link to="/Addschool"> <button className="btn btn-primary mt-4 py-2 px-5 ms-5 fs-5">Add school</button>
+           <Link to="/Admin/Addschool"> <button className="bg-blue-900 text-white rounded-lg mt-4 py-2 px-5 ms-5 fs-5">Add school</button>
            </Link>
             <div className='container mt-5'>
-                <table className='table table-dark'>
+                <table className='table shadow'>
                     <thead>
-                        <tr>
+
+                        <tr className='font-serif text-xl'>
+                            <th>Image</th>
                             <th>school</th>
                             <th>Email</th>
-                            <th></th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Fees</th>
+                            <th>Edit</th>
                             <th></th>
                         </tr>
                     </thead>
