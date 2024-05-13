@@ -5,11 +5,9 @@ import StarRatings from "react-star-ratings";
 
 const TopCollege = () => {
   const [College, setCollege] = useState([])
-
   const [filterList, setfilterList] = useState([])
   const [products, setProducts] = useState([]);
   const [reviewList, setReviewList] = useState([]);
-
 
   const fetchReviews = async () => {
     const res = await fetch("http://localhost:3000/reviews/getall");
@@ -20,7 +18,6 @@ const TopCollege = () => {
       return data;
     }
   }
-
   const calculateAvgRating = (reviews, collegeId) => {
     const collegeReviews = reviews.filter(review => review.college === collegeId);
     if (collegeReviews.length === 0) {
@@ -29,7 +26,6 @@ const TopCollege = () => {
     const totalRating = collegeReviews.reduce((acc, review) => acc + review.rating, 0);
     return totalRating / collegeReviews.length;
   }
-
   const fetchCollegeData = async () => {
     const res = await fetch("http://localhost:3000/college/getall");
     console.log(res.status);
@@ -51,24 +47,18 @@ const TopCollege = () => {
 
     }
   }
-
   useEffect(() => {
     fetchCollegeData()
   }, [])
-
-
   const filterByCourses = (course) => {
     console.log(course);
     const filteredColleges = filterList.filter(col => col.courses.toLowerCase().includes(course.toLowerCase()));
     setCollege(filteredColleges);
   }
-
-
   const displayCollegeData = () => {
     if (College.length === 0) {
       return <h1 className='text-center fw-bold' style={{ color: "seagreen" }}>No Data Found</h1>
     }
-
     return College.slice(0, 5).map((col) => (
       <>
         <div className="row h-50 mt-5 shadow mb-3">
@@ -92,19 +82,12 @@ const TopCollege = () => {
           <div className="col-md-3">
           </div>
         </div>
-
       </>
     ))
   }
 
-
-
   return (
-
-
     <>
-
-
       <div className="text-white d-flex justify-content-between bg-blue-900 container font-serif text-xl">
       <div className="text-white d-flex justify-content-between bg-blue-900 container font-serif text-xl">
         <button id="MA" value='a' onClick={(e) => filterByCourses("MA")} >MA</button>
@@ -118,11 +101,7 @@ const TopCollege = () => {
         <button id="Bsc" value='a' onClick={(e) => filterByCourses("Bsc")}>Bsc</button>
         <button id="Msc" value='a' onClick={(e) => filterByCourses("Msc")}>Msc</button>
       </div>
-
-
       </div>
-
-
       <div className="">
         {displayCollegeData()}
       </div>

@@ -27,7 +27,6 @@ import Manageplaway from './component/Admin/Manageplayway'
 import Manageuser from './component/Admin/Manageuser'
 import ViewCollege from './component/Mainpage/Viewcollege'
 import ViewUniversity from './component/Mainpage/Viewuniversity'
-import Viewschool from './component/Mainpage/Viewschool'
 
 import ViewPlayway from './component/Mainpage/Viewplayway'
 import Manageuniversity from './component/Admin/Manageuniversity'
@@ -37,8 +36,15 @@ import Mainpage from './component/Mainpage/Index'
 import User from './component/User/Index'
 import Profile from './component/User/Profile'
 import Editprofile from './component/User/editProfile'
+import ViewSchool from './component/Mainpage/Viewschool'
 import TopCollege from './component/Mainpage/Top5College'
+<<<<<<< HEAD
 import ForgotPassword from './component/Mainpage/ForgotPassword'
+=======
+import TopSchool from './component/Mainpage/Top5School'
+import TopUniversity from './component/Mainpage/Top5University'
+import TopPlayway from './component/Mainpage/Top5Playway'
+>>>>>>> d57287ea0cce443e3d319cf201129fbecb0221d8
 
 
 const App = () => {
@@ -66,14 +72,20 @@ const App = () => {
               <Route path='Mainpage' element={<Mainpage />}>
                 <Route path="Viewcollege/:id" element={<ViewCollege />} />
                 <Route path="Viewuniversity/:id" element={<ViewUniversity />} />
-                <Route path="Viewschool/:id" element={<Viewschool />} />
+                <Route path="Viewschool/:id" element={<ViewSchool />} />
                 <Route path="Viewplayway/:id" element={<ViewPlayway />} />
                 <Route path="School" element={<School />} />
                 <Route path="College" element={<College />} />
                 <Route path="University" element={<University />} />
                 <Route path="Playway" element={<Playway />} />
                 <Route path="Top5College" element={<TopCollege />} />
+<<<<<<< HEAD
                 <Route path="forgotPassword" element={<ForgotPassword/>} />
+=======
+                <Route path="Top5School" element={<TopSchool />} />
+                <Route path="Top5University" element={<TopUniversity />} />
+                <Route path="Top5Playway" element={<TopPlayway/>} />
+>>>>>>> d57287ea0cce443e3d319cf201129fbecb0221d8
               </Route>
 
 
