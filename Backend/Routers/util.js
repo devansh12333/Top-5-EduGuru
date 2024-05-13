@@ -33,9 +33,7 @@ const generateOTP = () => {
     return otp;
 }
 
-router.post('/uploadfile', uploader.single('myfile'), (req, res) => {
-    res.json({status : 'success'});
-})
+
 
 router.post('/sendotp', (req, res) => {
     const otp = generateOTP();

@@ -41,7 +41,7 @@ const Managecollege = () => {
                     <button className='btn btn-danger' onClick={() => {deletefunction(college._id)}}>Delete</button>
                 </td>
                 <td>
-                    <Link to={`/Update/${college._id}`} className='btn btn-success'>Update</Link>
+                    <Link to={`/Admin/updateCollege/${college._id}`} className='btn btn-success'>Update</Link>
                 </td>
             </tr>
 
