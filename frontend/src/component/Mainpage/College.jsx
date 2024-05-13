@@ -55,6 +55,8 @@ const College = () => {
     fetchCollegeData()
   }, [])
 
+  
+
   const filterproduct = (e) => {
     const value = e.target.value;
     setCollege(filterList.filter((col) => {
