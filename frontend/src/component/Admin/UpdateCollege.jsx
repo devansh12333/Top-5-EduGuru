@@ -2,15 +2,15 @@ import { Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const UpdateProduct = () => {
+const UpdateCollege = () => {
     const { id } = useParams();
     const [productData, setProductData] = useState(null);
     const [selFile, setSelFile] = useState("");
 
     const navigate = useNavigate();
 
-    const fetchschool = async () => {
-        const res = await fetch("http://localhost:3000/school/getbyid/" + id);
+    const fetchcollege = async () => {
+        const res = await fetch("http://localhost:3000/college/getbyid/" + id);
         const data = await res.json();
 
         console.log(data);
@@ -18,13 +18,13 @@ const UpdateProduct = () => {
     };
 
     useEffect(() => {
-        fetchschool();
+        fetchcollege();
     }, []);
 
     const submitForm = async (values) => {
         console.log(values);
         values.simage = selFile;
-        const res = await fetch('http://localhost:3000/school/update/' + id, {
+        const res = await fetch('http://localhost:3000/college/update/' + id, {
             method: 'PUT',
             body: JSON.stringify(values),
             headers: {
@@ -57,55 +57,55 @@ const UpdateProduct = () => {
 
     return (
         <div>
-            <div className="col-md-3 mx-auto pt-5">
+            <div className="col-md-3 mx-auto w-1/2 ">
                 <div className="card">
                     <div className="card-body">
-                        <h3 className="text-center my-5">Update Service</h3>
+                        <h3 className="text-center text-black bg-blue-900 mb-5 text-white py-2 text-xl  ">Update College</h3>
                         {productData !== null ? (
                             <Formik initialValues={productData} onSubmit={submitForm}>
 
-                                {(addSchoolForm) => (
+                                {(addcollegeForm) => (
 
-                                    <form onSubmit={addSchoolForm.handleSubmit}>
-                                        <label>School Name</label>
+                                    <form onSubmit={addcollegeForm.handleSubmit}>
+                                        <label>College Name</label>
 
                                         <span
                                             style={{ color: "red", fontSize: 10, marginLeft: 10 }}
                                         >
-                                            {addSchoolForm.errors.schoolname}
+                                            {addcollegeForm.errors.collegename}
                                         </span>
                                         <input
-                                            id="schoolname"
-                                            onChange={addSchoolForm.handleChange}
-                                            value={addSchoolForm.values.schoolname}
+                                            id="collegename"
+                                            onChange={addcollegeForm.handleChange}
+                                            value={addcollegeForm.values.collegename}
                                             type="text"
                                             className="form-control mb-4"
                                         />
 
-                                        <label>Product Details</label>
+                                        <label>Courses</label>
                                         <span
                                             style={{ color: "red", fontSize: 10, marginLeft: 10 }}
                                         >
-                                            {addSchoolForm.errors.schooldetails}
+                                            {addcollegeForm.errors.courses}
                                         </span>
                                         <input
-                                            id="schooldetails"
-                                            onChange={addSchoolForm.handleChange}
-                                            value={addSchoolForm.values.schooldetails}
+                                            id="collegedetails"
+                                            onChange={addcollegeForm.handleChange}
+                                            value={addcollegeForm.values.courses}
                                             type="text"
                                             className="form-control mb-4"
                                         />
 
-                                        <label>Product Address</label>
+                                        <label>Address</label>
                                         <span
                                             style={{ color: "red", fontSize: 10, marginLeft: 10 }}
                                         >
-                                            {addSchoolForm.errors.schooladdress}
+                                            {addcollegeForm.errors.collegeaddress}
                                         </span>
                                         <input
-                                            id="schooladdress"
-                                            onChange={addSchoolForm.handleChange}
-                                            value={addSchoolForm.values.schooladdress}
+                                            id="collegeaddress"
+                                            onChange={addcollegeForm.handleChange}
+                                            value={addcollegeForm.values.collegeaddress}
                                             type="text"
                                             className="form-control mb-4"
                                         />
@@ -113,40 +113,28 @@ const UpdateProduct = () => {
                                         <span
                                             style={{ color: "red", fontSize: 10, marginLeft: 10 }}
                                         >
-                                            {addSchoolForm.errors.phone}
+                                            {addcollegeForm.errors.phone}
                                         </span>
                                         <input
                                             id="phone"
-                                            onChange={addSchoolForm.handleChange}
-                                            value={addSchoolForm.values.phone}
+                                            onChange={addcollegeForm.handleChange}
+                                            value={addcollegeForm.values.phone}
                                             type="number"
                                             className="form-control mb-4"
                                         />
 
-                                        <label>Fees</label>
-                                        <span
-                                            style={{ color: "red", fontSize: 10, marginLeft: 10 }}
-                                        >
-                                            {addSchoolForm.errors.fees}
-                                        </span>
-                                        <input
-                                            id="fees"
-                                            onChange={addSchoolForm.handleChange}
-                                            value={addSchoolForm.values.fees}
-                                            type="number"
-                                            className="form-control mb-4"
-                                        />
 
-<label>Email</label>
+
+                                        <label>Email</label>
                                         <span
                                             style={{ color: "red", fontSize: 10, marginLeft: 10 }}
                                         >
-                                            {addSchoolForm.errors.email}
+                                            {addcollegeForm.errors.email}
                                         </span>
                                         <input
                                             id="email"
-                                            onChange={addSchoolForm.handleChange}
-                                            value={addSchoolForm.values.email}
+                                            onChange={addcollegeForm.handleChange}
+                                            value={addcollegeForm.values.email}
                                             type="email"
                                             className="form-control mb-4"
                                         />
@@ -159,8 +147,8 @@ const UpdateProduct = () => {
                                             placeholder="Upload Image"
                                             onChange={uploadFile} />
 
-                                        <button type="submit" className="btn btn-primary w-100">
-                                            Submit
+                                        <button type="submit" className="btn bg-blue-900 text-white w-100">
+                                            Update
                                         </button>
                                     </form>
                                 )}
@@ -175,4 +163,4 @@ const UpdateProduct = () => {
     );
 };
 
-export default UpdateProduct;
+export default UpdateCollege;

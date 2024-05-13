@@ -13,7 +13,6 @@ import School from './component/Mainpage/School'
 import College from './component/Mainpage/College'
 import University from './component/Mainpage/University'
 import Playway from './component/Mainpage/Playway'
-import Update from './component/Update'
 import ContactUs from './component/ContactUs'
 import Aboutus from './component/Aboutus'
 import Reviewandrating from './component/Reviewandrating'
@@ -27,7 +26,10 @@ import Manageplaway from './component/Admin/Manageplayway'
 import Manageuser from './component/Admin/Manageuser'
 import ViewCollege from './component/Mainpage/Viewcollege'
 import ViewUniversity from './component/Mainpage/Viewuniversity'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e00cbdcf7444dd183d3767e53590e9e034c8149
 
 import ViewPlayway from './component/Mainpage/Viewplayway'
 import Manageuniversity from './component/Admin/Manageuniversity'
@@ -38,7 +40,13 @@ import User from './component/User/Index'
 import Profile from './component/User/Profile'
 import Editprofile from './component/User/editProfile'
 import ViewSchool from './component/Mainpage/ViewSchool'
+<<<<<<< HEAD
 
+=======
+import TopCollege from './component/Mainpage/Top5College'
+import ForgotPassword from './component/Mainpage/ForgotPassword'
+import UpdateCollege from './component/Admin/UpdateCollege'
+>>>>>>> 1e00cbdcf7444dd183d3767e53590e9e034c8149
 
 
 const App = () => {
@@ -57,7 +65,6 @@ const App = () => {
               <Route path='/contactUs' element={<ContactUs />} />
               <Route path='/Aboutus' element={<Aboutus />} />
 
-              <Route path="/Update/:id" element={<Update />} />
 
               <Route path="/Reviewandrating" element={<Reviewandrating />} />
 
@@ -72,6 +79,8 @@ const App = () => {
                 <Route path="College" element={<College />} />
                 <Route path="University" element={<University />} />
                 <Route path="Playway" element={<Playway />} />
+                <Route path="Top5College" element={<TopCollege />} />
+                <Route path="forgotPassword" element={<ForgotPassword/>} />
               </Route>
 
 
@@ -94,6 +103,7 @@ const App = () => {
                 <Route path="ManagePlayway" element={<Manageplaway />} />
                 <Route path="Manageuniversity" element={<Manageuniversity />} />
                 <Route path="Manageuser" element={<Manageuser />} />
+                <Route path="updateCollege/:id" element={<UpdateCollege />} />
               </Route>
             </Routes>
           </SnackbarProvider>

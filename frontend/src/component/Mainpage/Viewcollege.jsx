@@ -92,14 +92,14 @@ const ViewCollege = () => {
 
         return reviews.map((rev) => (
             <>
-                <div className="row h-50">
+                <div className="row h-50 shadow mb-3">
                     <div className="rev-md-6 py-4">
                         <p className='text-warning ' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
                         <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{rev.name}</p>
                         <p className=' '>{rev.comment}</p>
                     </div>
                 </div>
-                <hr />
+               
             </>
         ))
     }
@@ -123,18 +123,17 @@ const ViewCollege = () => {
                             <div className=" ">
                                 <div className="row">
                                     <div className="col-md-3 mb-3">
-                                        <h5 className="fs-5 ms-2 font-serif mt-3">Contact <br /> Details </h5>
+                                        <h5 className="fs-5 ms-2 font-serif mt-3 bg-blue-900 text-white px-3 py-1">Contact  Details  </h5>
                                     </div>
-                                    <div className="col-md-9">
+                                    <div className="col-md-9 ">
                                         <p className=' fs-5  text-secondary' >Email : {CollegeList.email}</p>
                                         <p className=' fs-5  mb-2 text-secondary'>Contact : {CollegeList.phone}</p>
+                                        <p className=' fs-5  mb-2 text-secondary'>Fees : {CollegeList.fees}</p>
                                     </div>
                                 </div>
                             </div>
 
                             <p className=' fs-5 text-secondary mb-5'>{CollegeList.collegedetail}</p>
-                            {/* <p className=' mb-2  ' ><span className="fw-bold me-1">Phone no:</span>{CollegeList.phone}</p>
-                            <p className="mb-5"><span className="fw-bold me-1">Email:</span>{CollegeList.email}</p> */}
                         </div>
                     </div>
                 ) : (
@@ -144,7 +143,7 @@ const ViewCollege = () => {
                 )
             }
             <div className="container">
-                <div className="row card py-3 px-4 border-none  shadow">
+                <div className="row card py-3 mb-4 px-4 border-none  shadow">
                     <div className="col-md-8">
                         <h2 className="">Reviews And Ratings</h2>
                         <p className="fs-4 mb-2"></p>
@@ -154,7 +153,7 @@ const ViewCollege = () => {
                     </div>
                 </div>
             </div>
-            <div className="row">
+            <div className="row ">
                 {ReviewsData()}
             </div>
 

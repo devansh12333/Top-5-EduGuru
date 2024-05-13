@@ -35,22 +35,23 @@ const Navbar = () => {
 
   const showLoggedin = () => {
     if (loggedIn) {
-      return (<div className=" ">
-        <div className="container d-flex flex-wrap justify-content-end ">
+      return (
+        <div className=" ">
+          <div className="container d-flex flex-wrap justify-content-end ">
 
-          <div className="text-end">
-            <button onClick={logout} type="button" className="btn btn-danger  text-white px-3 py-1 rounded ">
-              Logout
-            </button>
-            <br />
-            <Link to={"/User/Profile"} type="button" className="btn btn-primary  text-white px-3 py-1 rounded ">
-              Profile
-            </Link>
+            <div className="text-end">
+              <button onClick={logout} type="button" className="btn btn-danger mx-2 text-white px-3 py-1 rounded ">
+                Logout
+              </button>
+
+              <Link to={"/User/Profile"} type="button" className="btn btn-primary  text-white px-3 py-1 rounded ">
+                Profile
+              </Link>
 
 
+            </div>
           </div>
         </div>
-      </div>
       );
     } else {
       return <div className=" ">
@@ -86,7 +87,7 @@ const Navbar = () => {
               <Offcanvas.Body>
 
 
-              
+
                 <Link className="nav-link fs-4 bg-blue-900 text-white rounded-lg py-1 font-serif hover:bg-blue-600 text-center mb-3" aria-current="page" to="/Mainpage/Playway">
                   Playway
                 </Link>
@@ -102,32 +103,32 @@ const Navbar = () => {
               </Offcanvas.Body>
             </Offcanvas>
           </div>
-<div style={{fontFamily: "cursive",fontSize: "large"}}>
-  <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-<li className="nav-item">
-          <Link className="nav-link text-blue-900 underline" aria-current="page" to="/Home">
-            Home
-          </Link>
-        </li>
-       
-        <li className="nav-item">
-          <Link className="nav-link text-blue-900 underline" to="/Aboutus"  >
-            About us
-          </Link>
-        </li>
-        
-        <li className="nav-item">
-          <Link className="nav-link text-blue-900 underline " to="/Contactus" >
-            Contact us
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link text-blue-900 underline" to="/Reviewandrating" >
-            Feedback
-          </Link>
-        </li>
-      </ul>
-</div>
+          <div style={{ fontFamily: "cursive", fontSize: "large" }}>
+            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link className="nav-link text-blue-900 font-serif" aria-current="page" to="/Home">
+                  Home
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link text-blue-900 font-serif" to="/Aboutus"  >
+                  About us
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link text-blue-900 font-serif" to="/Contactus" >
+                  Contact us
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link text-blue-900 font-serif" to="/Reviewandrating" >
+                  Feedback
+                </Link>
+              </li>
+            </ul>
+          </div>
           <div className=" text-slate-600" onClick={handleShowMenu}>
             <div className="text-2xl cursor-pointer">
               <LuUserCircle2 className="text-slate-600 fw-bold fs-2 hover:text-blue-500 " />
