@@ -114,7 +114,7 @@ const ViewCollege = () => {
     </div>
 
 <div className="col-md-2 my-auto">
-<button className="bg-red-600  text-white rounded-lg px-4 py-1"  onClick={() => {deletefunction(rev._id)}}>Delete</button>
+{/* <button className="bg-red-600  text-white rounded-lg px-4 py-1"  onClick={() => {deletefunction(rev._id)}}>Delete</button> */}
 
 </div>
 </div>

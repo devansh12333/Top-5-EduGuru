@@ -38,10 +38,11 @@ import Editprofile from './component/User/editProfile'
 import TopCollege from './component/Mainpage/Top5College'
 import ForgotPassword from './component/Mainpage/ForgotPassword'
 import UpdateCollege from './component/Admin/UpdateCollege'
-import ViewSchool from './component/Mainpage/Viewschool'
+import ViewSchool from './component/Mainpage/ViewSchool'
 import UpdatePlayway from './component/Admin/UpdatePlayway'
 import UpdateSchool from './component/Admin/UpdateSchool'
 import UpdateUniversity from './component/Admin/UpdateUniversity'
+import TopPlayway from './component/Mainpage/Top5Playway'
 
 
 const App = () => {
@@ -75,6 +76,7 @@ const App = () => {
                 <Route path="University" element={<University />} />
                 <Route path="Playway" element={<Playway />} />
                 <Route path="Top5College" element={<TopCollege />} />
+                <Route path="Top5Playway" element={<TopPlayway />} />
                 <Route path="forgotPassword" element={<ForgotPassword/>} />
               </Route>
 

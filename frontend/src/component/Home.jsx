@@ -51,7 +51,7 @@ const Home = () => {
         />
         <div className="text-gray-500 sm:text-lg dark:text-gray-400">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-            Work with tools you already use
+          Discover, Play, and Learn: The Adventure of Education
           </h2>
           <p className="mb-8 font-light lg:text-xl">
           Here, we believe that learning through play is the cornerstone of early childhood education. Our carefully curated playway curriculum is designed to foster holistic development while making learning fun and engaging for young minds.
@@ -127,7 +127,7 @@ const Home = () => {
     
         <div className="text-gray-500 sm:text-lg dark:text-gray-400">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-            We invest in the world’s potential
+          Tiny Steps, Big Dreams: Crafting Tomorrow's Leaders Today
           </h2>
           <p className="mb-8 font-light lg:text-xl">
           Our dedication to fostering a love for learning empowers students to become lifelong learners and leaders
@@ -266,7 +266,7 @@ const Home = () => {
             99.99% uptime
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
-            For Landwind, with zero maintenance downtime
+             With zero maintenance downtime
           </p>
         </div>
         <div>
@@ -302,7 +302,7 @@ const Home = () => {
             100+ countries
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
-            Have used Landwind to create functional websites
+            We are available 24X7
           </p>
         </div>
         <div>
@@ -318,7 +318,7 @@ const Home = () => {
             5+ Million
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
-            Transactions per day
+            More than 200k visitors per day
           </p>
         </div>
       </div>
@@ -665,7 +665,7 @@ const Home = () => {
       <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © 2023{" "}
         <a href="https://flowbite.com/" className="hover:underline">
-          Flowbite™
+          Top5eduguru
         </a>
         . All Rights Reserved.
       </span>
