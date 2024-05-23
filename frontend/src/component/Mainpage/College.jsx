@@ -139,7 +139,6 @@ const College = () => {
         <button id="Msc" value='a' onClick={(e) => filterByCourses("Msc")}>Msc</button>
       </div>
 
-
       <div className="">
         {displayCollegeData()}
       </div>
