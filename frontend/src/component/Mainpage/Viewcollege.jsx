@@ -42,7 +42,16 @@ const ViewCollege = () => {
         fetchreviewsDAta()
     }, [])
 
-
+    const deletefunction = async (id) => {
+        console.log(id);
+    
+        const res = await fetch('http://localhost:3000/reviews/delete/' + id, { method: 'DELETE' })
+    
+        if (res.status === 200) {
+            fetchreviewsDAta();
+        }
+    }
+    
 
 
     const ratingForm = () => {
@@ -92,13 +101,25 @@ const ViewCollege = () => {
 
         return reviews.map((rev) => (
             <>
-                <div className="row h-50 shadow mb-3">
-                    <div className="rev-md-6 py-4">
-                        <p className='text-warning ' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
-                        <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{rev.name}</p>
-                        <p className=' '>{rev.comment}</p>
-                    </div>
-                </div>
+
+<div className="row h-50 shadow mb-4 py-3">
+    <div className="col-md-1">
+    <img className='w-16 h-16 rounded-full' src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg" alt="" />
+
+    </div>
+    <div className="col-md-9">
+    <p className='text-warning ' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
+    <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{currentUser.name}</p>
+    <p className=' '>{rev.comment}</p>
+    </div>
+
+<div className="col-md-2 my-auto">
+{/* <button className="bg-red-600  text-white rounded-lg px-4 py-1"  onClick={() => {deletefunction(rev._id)}}>Delete</button> */}
+
+</div>
+</div>
+
+                
                
             </>
         ))

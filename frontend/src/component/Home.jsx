@@ -7,13 +7,12 @@ import Logo from '../../public/Logo.png'
 const Home = () => {
   return (
     <>
-
 <>
-
 
 <div className="conatiner-fluid " style={{ height: "80vh" }}>
         <div className="row p-5">
           <div className="col-md-6">
+            
             <span className='d-flex fs-5 ' style={{ color: "rgb(209, 189, 8)" }}> <IoStarSharp />
               <IoStarSharp />
               <IoStarSharp />
@@ -52,7 +51,7 @@ const Home = () => {
         />
         <div className="text-gray-500 sm:text-lg dark:text-gray-400">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-            Work with tools you already use
+          Discover, Play, and Learn: The Adventure of Education
           </h2>
           <p className="mb-8 font-light lg:text-xl">
           Here, we believe that learning through play is the cornerstone of early childhood education. Our carefully curated playway curriculum is designed to foster holistic development while making learning fun and engaging for young minds.
@@ -128,7 +127,7 @@ const Home = () => {
     
         <div className="text-gray-500 sm:text-lg dark:text-gray-400">
           <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-            We invest in the world’s potential
+          Tiny Steps, Big Dreams: Crafting Tomorrow's Leaders Today
           </h2>
           <p className="mb-8 font-light lg:text-xl">
           Our dedication to fostering a love for learning empowers students to become lifelong learners and leaders
@@ -188,39 +187,7 @@ const Home = () => {
     </div>
   </section>
 
-  {/* <section className="bg-white dark:bg-gray-900">
-    <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
-      <div className="  lg:col-span-7">
-        <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
-       Eduguru Spotlight: Unveiling the Best
-        </h1>
-        <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-          This free and open-source landing page template was built using the
-          utility classes from{" "}
-          <a href="https://tailwindcss.com" className="hover:underline">
-            Tailwind CSS
-          </a>{" "}
-          and based on the components from the{" "}
-          <a
-            href="https://flowbite.com/docs/getting-started/introduction/"
-            className="hover:underline"
-          >
-            Flowbite Library
-          </a>{" "}
-          and the{" "}
-          <a href="https://flowbite.com/blocks/" className="hover:underline">
-            Blocks System
-          </a>
-          .
-        </p>
-       
-      </div>
-      <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-        <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202206/Best-colleges-commerce-a.jpg?VersionId=li4rgeqFtk6gbD5CNq8wdr3E2J9TVuXj&size=690:388" alt="hero image" />
-      </div>
-    </div>
-  </section>
-  */}
+ 
 
 
   {/* End block */}
@@ -299,7 +266,7 @@ const Home = () => {
             99.99% uptime
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
-            For Landwind, with zero maintenance downtime
+             With zero maintenance downtime
           </p>
         </div>
         <div>
@@ -335,7 +302,7 @@ const Home = () => {
             100+ countries
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
-            Have used Landwind to create functional websites
+            We are available 24X7
           </p>
         </div>
         <div>
@@ -351,7 +318,7 @@ const Home = () => {
             5+ Million
           </h3>
           <p className="font-light text-gray-500 dark:text-gray-400">
-            Transactions per day
+            More than 200k visitors per day
           </p>
         </div>
       </div>
@@ -698,7 +665,7 @@ const Home = () => {
       <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © 2023{" "}
         <a href="https://flowbite.com/" className="hover:underline">
-          Flowbite™
+          Top5eduguru
         </a>
         . All Rights Reserved.
       </span>

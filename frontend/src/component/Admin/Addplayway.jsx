@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
-const addCollegeSchema = Yup.object().shape({});
+const addPlaywaySchema = Yup.object().shape({});
 
 import toast from 'react-hot-toast';
 
@@ -36,13 +36,13 @@ const AddPlayway = () => {
             action.resetForm();
             if (res.status === 200) {
                 toast("Item uploaded successfully")
-                Navigate("/Playway")
+               // Navigate("/Playway")
             }
             else {
                 toast("Something went wrong")
             }
         },
-        validationSchema: addCollegeSchema,
+        validationSchema: addPlaywaySchema,
 
     });
 

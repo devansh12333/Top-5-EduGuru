@@ -199,9 +199,7 @@ const Signup = () => {
                         </div>
                       </div>
                     </div>
-                    <Link to="/Mainpage/forgotPassword" >
-                      <p className="text-end text-blue-800 mb-4">
-                      Forgot Password ?</p></Link>
+                    
                     <div className="flex -mx-3">
                       <div className="w-full px-3 mb-5">
                         <button className="block w-full max-w-xs mx-auto bg-blue-900 hover:bg-blue-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">

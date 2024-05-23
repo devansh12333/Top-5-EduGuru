@@ -1,4 +1,5 @@
 import { LuUserCircle2 } from "react-icons/lu";
+import { PiListDashesBold } from "react-icons/pi";
 
 import logo from '../../public/Logo2.png'
 // import { Link } from 'react-router-dom'
@@ -75,9 +76,9 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg py-0 bg-white sticky-top shadow-lg">
 
         <div className="container-fluid">
-          <div>
+          <div className="d-flex">
+          <PiListDashesBold className="text-4xl my-auto" onClick={handleShow} />
 
-            <img src={logo} onClick={handleShow} alt="" style={{ width: "200px" }} />
             {/* </Button> */}
             <Offcanvas show={show} onHide={handleClose}>
               <Offcanvas.Header closeButton >

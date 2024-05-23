@@ -1,6 +1,39 @@
-import React from 'react'
+import { useFormik } from 'formik';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const ContactUs = () => {
+
+    const Navigate = useNavigate();
+    const addcontactForm = useFormik({
+        initialValues: {
+            fullName: "",
+            phoneno: "",
+            subject: "",
+            email: "",
+            message: "",
+        },
+
+        onSubmit: async (values, action) => {
+            console.log(values);
+            const res = await fetch("http://localhost:3000/contact/add", {
+                method: "POST",
+                body: JSON.stringify(values),
+                headers: { "Content-type": "application/json" },
+            });
+            console.log(res.status);
+            action.resetForm();
+            if (res.status === 200) {
+                toast("Item uploaded successfully")
+                Navigate("/ContactUs")
+            }
+            else {
+                toast("Something went wrong")
+            }
+        },
+
+    });
+
   return (
     <><>
     
@@ -110,28 +143,13 @@ const ContactUs = () => {
                       <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z" />
                     </svg>
                   </div>
-                  <div>
-                    <h4 className="mb-3">Opening Hours</h4>
-                    <div className="d-flex mb-1">
-                      <p className="text-secondary fw-bold mb-0 me-5">
-                        Mon - Fri
-                      </p>
-                      <p className="text-secondary mb-0">9am - 5pm</p>
-                    </div>
-                    <div className="d-flex">
-                      <p className="text-secondary fw-bold mb-0 me-5">
-                        Sat - Sun
-                      </p>
-                      <p className="text-secondary mb-0">9am - 2pm</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="col-12 col-lg-6">
             <div className="bg-white border rounded shadow-sm overflow-hidden">
-              <form action="#!">
+              <form onSubmit={addcontactForm.handleSubmit}>
                 <div className="row gy-4 gy-xl-5 p-4 p-xl-5">
                   <div className="col-12">
                     <label htmlFor="fullname" className="form-label">
@@ -140,9 +158,10 @@ const ContactUs = () => {
                     <input
                       type="text"
                       className="form-control"
-                      id="fullname"
-                      name="fullname"
-                      defaultValue=""
+                      id="fullName"
+                      name="fullName"
+                      value={addcontactForm.values.fullName}
+                      onChange={addcontactForm.handleChange}
                       required=""
                     />
                   </div>
@@ -168,7 +187,8 @@ const ContactUs = () => {
                         className="form-control"
                         id="email"
                         name="email"
-                        defaultValue=""
+                        value={addcontactForm.values.email}
+                        onChange={addcontactForm.handleChange}
                         required=""
                       />
                     </div>
@@ -193,9 +213,10 @@ const ContactUs = () => {
                       <input
                         type="tel"
                         className="form-control"
-                        id="phone"
-                        name="phone"
-                        defaultValue=""
+                        id="phoneno"
+                        name="phoneno"
+                        value={addcontactForm.values.phoneno}
+onChange={addcontactForm.handleChange}
                       />
                     </div>
                   </div>
@@ -208,7 +229,8 @@ const ContactUs = () => {
                       className="form-control"
                       id="subject"
                       name="subject"
-                      defaultValue=""
+                      value={addcontactForm.values.subject}
+                      onChange={addcontactForm.handleChange}
                       required=""
                     />
                   </div>
@@ -222,12 +244,13 @@ const ContactUs = () => {
                       name="message"
                       rows={3}
                       required=""
-                      defaultValue={""}
+                      value={addcontactForm.values.message}
+                      onChange={addcontactForm.handleChange}
                     />
                   </div>
                   <div className="col-12">
                     <div className="d-grid">
-                      <button className="btn btn-primary btn-lg" type="submit">
+                      <button type="submit" className="btn btn-primary btn-lg">
                         Send Message
                       </button>
                     </div>

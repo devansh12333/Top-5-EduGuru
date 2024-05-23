@@ -35,10 +35,14 @@ import Mainpage from './component/Mainpage/Index'
 import User from './component/User/Index'
 import Profile from './component/User/Profile'
 import Editprofile from './component/User/editProfile'
-import ViewSchool from './component/Mainpage/ViewSchool'
 import TopCollege from './component/Mainpage/Top5College'
 import ForgotPassword from './component/Mainpage/ForgotPassword'
 import UpdateCollege from './component/Admin/UpdateCollege'
+import ViewSchool from './component/Mainpage/ViewSchool'
+import UpdatePlayway from './component/Admin/UpdatePlayway'
+import UpdateSchool from './component/Admin/UpdateSchool'
+import UpdateUniversity from './component/Admin/UpdateUniversity'
+import TopPlayway from './component/Mainpage/Top5Playway'
 
 
 const App = () => {
@@ -72,6 +76,7 @@ const App = () => {
                 <Route path="University" element={<University />} />
                 <Route path="Playway" element={<Playway />} />
                 <Route path="Top5College" element={<TopCollege />} />
+                <Route path="Top5Playway" element={<TopPlayway />} />
                 <Route path="forgotPassword" element={<ForgotPassword/>} />
               </Route>
 
@@ -96,6 +101,9 @@ const App = () => {
                 <Route path="Manageuniversity" element={<Manageuniversity />} />
                 <Route path="Manageuser" element={<Manageuser />} />
                 <Route path="updateCollege/:id" element={<UpdateCollege />} />
+                <Route path="updatePlayway/:id" element={<UpdatePlayway />} />
+                <Route path="updateSchool/:id" element={<UpdateSchool />} />
+                <Route path="updateUniversity/:id" element={<UpdateUniversity />} />
               </Route>
             </Routes>
           </SnackbarProvider>
