@@ -123,11 +123,7 @@ const Navbar = () => {
                   Contact us
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link text-blue-900 font-serif" to="/Reviewandrating" >
-                  Feedback
-                </Link>
-              </li>
+          
             </ul>
           </div>
           <div className=" text-slate-600" onClick={handleShowMenu}>
